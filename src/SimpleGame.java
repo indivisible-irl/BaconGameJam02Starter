@@ -3,19 +3,23 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
  
-public class SimpleGame extends BasicGame{
- 
+public class SimpleGame extends BasicGame
+{
+	Image background = null;
+	
     public SimpleGame()
     {
-        super("Slick2DPath2Glory - SimpleGame");
+        super("Bird Poop!");
     }
  
     @Override
     public void init(GameContainer gc) 
-			throws SlickException {
- 
+			throws SlickException 
+	{
+    	background = new Image("resources/BackgroundSample.jpg");
     }
  
     @Override
@@ -28,7 +32,7 @@ public class SimpleGame extends BasicGame{
     public void render(GameContainer gc, Graphics g) 
 			throws SlickException 
     {
- 
+    	background.draw(0, 0);
     }
  
     public static void main(String[] args) 
