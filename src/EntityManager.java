@@ -10,8 +10,7 @@ public class EntityManager {
 	
 	public EntityManager(Bird b) throws SlickException
 	{
-		entities = new ArrayList<Entity>();
-		
+		entities = new ArrayList<Entity>();		
 		bird = b;
 	}
 	
@@ -50,10 +49,11 @@ public class EntityManager {
 	{
 		CollisionManager.checkAndHandleCollisions(bird, entities);
 		
-		for(Entity e : entities){
+		for(Entity e : entities)
+		{
+			if(e.position.x < -50) removeEntity(e);
 			e.update(input, delta);
-		}
-		
+		}		
 		bird.update(input, delta);
 	}
 	
