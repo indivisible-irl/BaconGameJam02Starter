@@ -250,7 +250,15 @@ public class Entity
 		this.colidable = colidable;
 	}
 	
-	protected void handleCollision()
+	/**
+	 * @return Get the Name
+	 */
+	public String getName()
+	{
+		return "Entity";
+	}
+	
+	protected void handleCollision(Entity entity)
 	{
 		
 	}

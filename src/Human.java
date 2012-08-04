@@ -58,13 +58,21 @@ public class Human extends Entity
 		boundingShape.setY(this.position.y);
 	}
 
+	/**
+	 * @return Get the Name
+	 */
+	public String getName()
+	{
+		return "Human";
+	}
+	
 	public void update(Input input, int delta)
 	{
 		this.getPosition().x -=  this.getVelocity() * delta;
 		this.updateBoundingRect();	
 	}
 	
-	public void handleCollision()
+	public void handleCollision(Entity entity)
 	{
 		Random rand = new Random();
 		

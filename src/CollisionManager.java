@@ -11,8 +11,8 @@ public class CollisionManager
 			{
 				if(entity.boundingShape.intersects(bird.getCrap().getBoundingShape()))
 				{
-					entity.handleCollision();
-					bird.getCrap().handleCollision();
+					entity.handleCollision(entity);
+					bird.getCrap().handleCollision(entity);
 				}
 			}
 		}
