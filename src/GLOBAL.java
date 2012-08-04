@@ -25,4 +25,14 @@ public class GLOBAL {
 	public static final String BIRD_WHITE_3 = "resources/bird/white/03.png";
 	public static final String BIRD_WHITE_4 = "resources/bird/white/04.png";
 	public static final String BIRD_WHITE_5 = "resources/bird/white/05.png";
+	
+	public static final String DUDE_WALK_1 = "resources/dude/walk/01.png";
+	public static final String DUDE_WALK_2 = "resources/dude/walk/02.png";
+	public static final String DUDE_WALK_3 = "resources/dude/walk/03.png";
+	public static final String DUDE_WALK_4 = "resources/dude/walk/04.png";
+	public static final String DUDE_WALK_5 = "resources/dude/walk/05.png";
+	public static final String DUDE_WALK_6 = "resources/dude/walk/06.png";
+	public static final String DUDE_WALK_7 = "resources/dude/walk/07.png";
+	public static final String DUDE_WALK_8 = "resources/dude/walk/08.png";
+	public static final String DUDE_WALK_9 = "resources/dude/walk/09.png";
 }

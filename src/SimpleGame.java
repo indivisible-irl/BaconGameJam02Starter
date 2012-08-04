@@ -26,27 +26,28 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
-    	background = new Background(new Image("resources/background.png"), new Image("resources/background.png"));
-    	Color chromakey = new Color(255, 0, 255);
+    	background = new Background(new Image(GLOBAL.BACKGROUND), new Image(GLOBAL.BACKGROUND));
     	
     	Image[] ibird = {
-    			new Image("resources/bird/white/01.png", chromakey), 
-    			new Image("resources/bird/white/02.png", chromakey), 
-    			new Image("resources/bird/white/03.png", chromakey), 
-    			new Image("resources/bird/white/04.png", chromakey), 
-    			new Image("resources/bird/white/05.png", chromakey)
+    			new Image(GLOBAL.BIRD_WHITE_1, GLOBAL.chromakey), 
+    			new Image(GLOBAL.BIRD_WHITE_2, GLOBAL.chromakey), 
+    			new Image(GLOBAL.BIRD_WHITE_3, GLOBAL.chromakey), 
+    			new Image(GLOBAL.BIRD_WHITE_4, GLOBAL.chromakey), 
+    			new Image(GLOBAL.BIRD_WHITE_5, GLOBAL.chromakey)
     			};
     	bird = new Bird(ibird);   	
     	
     	
     	Image[] idude = {
-    			new Image("resources/dude/walk/07.png", chromakey).getScaledCopy(1.7f), 
-    			new Image("resources/dude/walk/06.png", chromakey).getScaledCopy(1.7f), 
-    			new Image("resources/dude/walk/05.png", chromakey).getScaledCopy(1.7f),
-    			new Image("resources/dude/walk/04.png", chromakey).getScaledCopy(1.7f),
-    			new Image("resources/dude/walk/03.png", chromakey).getScaledCopy(1.7f),
-    			new Image("resources/dude/walk/02.png", chromakey).getScaledCopy(1.7f),
-    			new Image("resources/dude/walk/01.png", chromakey).getScaledCopy(1.7f)
+    			new Image(GLOBAL.DUDE_WALK_1, GLOBAL.chromakey).getScaledCopy(1.7f), 
+    			new Image(GLOBAL.DUDE_WALK_2, GLOBAL.chromakey).getScaledCopy(1.7f), 
+    			new Image(GLOBAL.DUDE_WALK_3, GLOBAL.chromakey).getScaledCopy(1.7f),
+    			new Image(GLOBAL.DUDE_WALK_4, GLOBAL.chromakey).getScaledCopy(1.7f),
+    			new Image(GLOBAL.DUDE_WALK_5, GLOBAL.chromakey).getScaledCopy(1.7f),
+    			new Image(GLOBAL.DUDE_WALK_6, GLOBAL.chromakey).getScaledCopy(1.7f),
+    			new Image(GLOBAL.DUDE_WALK_7, GLOBAL.chromakey).getScaledCopy(1.7f),
+    			new Image(GLOBAL.DUDE_WALK_8, GLOBAL.chromakey).getScaledCopy(1.7f),
+    			new Image(GLOBAL.DUDE_WALK_9, GLOBAL.chromakey).getScaledCopy(1.7f)
     			};
     	dude = new Human(idude);
     	
