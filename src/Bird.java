@@ -13,6 +13,12 @@ import org.newdawn.slick.geom.Vector2f;
 public class Bird extends Entity 
 {				
 	private Crap crap;
+	private static int SCREEN_HEIGHT = 600;
+	private static int SCREEN_WIDTH = 800;
+	private static int BUFFER_TOP = 15;
+	private static int BUFFER_BOTTOM = SCREEN_HEIGHT - 150;
+	private static int BUFFER_LEFT = 15;
+	private static int BUFFER_RIGHT = SCREEN_WIDTH - 75;
 	
 	/**
 	 * 
@@ -88,7 +94,10 @@ public class Bird extends Entity
 				direction = -1;
 				this.flip(true, false);
 			}
-			this.getPosition().x -=  this.getVelocity() * delta;	
+			if (!(this.getPosition().getX() < BUFFER_LEFT))
+			{
+				this.getPosition().x -=  this.getVelocity() * delta;
+			}
 			//if(rotation < 0) this.getAnimationFrame().rotate(1);
 			//if(rotation > 0) this.getAnimationFrame().rotate(-1);
 		}
@@ -98,18 +107,27 @@ public class Bird extends Entity
 				direction = 1;
 				this.flip(true, false);
 			}
-			this.getPosition().x +=  this.getVelocity() * delta;
+			if (!(this.getPosition().getX() > BUFFER_RIGHT))
+			{
+				this.getPosition().x +=  this.getVelocity() * delta;
+			}
 			//if(rotation < 0) this.getAnimationFrame().rotate(1);
 			//if(rotation > 0) this.getAnimationFrame().rotate(-1);
 		}
 		if(input.isKeyDown(Input.KEY_UP) || input.isKeyDown(Input.KEY_W))
 		{
 			//if(rotation > -45) this.getAnimationFrame().rotate(-1);
-			this.getPosition().y -=  this.getVelocity() * delta;
+			if (!(this.getPosition().getY() < BUFFER_TOP))
+			{
+				this.getPosition().y -=  this.getVelocity() * delta;
+			}
 		}
 		if(input.isKeyDown(Input.KEY_DOWN) || input.isKeyDown(Input.KEY_S))
 		{
-			this.getPosition().y +=  this.getVelocity() * delta;
+			if (!(this.getPosition().getY() > BUFFER_BOTTOM))
+			{
+				this.getPosition().y +=  this.getVelocity() * delta;
+			}
 			//if(rotation < 45) this.getAnimationFrame().rotate(1);
 		}
 		if(input.isKeyDown(Input.KEY_SPACE))
