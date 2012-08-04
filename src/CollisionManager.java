@@ -17,7 +17,7 @@ public class CollisionManager
 				//Bird collision with enemies
 				if(entity.boundingShape.intersects(bird.boundingShape))
 				{
-					System.out.print("Collision detected between the bird and an enemy.");
+					System.out.println("Collision detected between the bird and " + entity.getName());
 					entity.handleCollision(bird);
 				}
 			}
