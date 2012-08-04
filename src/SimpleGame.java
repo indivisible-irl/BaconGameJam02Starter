@@ -4,11 +4,13 @@ import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
  
 public class SimpleGame extends BasicGame
 {
 	Image background = null;
+	Bird bird;
 	
     public SimpleGame()
     {
@@ -20,13 +22,15 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
 	{
     	background = new Image("resources/BackgroundSample.jpg");
+    	bird = new Bird(new Image("resources/BirdMoveUp.png"));
     }
  
     @Override
     public void update(GameContainer gc, int delta) 
 			throws SlickException     
     {
- 
+    	Input input = gc.getInput();
+    	bird.update(input, delta);
     }
     
     @Override
@@ -34,6 +38,7 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
     {
     	background.draw(0, 0);
+    	bird.draw();
     }
  
     public static void main(String[] args) 
