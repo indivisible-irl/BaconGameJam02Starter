@@ -34,9 +34,9 @@ public class SimpleGame extends BasicGame
     	//Image [] ii = {ss.getSubImage(0, 0), ss.getSubImage(1, 0)};
     	//int [] dur = {100, 100};
     	//bird = new Bird(new Animation(ii, 100));
-    	dude = new Human(new Image("resources/Dude_R2L_28x49.png"), 28, 49);
-    	dude.getAnimation().setAutoUpdate(true);
-    	dude.getAnimation().start();
+    	//dude = new Human(new Image("resources/Dude_R2L_28x49.png"), 28, 49);
+    	//dude.getAnimation().setAutoUpdate(true);
+    	//dude.getAnimation().start();
     	
     	bird.getAnimation().setAutoUpdate(true);
     	bird.getAnimation().start();
