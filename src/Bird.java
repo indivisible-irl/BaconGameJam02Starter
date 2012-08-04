@@ -22,7 +22,12 @@ public class Bird extends Entity
 		 this.setPosition(new Vector2f(50, 50));
 		 this.setVelocity(0.3f);
 	}
-	
+	public Bird(Image[] images)
+	{
+		 super(images);
+		 this.setPosition(new Vector2f(50, 50));
+		 this.setVelocity(0.3f);
+	}
 	//////////////////////////////////////////////////////
 	////// get & set	
 	public int getHealth()
