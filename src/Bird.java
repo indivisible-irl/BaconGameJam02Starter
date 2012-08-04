@@ -12,7 +12,6 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Bird extends Entity 
 {				
-	private int health;									// health of our birdy	
 	private Crap crap;
 	
 	/**
@@ -38,13 +37,22 @@ public class Bird extends Entity
 	}
 	//////////////////////////////////////////////////////
 	////// get & set	
-	public int getHealth()
+	
+	/**
+	 * @param Set the Crap
+	 */
+	public void setCrap(Crap crap)
 	{
-		return this.health;
+		this.crap = crap;
 	}
-	public double getScoreMultiplier(){
-		return 1;
-	}	
+	
+	/**
+	 * @return Get the Crap
+	 */
+	public Crap getCrap()
+	{
+		return crap;
+	}
 	
 	//////////////////////////////////////////////////////
 	////// functional methods

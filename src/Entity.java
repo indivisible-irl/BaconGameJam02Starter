@@ -60,6 +60,23 @@ public class Entity
 	{
 		return scoremultiplier;
 	}
+	
+	/**
+	 * @param Set the Health
+	 */
+	public void setHealth(float health)
+	{
+		this.health = health;
+	}
+	
+	/**
+	 * @return the Health
+	 */
+	public float getHealth()
+	{
+		return health;
+	}
+	
 	/**
 	 * @param Set the Score Multiplier
 	 */
