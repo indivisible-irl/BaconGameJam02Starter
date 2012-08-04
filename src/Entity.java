@@ -205,6 +205,7 @@ public class Entity
 		this.direction = 0;
 		this.animation = new Animation();
 		this.addAnimationFrame(image, 1000);
+		this.colidable = false;
 	}
 	
 	public Entity(Image image, boolean colidable)
@@ -229,6 +230,7 @@ public class Entity
 		this.animation = new Animation(images, 100);
 		this.animation.start();
 		this.animation.setAutoUpdate(true);
+		this.colidable = false;
 	}
 	
 	/**
