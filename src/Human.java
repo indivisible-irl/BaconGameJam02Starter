@@ -84,7 +84,7 @@ public class Human extends Entity
 		}else{
 			this.getAnimationFrame().rotate(-90);
 		}
-		this.velocity = 0.1f;
+		this.setVelocity(.1f);
 	}
 	
 	public void draw()
