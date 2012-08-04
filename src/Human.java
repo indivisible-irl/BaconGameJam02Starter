@@ -66,7 +66,7 @@ public class Human extends Entity
 	
 	public void handleCollision()
 	{
-		System.out.println("OMG human colided!");
+		this.colidable = false;
 	}
 	
 	public void draw()

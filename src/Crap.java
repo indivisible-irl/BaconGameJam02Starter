@@ -68,5 +68,6 @@ public class Crap extends Entity
 	protected void handleCollision()
 	{
 		System.out.println("Crap collision");
+		this.deactivate();
 	}
 }
