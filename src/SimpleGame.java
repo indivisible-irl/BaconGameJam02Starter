@@ -2,6 +2,7 @@
 //import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -28,25 +29,27 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
 	{
     	background = new Background(new Image("resources/background.png"), new Image("resources/background.png"));
-    	Image[] ibird = {new Image("resources/bird/white/01.png"), 
-    			new Image("resources/bird/white/02.png"), 
-    			new Image("resources/bird/white/03.png"), 
-    			new Image("resources/bird/white/04.png"), 
-    			new Image("resources/bird/white/05.png")};
+    	Color chromakey = new Color(255, 0, 255);
+    	
+    	Image[] ibird = {new Image("resources/bird/white/01.png", chromakey), 
+    			new Image("resources/bird/white/02.png", chromakey), 
+    			new Image("resources/bird/white/03.png", chromakey), 
+    			new Image("resources/bird/white/04.png", chromakey), 
+    			new Image("resources/bird/white/05.png", chromakey)};
     	bird = new Bird(ibird);
-    	Image[] images = {new Image("resources/dude/walk/01.png"), 
+    	bird.getAnimation().setAutoUpdate(true);
+    	bird.getAnimation().start();   
+    	
+    	Image[] idude = {new Image("resources/dude/walk/01.png"), 
     			new Image("resources/dude/walk/02.png"), 
     			new Image("resources/dude/walk/03.png"),
     			new Image("resources/dude/walk/04.png"),
     			new Image("resources/dude/walk/05.png"),
     			new Image("resources/dude/walk/06.png"),
     			new Image("resources/dude/walk/07.png")};
-    	dude = new Human(images);
+    	dude = new Human(idude);
     	dude.getAnimation().setAutoUpdate(true);
     	dude.getAnimation().start();
-    	
-    	bird.getAnimation().setAutoUpdate(true);
-    	bird.getAnimation().start();
     }
  
     @Override
