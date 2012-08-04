@@ -65,6 +65,13 @@ public class Bird extends Entity
 		return crap;
 	}
 	
+	/**
+	 * @return Get the Name
+	 */
+	public String getName()
+	{
+		return "Bird";
+	}
 	//////////////////////////////////////////////////////
 	////// functional methods
 	

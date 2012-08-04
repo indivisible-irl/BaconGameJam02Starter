@@ -8,6 +8,7 @@ import org.newdawn.slick.geom.Vector2f;
  */
 public class Crap extends Entity
 {
+	public static final String NAME = "Crap";
 	private static final int SCREEN_HEIGHT = 600;
 	
 	protected boolean isActive = false;
@@ -28,6 +29,14 @@ public class Crap extends Entity
 	{
 		boundingShape.setX(this.position.x);
 		boundingShape.setY(this.position.y);
+	}
+	
+	/**
+	 * @return Get the Name
+	 */
+	public String getName()
+	{
+		return "Crap";
 	}
 	
 	public void update(int delta)
@@ -65,9 +74,9 @@ public class Crap extends Entity
 		return this.isActive;
 	}
 	
-	protected void handleCollision()
+	protected void handleCollision(Entity entity)
 	{
-		System.out.println("Crap collision");
+		System.out.println("Crap collision with " + entity.getName());
 		this.deactivate();
 	}
 }
