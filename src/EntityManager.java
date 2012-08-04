@@ -33,6 +33,13 @@ public class EntityManager {
 		entities.remove(entity);
 	}
 	
+	/**
+	 * @return the ArrayList
+	 */
+	public ArrayList<Entity> getEntityList()
+	{
+		return entities;
+	}
 	
 	/**
 	 * Updates all entities
@@ -41,8 +48,9 @@ public class EntityManager {
 	 */
 	public void update(Input input, int delta)
 	{
+		CollisionManager.checkAndHandleCollisions(bird, entities);
+		
 		for(Entity e : entities){
-			CollisionManager.checkAndHandleCollisions(bird, entities);
 			e.update(input, delta);
 		}
 		
