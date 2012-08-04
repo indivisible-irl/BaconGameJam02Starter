@@ -2,6 +2,7 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 /*
@@ -44,6 +45,17 @@ public class Bird extends Entity
 		 this.setVelocity(0.2f);
 		 this.crap = new Crap(new Image(GLOBAL.CRAP, new Color(255, 0, 255)), this);
 		 this.direction = -1;
+		 this.boundingShape = new Rectangle(this.getPosition().x, 
+					this.getPosition().y, 
+					this.getAnimationFrame().getWidth(),
+					this.getAnimationFrame().getHeight());
+		 this.colidable = true;
+	}
+	
+	private void updateBoundingRect()
+	{
+		boundingShape.setX(this.position.x);
+		boundingShape.setY(this.position.y);
 	}
 	
 	//////////////////////////////////////////////////////
@@ -91,6 +103,7 @@ public class Bird extends Entity
 	 */
 	public void update(Input input, int delta)
 	{
+		this.updateBoundingRect();
 		//float rotation = this.getAnimationFrame().getRotation();
 		
 		if(input.isKeyDown(Input.KEY_LEFT) || input.isKeyDown(Input.KEY_A))

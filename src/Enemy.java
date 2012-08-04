@@ -24,7 +24,7 @@ public class Enemy extends Entity
 		this.position.x = GLOBAL.SCREEN_WIDTH - 100;
 		this.position.y = randomYValue;
 		this.setVelocity(0.15f);
-		 this.boundingShape = new Rectangle(this.getPosition().x, 
+		this.boundingShape = new Rectangle(this.getPosition().x, 
 					this.getPosition().y, 
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
