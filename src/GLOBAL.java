@@ -1,6 +1,6 @@
 import org.newdawn.slick.Color;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
+//import org.newdawn.slick.Image;
+//import org.newdawn.slick.SlickException;
 
 /*
  * Reddit BaconGameJam - Aug 2012
@@ -13,6 +13,16 @@ import org.newdawn.slick.SlickException;
 public class GLOBAL {
 	public static final int SCREEN_WIDTH = 800;
 	public static final int SCREEN_HEIGHT = 600;
+	
+	public static final long ENTITY_DELAY = 2000;
+	public static final long ENTITY_DECREMENTS = 200;
+
+	// Each frequency should be bigger than the previous and sum should equal 0
+	//		The difference between is the weighting it gets
+	public static final int HUMAN_FREQUENCY = 25;		// 20
+	public static final int CAT_FREQUENCY = 50;			// 20
+	public static final int DO_NOTHING = 100;			// 60
+	public static final int RANDOM_MAX = 100;			// max for random num gen			
 	
 	public static final Color chromakey = new Color(255, 0, 255);
 	
