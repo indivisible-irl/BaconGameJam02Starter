@@ -68,9 +68,11 @@ public class SimpleGame extends BasicGame
     	}
     	if(input.isKeyDown(Input.KEY_P)){
     		entityQueueHandler.increaseDelay();
+    		System.out.println("Increased Queue delay: " + entityQueueHandler.getDelay());
     	}
     	if(input.isKeyDown(Input.KEY_O)){
     		entityQueueHandler.decreaseDelay();
+    		System.out.println("Decreased Queue delay: " + entityQueueHandler.getDelay());
     	}
     	
     	background.update(delta);
