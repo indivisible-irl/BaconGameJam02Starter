@@ -52,7 +52,7 @@ public class EntityManager {
 		for(int i = 0; i < this.entities.size(); i++)
 		{
 			entities.get(i).update(input, delta);
-			if(entities.get(i).position.x < -50 && this.entities.size() > 1) entities.remove(i);
+			if(entities.get(i).position.x < -(entities.get(i).getAnimationFrame().getWidth()) && this.entities.size() > 1) entities.remove(i);
 		}
 		bird.update(input, delta);
 	}
