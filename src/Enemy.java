@@ -21,7 +21,7 @@ public class Enemy extends Entity
 	{		
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(LOWER_RANDOM_BOUND) + VARIANCE;
-		this.position.x = GLOBAL.SCREEN_WIDTH - 100;
+		this.position.x = GLOBAL.SCREEN_WIDTH + 100;
 		this.position.y = randomYValue;
 		this.setVelocity(0.15f);
 		this.boundingShape = new Rectangle(this.getPosition().x, 

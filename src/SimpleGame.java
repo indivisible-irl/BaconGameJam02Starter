@@ -47,7 +47,7 @@ public class SimpleGame extends BasicGame
     	
     	entityManager = new EntityManager(bird);
     	entityManager.addEntity(Human.getRandomlyPlacedHuman());
-    	entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
+    	//entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
     	entityQueueHandler = new EntityQueueHandler(entityManager);
     }
  
