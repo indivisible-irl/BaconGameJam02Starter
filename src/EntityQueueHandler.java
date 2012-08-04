@@ -92,16 +92,21 @@ public class EntityQueueHandler {
 				} catch (SlickException e) {
 					e.printStackTrace();
 				}
-			} else if ( getRandom() < GLOBAL.CAR_FREQUENCY) {
+			} else if ( getRandom() < GLOBAL.CAT_FREQUENCY) {
+				if (debug){
+					System.out.println("I would have placed a cat. I like cats.");
+				}
+			} else if ( getRandom() < GLOBAL.BIRD_FREQUENCY) {
+				if (debug){
+					System.out.println("Another evil birdy");
+				}
 				try {
-					getEntityManager().addEntity(Car.getRandomlyPlacedCar());
+					getEntityManager().addEntity(Enemy.getRandomlyPlacedEnemy());
 				} catch (SlickException e) {
 					e.printStackTrace();
 				}
-				if (debug){
-					System.out.println("Adding a Car");
-				}
-			} else {
+			}
+			else {
 				// do nothing
 			}
 			setLastUpdate(new Date().getTime());
