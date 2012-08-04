@@ -56,7 +56,7 @@ public class EntityManagerTester extends BasicGame
     	
     	entityManager = new EntityManager(bird);
     	entityManager.addEntity(dude);
-    	//entityManager.addEntity(otherDude);  
+    	entityManager.addEntity(otherDude);  
     	entityManager.addEntity(Human.getRandomlyPlacedHuman());
     }
  
@@ -65,9 +65,14 @@ public class EntityManagerTester extends BasicGame
 			throws SlickException     
     {
     	Input input = gc.getInput();
+    	
+    	if(input.isKeyDown(Input.KEY_H)){
+    		entityManager.addEntity(Human.getRandomlyPlacedHuman());
+    	}
+    	
     	background.update(delta);
-    	bird.update(input, delta);
     	entityManager.update(input, delta);
+    	//bird.update(input, delta);
     	//dude.update(input, delta);
     	//otherDude.update(input, delta);
     }
@@ -77,8 +82,8 @@ public class EntityManagerTester extends BasicGame
 			throws SlickException 
     {
     	background.draw();
-    	bird.draw();
     	entityManager.draw();
+    	//bird.draw();
     	//dude.draw();
     	//otherDude.draw();
     }
