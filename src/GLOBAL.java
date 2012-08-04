@@ -17,6 +17,7 @@ public class GLOBAL {
 	public static final Color chromakey = new Color(255, 0, 255);
 	
 	public static final String BACKGROUND = "resources/background.png";
+	
 	//public static final Image IMG_BGRND = new Image(BACKGROUND);
 	public static final String CRAP = "resources/poop.png";
 	

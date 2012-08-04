@@ -88,7 +88,7 @@ public class EntityManagerTester extends BasicGame
     	//otherDude.draw();
     }
  
-    public static void main(String[] args) 
+    /*public static void main(String[] args) 
 			throws SlickException
     {    	
          AppGameContainer app = new AppGameContainer(new EntityManagerTester());
@@ -96,5 +96,5 @@ public class EntityManagerTester extends BasicGame
          app.setDisplayMode(SCREEN_HEIGHT, SCREEN_WIDTH, false);
          app.setTargetFrameRate(60);
          app.start();
-    }
+    }*/
 }

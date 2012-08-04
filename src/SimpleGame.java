@@ -1,6 +1,5 @@
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -8,14 +7,10 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
  
 public class SimpleGame extends BasicGame
-{
-	static final int SCREEN_HEIGHT = 800;
-	static final int SCREEN_WIDTH = 600;
-	
-	Background background = null;
-	Bird bird;
-	Human dude;
-	Human otherDude;
+{	
+	private Background background = null;
+	private Bird bird;
+	private EntityManager entityManager;
 	
     public SimpleGame()
     {
@@ -35,23 +30,10 @@ public class SimpleGame extends BasicGame
     			new Image(GLOBAL.BIRD_WHITE_4, GLOBAL.chromakey), 
     			new Image(GLOBAL.BIRD_WHITE_5, GLOBAL.chromakey)
     			};
-    	bird = new Bird(ibird);   	
+    	bird = new Bird(ibird);
     	
-    	
-    	Image[] idude = {
-    			new Image(GLOBAL.DUDE_WALK_1, GLOBAL.chromakey).getScaledCopy(1.7f), 
-    			new Image(GLOBAL.DUDE_WALK_2, GLOBAL.chromakey).getScaledCopy(1.7f), 
-    			new Image(GLOBAL.DUDE_WALK_3, GLOBAL.chromakey).getScaledCopy(1.7f),
-    			new Image(GLOBAL.DUDE_WALK_4, GLOBAL.chromakey).getScaledCopy(1.7f),
-    			new Image(GLOBAL.DUDE_WALK_5, GLOBAL.chromakey).getScaledCopy(1.7f),
-    			new Image(GLOBAL.DUDE_WALK_6, GLOBAL.chromakey).getScaledCopy(1.7f),
-    			new Image(GLOBAL.DUDE_WALK_7, GLOBAL.chromakey).getScaledCopy(1.7f),
-    			new Image(GLOBAL.DUDE_WALK_8, GLOBAL.chromakey).getScaledCopy(1.7f),
-    			new Image(GLOBAL.DUDE_WALK_9, GLOBAL.chromakey).getScaledCopy(1.7f)
-    			};
-    	dude = new Human(idude);
-    	
-    	otherDude = Human.getRandomlyPlacedHuman();
+    	entityManager = new EntityManager(bird);
+    	entityManager.addEntity(Human.getRandomlyPlacedHuman());
     }
  
     @Override
@@ -60,9 +42,8 @@ public class SimpleGame extends BasicGame
     {
     	Input input = gc.getInput();
     	background.update(delta);
-    	bird.update(input, delta);
-    	dude.update(input, delta);
-    	otherDude.update(input, delta);
+    	//bird.update(input, delta);
+    	entityManager.update(input, delta);
     }
     
     @Override
@@ -70,18 +51,22 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
     {
     	background.draw();
-    	bird.draw();
-    	dude.draw();
-    	otherDude.draw();
+    	//bird.draw();
+    	entityManager.draw();
     }
  
-    /*public static void main(String[] args) 
+    /**
+     * Entry point
+     * @param args
+     * @throws SlickException
+     */
+    public static void main(String[] args) 
 			throws SlickException
     {    	
          AppGameContainer app = new AppGameContainer(new SimpleGame());
  
-         app.setDisplayMode(SCREEN_HEIGHT, SCREEN_WIDTH, false);
+         app.setDisplayMode(GLOBAL.SCREEN_WIDTH, GLOBAL.SCREEN_HEIGHT, false);
          app.setTargetFrameRate(60);
          app.start();
-    }*/
+    }
 }
