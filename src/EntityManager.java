@@ -51,7 +51,7 @@ public class EntityManager {
 		
 		for(Entity e : entities)
 		{
-			if(e.position.x < -50) removeEntity(e);
+			if(e.position.x < -50 && this.entities.size() > 1) removeEntity(e);
 			e.update(input, delta);
 		}		
 		bird.update(input, delta);
