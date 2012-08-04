@@ -89,6 +89,13 @@ public class Entity
 		return this.animation;
 	}
 	/**
+	 * Sets the animation
+	 * @param animation
+	 */
+	public void setAnimation(Animation animation){
+		this.animation = animation;
+	}
+	/**
 	 * @param Sets the animation frame
 	 */
 	public void setAnimationFrames(int index)
@@ -114,6 +121,16 @@ public class Entity
 	{
 		this.animation.addFrame(image, duration);
 	}
+	/**
+	 * Adds a sprite sheet and sets the animation
+	 * @param sSheet
+	 * @param frames
+	 * @param duration
+	 */
+	public void addSprites(SpriteSheet sSheet, int[] frames, int[] duration){
+		setSpriteSheet(sSheet);
+		this.animation = new Animation(getSpriteSheet(), frames, duration);
+	}
 	
 	//////////////////////////////////////////////////////////////////////////
 	
@@ -122,7 +139,9 @@ public class Entity
 	 */
 	public Entity()
 	{
-		// nothing here
+		this.position = new Vector2f(0, 0);
+		this.velocity = 0.0f;
+		this.direction = 0;
 	}
 	/**
 	 * Default constructor requires an Image

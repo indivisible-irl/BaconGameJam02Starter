@@ -19,7 +19,7 @@ public class Sprite extends Entity
 	////////////////////////////////////////////////////////////
 
 	/**
-	 * Get the height of the source inage
+	 * Get the height of the source image
 	 * @return int
 	 */
 	public int getImageHeight(){
@@ -133,7 +133,7 @@ public class Sprite extends Entity
 	
 	////////////////////////////////////////////////////////////
 	
-	public Sprite(Image img, int tWidth, int tHeight)
+	public Sprite(Image img, int tWidth, int tHeight, int[] frames, int[] duration)
 	{
 		super();
 		setImage(img);
@@ -144,7 +144,8 @@ public class Sprite extends Entity
 		setNumRows(getImageWidth() / getTileWidth());
 		setNumColumns(getImageHeight() / getTileHeight());
 		setSpriteSheet(new SpriteSheet(getImage(), getTileWidth(), getTileHeight()));
-		super.setSpriteSheet(spriteSheet);
+		super.addSprites(spriteSheet, frames, duration);
+		
 	}
 	
 }
