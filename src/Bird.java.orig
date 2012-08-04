@@ -23,8 +23,11 @@ public class Bird extends Entity
 		 super(image);
 		 this.setPosition(new Vector2f(50, 50));
 		 this.setVelocity(0.3f);
+<<<<<<< HEAD
 		 this.crap = new Crap(new Image("resources/poop.png"), this);
+=======
 		 this.direction = -1;
+>>>>>>> c604ffd63038ba28d2fbe6afca66bd3832ebd3d4
 	}
 	public Bird(Image[] images)
 	{
