@@ -22,7 +22,7 @@ public class Background
 	{
 		this.leadImage = new Entity(leadImage);
 		this.followImage = new Entity(followImage);
-		this.velocity = 0.3f;		
+		this.velocity = 0.2f;		
 	}
 	
 	/**
