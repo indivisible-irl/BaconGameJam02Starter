@@ -41,6 +41,11 @@ public class SimpleGame extends BasicGame
 			throws SlickException     
     {
     	Input input = gc.getInput();
+    	
+    	if(input.isKeyDown(Input.KEY_H)){
+    		entityManager.addEntity(Human.getRandomlyPlacedHuman());
+    	}
+    	
     	background.update(delta);
     	//bird.update(input, delta);
     	entityManager.update(input, delta);
