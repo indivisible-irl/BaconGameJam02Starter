@@ -28,15 +28,22 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
 	{
     	background = new Background(new Image("resources/background.png"), new Image("resources/background.png"));
-    	bird = new Bird(new Image("resources/BirdMoveUp.png"));
-    	//bird = new Bird(new Image("resources/BirdMoveUp.png"));
-    	//SpriteSheet ss = new SpriteSheet(new Image("resources/DudeWalking_L2R.jpg"), 28, 49);
-    	//Image [] ii = {ss.getSubImage(0, 0), ss.getSubImage(1, 0)};
-    	//int [] dur = {100, 100};
-    	//bird = new Bird(new Animation(ii, 100));
-    	//dude = new Human(new Image("resources/Dude_R2L_28x49.png"), 28, 49);
-    	//dude.getAnimation().setAutoUpdate(true);
-    	//dude.getAnimation().start();
+    	Image[] ibird = {new Image("resources/bird/white/01.png"), 
+    			new Image("resources/bird/white/02.png"), 
+    			new Image("resources/bird/white/03.png"), 
+    			new Image("resources/bird/white/04.png"), 
+    			new Image("resources/bird/white/05.png")};
+    	bird = new Bird(ibird);
+    	Image[] images = {new Image("resources/dude/walk/01.png"), 
+    			new Image("resources/dude/walk/02.png"), 
+    			new Image("resources/dude/walk/03.png"),
+    			new Image("resources/dude/walk/04.png"),
+    			new Image("resources/dude/walk/05.png"),
+    			new Image("resources/dude/walk/06.png"),
+    			new Image("resources/dude/walk/07.png")};
+    	dude = new Human(images);
+    	dude.getAnimation().setAutoUpdate(true);
+    	dude.getAnimation().start();
     	
     	bird.getAnimation().setAutoUpdate(true);
     	bird.getAnimation().start();

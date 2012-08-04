@@ -144,7 +144,6 @@ public class Sprite extends Entity
 		setNumRows(getImageWidth() / getTileWidth());
 		setNumColumns(getImageHeight() / getTileHeight());
 		setSpriteSheet(new SpriteSheet(getImage(), getTileWidth(), getTileHeight()));
-		super.addSprites(spriteSheet, frames, duration);
 		
 	}
 	

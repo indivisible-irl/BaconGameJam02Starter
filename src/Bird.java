@@ -25,7 +25,12 @@ public class Bird extends Entity
 		 this.setVelocity(0.3f);
 		 this.crap = new Crap(new Image("resources/poop.png"), this);
 	}
-	
+	public Bird(Image[] images)
+	{
+		 super(images);
+		 this.setPosition(new Vector2f(50, 50));
+		 this.setVelocity(0.3f);
+	}
 	//////////////////////////////////////////////////////
 	////// get & set	
 	public int getHealth()

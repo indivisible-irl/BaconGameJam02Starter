@@ -1,11 +1,11 @@
 import org.newdawn.slick.Image;
 
 
-public class Human extends Sprite
+public class Human extends Entity
 {
-	public Human(Image image, int tileWidth, int tileHeight)
+	public Human(Image[] images)
 	{
-		 super(image, tileWidth, tileHeight, new int[] {2,2,2,2,2,2,2,2,2}, new int[] {2,2,2,2,2,2,2,2,2});
+		 super(images);
 	}
 	
 }

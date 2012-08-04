@@ -14,7 +14,7 @@ public class Entity
 	protected float direction;
 	protected float scoremultiplier;
 	protected Animation animation;
-	protected SpriteSheet spriteSheet;
+	protected Image[] images;
 
 	///////////////////////////////////////
 	//Getters/Setters
@@ -103,33 +103,11 @@ public class Entity
 		this.animation.setCurrentFrame(index);
 	}
 	/**
-	 * @return Gets the sprite sheet object
-	 */
-	public SpriteSheet getSpriteSheet() {
-		return spriteSheet;
-	}
-	/**
-	 * @param Sets the SpriteSheet object
-	 */
-	public void setSpriteSheet(SpriteSheet spriteSheet) {
-		this.spriteSheet = spriteSheet;
-	}
-	/**
 	 * @param image add an individual image to the animationFrame list
 	 */
 	public void addAnimationFrame(Image image, int duration)
 	{
 		this.animation.addFrame(image, duration);
-	}
-	/**
-	 * Adds a sprite sheet and sets the animation
-	 * @param sSheet
-	 * @param frames
-	 * @param duration
-	 */
-	public void addSprites(SpriteSheet sSheet, int[] frames, int[] duration){
-		setSpriteSheet(sSheet);
-		this.animation = new Animation(getSpriteSheet(), frames, duration);
 	}
 	
 	//////////////////////////////////////////////////////////////////////////
@@ -168,13 +146,14 @@ public class Entity
 		this.animation = animation;
 	}
 	/**
-	 * Constructor that uses a SpriteSheet to make an animation
+	 * Constructor that uses a an array of images to make an animation
 	 * @param spriteSheet
 	 */
-	public Entity(SpriteSheet spriteSheet){
+	public Entity(Image[] images){
 		this.position = new Vector2f(0, 0);
 		this.velocity = 0.0f;
 		this.direction = 0;
-		setSpriteSheet(spriteSheet);
+		this.images = images;
+		this.animation = new Animation(images, 100);
 	}
 }
