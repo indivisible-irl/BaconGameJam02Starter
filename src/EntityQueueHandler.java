@@ -105,8 +105,16 @@ public class EntityQueueHandler {
 				} catch (SlickException e) {
 					e.printStackTrace();
 				}
-			}
-			else {
+			} else if ( getRandom() < GLOBAL.CAR_FREQUENCY) {
+				if (debug){
+					System.out.println("Vroom VROOM!");
+				}
+				try {
+					getEntityManager().addEntity(Car.getRandomlyPlacedCar());
+				} catch (SlickException e) {
+					e.printStackTrace();
+				}
+			} else {
 				// do nothing
 			}
 			setLastUpdate(new Date().getTime());

@@ -19,11 +19,12 @@ public class GLOBAL {
 
 	// Each frequency should be bigger than the previous and sum should equal 0
 	//		The difference between is the weighting it gets
-	public static final int HUMAN_FREQUENCY = 25;		// 20
-	public static final int CAT_FREQUENCY = 50;			// 20
-	public static final int BIRD_FREQUENCY = 70;		// 20
-	public static final int DO_NOTHING = 100;			// 40
-	public static final int RANDOM_MAX = 100;			// max for random num gen			
+	public static final int HUMAN_FREQUENCY = 25;		// 25
+	public static final int CAT_FREQUENCY = 45;			// 20
+	public static final int BIRD_FREQUENCY = 70;		// 25
+	public static final int CAR_FREQUENCY = 90;			// 20
+	public static final int DO_NOTHING = 150;			// 40
+	public static final int RANDOM_MAX = 150;			// max for random num gen			
 	
 	public static final Color chromakey = new Color(255, 0, 255);
 	
