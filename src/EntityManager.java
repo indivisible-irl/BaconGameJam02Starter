@@ -15,6 +15,8 @@ public class EntityManager {
 	
 	public EntityManager(Bird b) throws SlickException
 	{
+		entities = new ArrayList<Entity>();
+		
 		bird = b;
 	}
 	
