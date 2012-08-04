@@ -8,7 +8,4 @@ public class Car extends Entity
 		 super(image);
 	}
 	
-	public double getScoreMultiplier(){
-		return 1;
-	}
 }

@@ -61,6 +61,13 @@ public class Entity
 		return scoremultiplier;
 	}
 	/**
+	 * @param Set the Score Multiplier
+	 */
+	public void setMultiplier(float scoremultiplier)
+	{
+		this.scoremultiplier = scoremultiplier;
+	}
+	/**
 	 * @param direction the direction to set
 	 */
 	public void setDirection(float direction)
