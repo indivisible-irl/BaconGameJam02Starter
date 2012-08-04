@@ -45,10 +45,14 @@ public class Bird extends Entity
 		
 	}
 	
+	/**
+	 * Handles input and movement responses from the bird
+	 * @param input
+	 * @param delta
+	 */
 	public void update(Input input, int delta)
 	{
 		float rotation = this.getSpriteImage().getRotation();
-		System.out.println(rotation);
 		
 		if(input.isKeyDown(Input.KEY_LEFT))
 		{
@@ -74,6 +78,9 @@ public class Bird extends Entity
 		}
 	}	
 	
+	/**
+	 * handles the drawing of the bird each frame
+	 */
 	public void draw()
 	{
 		this.getSpriteImage().draw(this.getPosition().x, this.getPosition().y);

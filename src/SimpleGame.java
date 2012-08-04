@@ -9,7 +9,7 @@ import org.newdawn.slick.SlickException;
  
 public class SimpleGame extends BasicGame
 {
-	Image background = null;
+	Background background = null;
 	Bird bird;
 	
     public SimpleGame()
@@ -21,7 +21,7 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
-    	background = new Image("resources/BackgroundSample.jpg");
+    	background = new Background(new Image("resources/BackgroundSample.jpg"), new Image("resources/BackgroundSample.jpg"));
     	bird = new Bird(new Image("resources/BirdMoveUp.png"));
     }
  
@@ -30,6 +30,7 @@ public class SimpleGame extends BasicGame
 			throws SlickException     
     {
     	Input input = gc.getInput();
+    	background.update(delta);
     	bird.update(input, delta);
     }
     
@@ -37,7 +38,7 @@ public class SimpleGame extends BasicGame
     public void render(GameContainer gc, Graphics g) 
 			throws SlickException 
     {
-    	background.draw(0, 0);
+    	background.draw();
     	bird.draw();
     }
  
