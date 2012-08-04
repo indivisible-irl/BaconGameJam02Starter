@@ -1,5 +1,6 @@
 
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.SpriteSheet;
 //click includes
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Vector2f;
@@ -8,11 +9,12 @@ public class Entity
 {
 	///////////////////////////////////////
 	// x,y coords on screen
-	private Vector2f position;		
-	private float velocity;
-	private float direction;
-	private float scoremultiplier;
-	private Animation animation;
+	protected Vector2f position;		
+	protected float velocity;
+	protected float direction;
+	protected float scoremultiplier;
+	protected Animation animation;
+	protected SpriteSheet spriteSheet;
 
 	///////////////////////////////////////
 	//Getters/Setters
@@ -94,6 +96,18 @@ public class Entity
 		this.animation.setCurrentFrame(index);
 	}
 	/**
+	 * @return Gets the sprite sheet object
+	 */
+	public SpriteSheet getSpriteSheet() {
+		return spriteSheet;
+	}
+	/**
+	 * @param Sets the SpriteSheet object
+	 */
+	public void setSpriteSheet(SpriteSheet spriteSheet) {
+		this.spriteSheet = spriteSheet;
+	}
+	/**
 	 * @param image add an individual image to the animationFrame list
 	 */
 	public void addAnimationFrame(Image image, int duration)
@@ -101,6 +115,15 @@ public class Entity
 		this.animation.addFrame(image, duration);
 	}
 	
+	//////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 * Empty constructor because I couldn't get Sprite to init otherwise.
+	 */
+	public Entity()
+	{
+		// nothing here
+	}
 	/**
 	 * Default constructor requires an Image
 	 * @param image
@@ -115,7 +138,7 @@ public class Entity
 	}
 	
 	/**
-	 * Constructor that uses a SpriteSheet to make an animation
+	 * Constructor that uses an Animation to make an animation
 	 * @param image
 	 */
 	public Entity(Animation animation)
@@ -124,5 +147,15 @@ public class Entity
 		this.velocity = 0.0f;
 		this.direction = 0;
 		this.animation = animation;
+	}
+	/**
+	 * Constructor that uses a SpriteSheet to make an animation
+	 * @param spriteSheet
+	 */
+	public Entity(SpriteSheet spriteSheet){
+		this.position = new Vector2f(0, 0);
+		this.velocity = 0.0f;
+		this.direction = 0;
+		setSpriteSheet(spriteSheet);
 	}
 }
