@@ -92,7 +92,7 @@ public class EntityQueueHandler {
 				} catch (SlickException e) {
 					e.printStackTrace();
 				}
-			} else if ( getRandom() < GLOBAL.CAT_FREQUENCY) {
+			} else if ( getRandom() < GLOBAL.CAR_FREQUENCY) {
 				try {
 					getEntityManager().addEntity(Car.getRandomlyPlacedCar());
 				} catch (SlickException e) {

@@ -11,7 +11,7 @@ import org.newdawn.slick.geom.Vector2f;
 public class Car extends Entity 
 {
 	protected static final int VARIANCE = 42;
-	protected static final int LOWER_RANDOM_BOUND = 390;
+	protected static final int LOWER_RANDOM_BOUND = 420;
 	
 	private static Color chromakey = new Color(255, 0, 255);
 	
