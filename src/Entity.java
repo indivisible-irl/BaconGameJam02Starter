@@ -8,16 +8,19 @@ import org.newdawn.slick.geom.Vector2f;
 public class Entity
 {
 	///////////////////////////////////////
-	// x,y coords on screen
+	// instance variables
+	
 	protected Vector2f position;		
 	protected float velocity;
 	protected float direction;
 	protected float scoremultiplier;
+	protected float health;
 	protected Animation animation;
 	protected Image[] images;
 
 	///////////////////////////////////////
 	//Getters/Setters
+	
 	/**
 	 * @return the position
 	 */
@@ -25,6 +28,7 @@ public class Entity
 	{
 		return position;
 	}
+	
 	/**
 	 * @param position the position to set
 	 */
@@ -32,6 +36,7 @@ public class Entity
 	{
 		this.position = position;
 	}
+	
 	/**
 	 * @return the velocity
 	 */
@@ -39,6 +44,7 @@ public class Entity
 	{
 		return velocity;
 	}
+	
 	/**
 	 * @param velocity the velocity to set
 	 */
@@ -46,13 +52,7 @@ public class Entity
 	{
 		this.velocity = velocity;
 	}
-	/**
-	 * @return the direction
-	 */
-	public float getDirection()
-	{
-		return direction;
-	}
+	
 	/**
 	 * @return the Score Multiplier
 	 */
@@ -60,6 +60,23 @@ public class Entity
 	{
 		return scoremultiplier;
 	}
+	
+	/**
+	 * @param Set the Health
+	 */
+	public void setHealth(float health)
+	{
+		this.health = health;
+	}
+	
+	/**
+	 * @return the Health
+	 */
+	public float getHealth()
+	{
+		return health;
+	}
+	
 	/**
 	 * @param Set the Score Multiplier
 	 */
@@ -67,6 +84,15 @@ public class Entity
 	{
 		this.scoremultiplier = scoremultiplier;
 	}
+	
+	/**
+	 * @param direction the direction to set
+	 */
+	public float getDirection()
+	{
+		return this.direction;
+	}
+	
 	/**
 	 * @param direction the direction to set
 	 */
@@ -74,6 +100,7 @@ public class Entity
 	{
 		this.direction = direction;
 	}
+	
 	/**
 	 * @return the current animation frame
 	 */
@@ -81,6 +108,7 @@ public class Entity
 	{
 		return this.animation.getCurrentFrame();
 	}
+	
 	/**
 	 * @return Get the animation
 	 */
@@ -88,13 +116,23 @@ public class Entity
 	{
 		return this.animation;
 	}
+	
 	/**
-	 * Sets the animation
+	 * Sets the animation with an Animation
 	 * @param animation
 	 */
 	public void setAnimation(Animation animation){
 		this.animation = animation;
 	}
+	
+	/**
+	 * Sets the animation with an image array
+	 * @param animation
+	 */
+	public void setAnimation(Image[] images){
+		this.animation = new Animation(images, 100);
+	}
+	
 	/**
 	 * @param Sets the animation frame
 	 */
@@ -102,18 +140,21 @@ public class Entity
 	{
 		this.animation.setCurrentFrame(index);
 	}
+	
 	/**
-	 * @param image add an individual image to the animationFrame list
+	 * @param append an image to the animation
 	 */
 	public void addAnimationFrame(Image image, int duration)
 	{
 		this.animation.addFrame(image, duration);
 	}
 	
-	//////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////
+	//Constructors
 	
 	/**
-	 * Empty constructor because I couldn't get Sprite to init otherwise.
+	 * Default constructor
+	 *
 	 */
 	public Entity()
 	{
@@ -122,7 +163,7 @@ public class Entity
 		this.direction = 0;
 	}
 	/**
-	 * Default constructor requires an Image
+	 * Constructor that requires an Image
 	 * @param image
 	 */
 	public Entity(Image image)
@@ -132,18 +173,6 @@ public class Entity
 		this.direction = 0;
 		this.animation = new Animation();
 		this.addAnimationFrame(image, 1000);
-	}
-	
-	/**
-	 * Constructor that uses an Animation to make an animation
-	 * @param image
-	 */
-	public Entity(Animation animation)
-	{
-		this.position = new Vector2f(0, 0);
-		this.velocity = 0.0f;
-		this.direction = 0;
-		this.animation = animation;
 	}
 	/**
 	 * Constructor that uses a an array of images to make an animation
@@ -155,5 +184,7 @@ public class Entity
 		this.direction = 0;
 		this.images = images;
 		this.animation = new Animation(images, 100);
+		this.animation.start();
+		this.animation.setAutoUpdate(true);
 	}
 }

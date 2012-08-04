@@ -12,7 +12,6 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Bird extends Entity 
 {				
-	private int health;									// health of our birdy	
 	private Crap crap;
 	
 	/**
@@ -38,23 +37,33 @@ public class Bird extends Entity
 	}
 	//////////////////////////////////////////////////////
 	////// get & set	
-	public int getHealth()
+	
+	/**
+	 * @param Set the Crap
+	 */
+	public void setCrap(Crap crap)
 	{
-		return this.health;
+		this.crap = crap;
 	}
-	public double getScoreMultiplier(){
-		return 1;
-	}	
+	
+	/**
+	 * @return Get the Crap
+	 */
+	public Crap getCrap()
+	{
+		return crap;
+	}
 	
 	//////////////////////////////////////////////////////
 	////// functional methods
-	public void goUp()
+	
+	public void flip(boolean flipHorizontal, boolean flipVertical)
 	{
+		for(int i = 0;i < images.length;i++){
+			images[i] = images[i].getFlippedCopy(flipHorizontal, flipVertical);
+		}
 		
-	}
-	public void goDown()
-	{
-		
+		this.setAnimation(images);
 	}
 	
 	/**
@@ -69,12 +78,20 @@ public class Bird extends Entity
 		
 		if(input.isKeyDown(Input.KEY_LEFT) || input.isKeyDown(Input.KEY_A))
 		{
+			if(direction != -1){
+				direction = -1;
+				this.flip(true, false);
+			}
 			this.getPosition().x -=  this.getVelocity() * delta;	
 			if(rotation < 0) this.getAnimationFrame().rotate(1);
 			if(rotation > 0) this.getAnimationFrame().rotate(-1);
 		}
 		if(input.isKeyDown(Input.KEY_RIGHT) || input.isKeyDown(Input.KEY_D))
 		{
+			if(direction != 1){
+				direction = 1;
+				this.flip(true, false);
+			}
 			this.getPosition().x +=  this.getVelocity() * delta;
 			if(rotation < 0) this.getAnimationFrame().rotate(1);
 			if(rotation > 0) this.getAnimationFrame().rotate(-1);
