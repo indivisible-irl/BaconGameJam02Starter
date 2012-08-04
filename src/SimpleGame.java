@@ -12,6 +12,7 @@ public class SimpleGame extends BasicGame
 	private Bird bird;
 	private Enemy enemy;
 	private EntityManager entityManager;
+	private EntityQueueHandler entityQueueHandler;
 	private Score score;
 	
     public SimpleGame()
@@ -46,7 +47,8 @@ public class SimpleGame extends BasicGame
     	
     	entityManager = new EntityManager(bird);
     	entityManager.addEntity(Human.getRandomlyPlacedHuman());
-    	entityManager.addEntity(enemy.getRandomlyPlacedEnemy());
+    	entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
+    	entityQueueHandler = new EntityQueueHandler(entityManager);
     }
  
     @Override
@@ -61,8 +63,8 @@ public class SimpleGame extends BasicGame
     	
     	background.update(delta);
     	//bird.update(input, delta);
+    	entityQueueHandler.update();
     	entityManager.update(input, delta);
-    	
     	score.update();
     }
     
