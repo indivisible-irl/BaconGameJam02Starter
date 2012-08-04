@@ -16,11 +16,11 @@ public class EntityManagerTester extends BasicGame
 	Bird bird;
 	Human dude;
 	Human otherDude;
-	Human thirdDude;
+	EntityManager entityManager;
 	
     public EntityManagerTester()
     {
-        super("Bird Poop!");
+        super("Entity Manager Tester!");
     }
  
     @Override
@@ -54,10 +54,10 @@ public class EntityManagerTester extends BasicGame
     	
     	otherDude = Human.getRandomlyPlacedHuman();
     	
-    	EntityManager entityManager = new EntityManager(bird);
+    	entityManager = new EntityManager(bird);
     	entityManager.addEntity(dude);
-    	entityManager.addEntity(otherDude);
-    	
+    	//entityManager.addEntity(otherDude);  
+    	entityManager.addEntity(Human.getRandomlyPlacedHuman());
     }
  
     @Override
@@ -67,6 +67,7 @@ public class EntityManagerTester extends BasicGame
     	Input input = gc.getInput();
     	background.update(delta);
     	bird.update(input, delta);
+    	entityManager.update(input, delta);
     	//dude.update(input, delta);
     	//otherDude.update(input, delta);
     }
@@ -77,6 +78,7 @@ public class EntityManagerTester extends BasicGame
     {
     	background.draw();
     	bird.draw();
+    	entityManager.draw();
     	//dude.draw();
     	//otherDude.draw();
     }
@@ -84,7 +86,7 @@ public class EntityManagerTester extends BasicGame
     public static void main(String[] args) 
 			throws SlickException
     {    	
-         AppGameContainer app = new AppGameContainer(new SimpleGame());
+         AppGameContainer app = new AppGameContainer(new EntityManagerTester());
  
          app.setDisplayMode(SCREEN_HEIGHT, SCREEN_WIDTH, false);
          app.setTargetFrameRate(60);

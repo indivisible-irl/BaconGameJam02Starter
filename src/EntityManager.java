@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
@@ -45,7 +42,7 @@ public class EntityManager {
 	public void update(Input input, int delta)
 	{
 		for(Entity e : entities){
-			//Collision Manager
+			CollisionManager.checkAndHandleCollisions(bird, entities);
 			e.update(input, delta);
 		}
 		
