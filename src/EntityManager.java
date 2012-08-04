@@ -7,8 +7,6 @@ import org.newdawn.slick.SlickException;
 
 
 public class EntityManager {
-	private static final int SCREEN_WIDTH = 800;
-	private static final int SCREEN_HEIGHT = 600;
 	
 	private Bird bird;
 	private ArrayList<Entity> entities;
