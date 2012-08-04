@@ -30,6 +30,10 @@ public class Bird extends Entity
 		 this.init();
 	}
 	
+	/**
+	 * Init for repeating constructor code
+	 * @throws SlickException
+	 */
 	private void init() throws SlickException
 	{
 		 this.setPosition(new Vector2f(50, 50));
