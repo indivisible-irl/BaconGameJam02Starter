@@ -29,6 +29,10 @@ public class Bird extends Entity
 	{
 		return this.health;
 	}
+	public double getScoreMultiplier(){
+		return 1;
+	}
+	
 	
 	//////////////////////////////////////////////////////
 	////// functional methods
