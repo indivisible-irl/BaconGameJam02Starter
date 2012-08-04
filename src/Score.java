@@ -11,7 +11,6 @@ import java.text.DecimalFormat;
 public class Score {
 	private static int BASE_SCORE = 5;
 	private static DecimalFormat format = new DecimalFormat("#");
-	private static int SCORE_PAD = 9;
 	private static double MULTIPLIER_MULTIPLIER = 0.2;
 	private static int MULTIPLIER_PERIOD = 1000;
 	private static long START = new Date().getTime();
