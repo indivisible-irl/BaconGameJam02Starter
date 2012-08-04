@@ -23,7 +23,7 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
-    	background = new Background(new Image("resources/BackgroundSample.jpg"), new Image("resources/BackgroundSample.jpg"));
+    	background = new Background(new Image("resources/background.png"), new Image("resources/background.png"));
     	bird = new Bird(new Image("resources/BirdMoveUp.png"));
     	//bird = new Bird(new Image("resources/BirdMoveUp.png"));
     	//SpriteSheet ss = new SpriteSheet(new Image("resources/DudeWalking_L2R.jpg"), 28, 49);
