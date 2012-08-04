@@ -9,7 +9,7 @@ public class CollisionManager
 		{
 			if(entity.colidable)
 			{
-				if(entity.boundingShape.intersects(bird.getCrap().getBoundingShape()))
+				if(entity.boundingShape.intersects(bird.getCrap().getBoundingShape()) && bird.getCrap().isActive)
 				{
 					entity.handleCollision(entity);
 					bird.getCrap().handleCollision(entity);

@@ -49,10 +49,10 @@ public class EntityManager {
 	{
 		CollisionManager.checkAndHandleCollisions(bird, entities);
 		
-		for(Entity e : entities)
+		for(int i = 0; i < this.entities.size(); i++)
 		{
-			if(e.position.x < -50 && this.entities.size() > 1) removeEntity(e);
-			e.update(input, delta);
+			if(entities.get(i).position.x < -50 && this.entities.size() > 1) entities.remove(i);
+			entities.get(i).update(input, delta);
 		}		
 		bird.update(input, delta);
 	}
