@@ -12,6 +12,7 @@ public class Entity
 	private Vector2f position;		
 	private float velocity;
 	private float direction;
+	private float scoremultiplier;
 	private ArrayList<Image> animationFrames;
 	private Image spriteImage;
 
@@ -51,6 +52,13 @@ public class Entity
 	public float getDirection()
 	{
 		return direction;
+	}
+	/**
+	 * @return the Score Multiplier
+	 */
+	public float getMultiplier()
+	{
+		return scoremultiplier;
 	}
 	/**
 	 * @param direction the direction to set
