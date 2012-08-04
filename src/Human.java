@@ -67,6 +67,9 @@ public class Human extends Entity
 	public void handleCollision()
 	{
 		this.colidable = false;
+		this.getAnimation().stop();
+		this.getAnimationFrame().rotate(90);
+		this.velocity = 0.1f;
 	}
 	
 	public void draw()
