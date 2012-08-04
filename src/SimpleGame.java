@@ -44,8 +44,7 @@ public class SimpleGame extends BasicGame
     public static void main(String[] args) 
 			throws SlickException
     {    	
-         AppGameContainer app = 
-			new AppGameContainer(new SimpleGame());
+         AppGameContainer app = new AppGameContainer(new SimpleGame());
  
          app.setDisplayMode(800, 600, false);
          app.start();

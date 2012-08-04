@@ -47,21 +47,30 @@ public class Bird extends Entity
 	
 	public void update(Input input, int delta)
 	{
+		float rotation = this.getSpriteImage().getRotation();
+		System.out.println(rotation);
+		
 		if(input.isKeyDown(Input.KEY_LEFT))
 		{
-			this.getPosition().x -=  this.getVelocity() * delta;
+			this.getPosition().x -=  this.getVelocity() * delta;	
+			if(rotation < 0) this.getSpriteImage().rotate(1);
+			if(rotation > 0) this.getSpriteImage().rotate(-1);
 		}
 		if(input.isKeyDown(Input.KEY_RIGHT))
 		{
 			this.getPosition().x +=  this.getVelocity() * delta;
+			if(rotation < 0) this.getSpriteImage().rotate(1);
+			if(rotation > 0) this.getSpriteImage().rotate(-1);
 		}
 		if(input.isKeyDown(Input.KEY_UP))
 		{
+			if(rotation > -45) this.getSpriteImage().rotate(-1);
 			this.getPosition().y -=  this.getVelocity() * delta;
 		}
 		if(input.isKeyDown(Input.KEY_DOWN))
 		{
 			this.getPosition().y +=  this.getVelocity() * delta;
+			if(rotation < 45) this.getSpriteImage().rotate(1);
 		}
 	}	
 	
