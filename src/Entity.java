@@ -248,5 +248,10 @@ public class Entity
 		this.animation.setAutoUpdate(true);
 		this.colidable = colidable;
 	}
+	
+	protected void handleCollision()
+	{
+		
+	}
 
 }
