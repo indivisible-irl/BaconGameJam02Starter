@@ -38,13 +38,13 @@ public class SimpleGame extends BasicGame
     	bird = new Bird(ibird);
     	
     	Image[] idude = {
-    			new Image("resources/dude/walk/01.png"), 
-    			new Image("resources/dude/walk/02.png"), 
-    			new Image("resources/dude/walk/03.png"),
-    			new Image("resources/dude/walk/04.png"),
-    			new Image("resources/dude/walk/05.png"),
-    			new Image("resources/dude/walk/06.png"),
-    			new Image("resources/dude/walk/07.png")
+    			new Image("resources/dude/walk/07.png", chromakey), 
+    			new Image("resources/dude/walk/06.png", chromakey), 
+    			new Image("resources/dude/walk/05.png", chromakey),
+    			new Image("resources/dude/walk/04.png", chromakey),
+    			new Image("resources/dude/walk/03.png", chromakey),
+    			new Image("resources/dude/walk/02.png", chromakey),
+    			new Image("resources/dude/walk/01.png", chromakey)
     			};
     	dude = new Human(idude);
     }
@@ -56,6 +56,7 @@ public class SimpleGame extends BasicGame
     	Input input = gc.getInput();
     	background.update(delta);
     	bird.update(input, delta);
+    	dude.update(input, delta);
     }
     
     @Override
@@ -64,6 +65,7 @@ public class SimpleGame extends BasicGame
     {
     	background.draw();
     	bird.draw();
+    	dude.draw();
     }
  
     public static void main(String[] args) 
