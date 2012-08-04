@@ -95,6 +95,10 @@ public class Entity
 		this.spriteImage = spriteImage;
 	}
 	
+	/**
+	 * Default constructor requires an Image
+	 * @param image
+	 */
 	public Entity(Image image)
 	{
 		this.position = new Vector2f(0, 0);
@@ -104,6 +108,11 @@ public class Entity
 		this.spriteImage = image;
 	}
 	
+	/**
+	 * Constructor that also allows for the animationFrames
+	 * @param image
+	 * @param animationFrames
+	 */
 	public Entity(Image image, ArrayList<Image> animationFrames)
 	{		
 		this.position = new Vector2f(0, 0);
