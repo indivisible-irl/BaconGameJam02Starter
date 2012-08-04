@@ -124,7 +124,10 @@ public class EntityQueueHandler {
 	 * decrease the delay interval between seed attempts
 	 */
 	public void decreaseDelay(){
-		setDelay(getDelay() - GLOBAL.ENTITY_DECREMENTS);
+		setDelay(getDelay() - GLOBAL.ENTITY_INCREMENT);
+	}
+	public void increaseDelay(){
+		setDelay(getDelay() + GLOBAL.ENTITY_INCREMENT);
 	}
 	
 	////////////////////////////////////////////////

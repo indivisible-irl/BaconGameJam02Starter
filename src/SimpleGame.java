@@ -60,6 +60,18 @@ public class SimpleGame extends BasicGame
     	if(input.isKeyDown(Input.KEY_H)){
     		entityManager.addEntity(Human.getRandomlyPlacedHuman());
     	}
+    	if(input.isKeyDown(Input.KEY_E)){
+    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
+    	}
+    	if(input.isKeyDown(Input.KEY_C)){
+    		entityManager.addEntity(Car.getRandomlyPlacedCar());
+    	}
+    	if(input.isKeyDown(Input.KEY_P)){
+    		entityQueueHandler.increaseDelay();
+    	}
+    	if(input.isKeyDown(Input.KEY_O)){
+    		entityQueueHandler.decreaseDelay();
+    	}
     	
     	background.update(delta);
     	//bird.update(input, delta);

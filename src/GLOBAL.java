@@ -15,7 +15,7 @@ public class GLOBAL {
 	public static final int SCREEN_HEIGHT = 600;
 	
 	public static final long ENTITY_DELAY = 2000;
-	public static final long ENTITY_DECREMENTS = 200;
+	public static final long ENTITY_INCREMENT = 200;
 
 	// Each frequency should be bigger than the previous and sum should equal 0
 	//		The difference between is the weighting it gets
@@ -23,8 +23,8 @@ public class GLOBAL {
 	public static final int CAT_FREQUENCY = 45;			// 20
 	public static final int BIRD_FREQUENCY = 70;		// 25
 	public static final int CAR_FREQUENCY = 90;			// 20
-	public static final int DO_NOTHING = 150;			// 40
-	public static final int RANDOM_MAX = 150;			// max for random num gen			
+	public static final int DO_NOTHING = 120;			// 30
+	public static final int RANDOM_MAX = 120;			// max for random num gen			
 	
 	public static final Color chromakey = new Color(255, 0, 255);
 	
