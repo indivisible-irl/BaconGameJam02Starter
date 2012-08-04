@@ -4,11 +4,23 @@
  * 04/08/2012
  * Score.java
  */
+
+import java.util.Date;
+import java.text.DecimalFormat;
+
 public class Score {
-	private int score;
+	private static int BASE_SCORE = 5;
+	private static DecimalFormat format = new DecimalFormat("#");
+	private static int SCORE_PAD = 9;
+	private static double MULTIPLIER_MULTIPLIER = 0.2;
+	private static int MULTIPLIER_PERIOD = 1000;
+	private static long START = new Date().getTime();
+	
+	private double score;
 	private double multiplier;
 	private int bonus;
-	private int time;
+	private long time;
+	private long lastTime;
 	
 	/////////////////////////////////////////////////
 	
@@ -16,14 +28,14 @@ public class Score {
 	 * Returns the current score
 	 * @return int
 	 */
-	public int getScore(){
+	public double getScore(){
 		return this.score;
 	}
 	/**
 	 * Sets the score
 	 * @param num
 	 */
-	public void setScore(int num){
+	public void setScore(double num){
 		this.score = num;
 	}
 	/**
@@ -58,27 +70,93 @@ public class Score {
 	 * Get the time
 	 * @return
 	 */
-	public int getTime(){
+	public long getTime(){
 		return this.time;
 	}
 	/**
 	 * Set the time
 	 * @param time
 	 */
-	public void setTime(int time){
-		this.time = time;
+	public void setTime(){
+		this.time = new Date().getTime();
+	}
+	/**
+	 * Return the last time the multiplier was updated
+	 * @return
+	 */
+	public long getLastTime(){
+		return this.lastTime;
+	}
+	/**
+	 * Set the most recent multiplier update time
+	 * @param time
+	 */
+	public void setLastTime(long time){
+		this.lastTime = time;
 	}
 	
 	///////////////////////////////////////////////
 	
+	/**
+	 * Add a bonus to the score.
+	 * @param bonus
+	 */
 	public void addBonus(int bonus){
 		setScore(getScore() + bonus);
 	}
+	/**
+	 * Increase the score multiplier by 0.2
+	 */
 	public void increaseMultiplier(){
-		setMultiplier(getMultiplier() + 0.1);
+		setMultiplier(getMultiplier() + MULTIPLIER_MULTIPLIER);
 	}
+	/**
+	 * Reset the multiplier to it's base value.
+	 * For use when an object it hit or such.
+	 */
 	public void resetMultiplier(){
 		setMultiplier(1);
 	}
+	public String getScorePrintable(){
+		return format.format(getScore());
+	}
+	/**
+	 * Work out how many milliseconds the game as been running
+	 * @return long
+	 */
+	public long calcRunTime(){
+		return getTime() - START;
+	}
+	/**
+	 * Update the score multiplier if enough time has passed since last time
+	 */
+	public void updateMultiplier(){
+		setTime();
+		if( (getTime() - START) - getLastTime() > MULTIPLIER_PERIOD){
+			increaseMultiplier();
+		}
+	}
+	/**
+	 * Main score update method to be called from the game.
+	 */
+	public void update(){
+		updateMultiplier();
+		setScore(getScore() + (BASE_SCORE * getMultiplier()));
+	}
 	
+	//////////////////////////////////////////////
+	
+	/**
+	 * Main constructor
+	 */
+	public Score(){
+		setScore(0);
+		setMultiplier(1.0);
+		setBonus(0);
+	}
+	public Score(long score){
+		setScore(score);
+		setMultiplier(1.0);
+		setBonus(0);
+	}
 }
