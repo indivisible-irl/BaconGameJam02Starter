@@ -11,8 +11,7 @@ import org.newdawn.slick.geom.Vector2f;
 public class Human extends Entity
 {
 	protected static final int VARIANCE = 42;
-	protected static final int LOWER_RAONDOM_BOUND = 390;
-	protected static final int SCREEN_WIDTH = 800;
+	protected static final int LOWER_RANDOM_BOUND = 390;
 	
 	private static Color chromakey = new Color(255, 0, 255);
 	
@@ -46,9 +45,9 @@ public class Human extends Entity
 				new Image("resources/dude/walk/01.png", chromakey).getScaledCopy(1.7f)
 				};
 		Random rand = new Random();
-		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RAONDOM_BOUND;
+		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
 		Human returnHuman = new Human(dude);
-		returnHuman.position = new Vector2f(SCREEN_WIDTH + 100, randomYValue);
+		returnHuman.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);
 		return returnHuman;
 	}
 	
@@ -62,7 +61,6 @@ public class Human extends Entity
 	{
 		this.getPosition().x -=  this.getVelocity() * delta;
 		this.updateBoundingRect();	
-		
 	}
 	
 	public void handleCollision()

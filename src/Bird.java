@@ -13,12 +13,10 @@ import org.newdawn.slick.geom.Vector2f;
 public class Bird extends Entity 
 {				
 	private Crap crap;
-	private static int SCREEN_HEIGHT = 600;
-	private static int SCREEN_WIDTH = 800;
 	private static int BUFFER_TOP = 15;
-	private static int BUFFER_BOTTOM = SCREEN_HEIGHT - 150;
+	private static int BUFFER_BOTTOM = GLOBAL.SCREEN_HEIGHT - 150;
 	private static int BUFFER_LEFT = 15;
-	private static int BUFFER_RIGHT = SCREEN_WIDTH - 75;
+	private static int BUFFER_RIGHT = GLOBAL.SCREEN_WIDTH - 75;
 	
 	/**
 	 * 

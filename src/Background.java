@@ -3,9 +3,6 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Background
 {
-	//Screen dimensions
-	//private static final int SCREEN_WIDTH = 800;
-	//private static final int SCREEN_HEIGHT = 600;
 	
 	Entity leadImage;
 	Entity followImage;
