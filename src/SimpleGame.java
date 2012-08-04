@@ -48,8 +48,8 @@ public class SimpleGame extends BasicGame
     			new Image("resources/dude/walk/06.png"),
     			new Image("resources/dude/walk/07.png")};
     	dude = new Human(idude);
-    	dude.getAnimation().setAutoUpdate(true);
-    	dude.getAnimation().start();
+    	//dude.getAnimation().setAutoUpdate(true);
+    	//dude.getAnimation().start();
     }
  
     @Override

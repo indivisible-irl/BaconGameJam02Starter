@@ -1,3 +1,4 @@
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -23,14 +24,16 @@ public class Bird extends Entity
 		 super(image);
 		 this.setPosition(new Vector2f(50, 50));
 		 this.setVelocity(0.3f);
-		 this.crap = new Crap(new Image("resources/poop.png"), this);
+		 this.crap = new Crap(new Image("resources/poop.png", new Color(255, 0, 255)), this);
 		 this.direction = -1;
 	}
-	public Bird(Image[] images)
+	
+	public Bird(Image[] images) throws SlickException
 	{
 		 super(images);
 		 this.setPosition(new Vector2f(50, 50));
 		 this.setVelocity(0.3f);
+		 this.crap = new Crap(new Image("resources/poop.png", new Color(255, 0, 255)), this);
 		 this.direction = -1;
 	}
 	//////////////////////////////////////////////////////

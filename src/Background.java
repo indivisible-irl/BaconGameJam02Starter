@@ -55,7 +55,6 @@ public class Background
 					this.leadImage.getPosition().y);
 			followImage.setPosition(stitch);
 		}
-		//bothScroll(delta);
 		this.scroll(leadImage, delta);
 		this.scroll(followImage, delta);
 	}

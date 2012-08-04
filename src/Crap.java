@@ -7,6 +7,8 @@ import org.newdawn.slick.geom.Vector2f;
  */
 public class Crap extends Entity
 {
+	private static final int SCREEN_HEIGHT = 600;
+	
 	boolean isActive = false;
 	Bird parentBird;
 	
@@ -22,6 +24,10 @@ public class Crap extends Entity
 		if(!isActive) return;  //if the poop isnt active, dont do shit!  GET IT
 		
 		this.position.y += this.velocity * delta;
+		if(this.position.y > SCREEN_HEIGHT)
+		{
+			this.deactivate();
+		}
 	}
 	
 	public void draw()
