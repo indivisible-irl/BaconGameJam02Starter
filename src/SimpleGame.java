@@ -1,5 +1,5 @@
 
-import org.newdawn.slick.Animation;
+//import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -7,10 +7,13 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.SpriteSheet;
+//import org.newdawn.slick.SpriteSheet;
  
 public class SimpleGame extends BasicGame
 {
+	static final int SCREEN_HEIGHT = 800;
+	static final int SCREEN_WIDTH = 600;
+	
 	Background background = null;
 	Bird bird;
 	
@@ -25,6 +28,7 @@ public class SimpleGame extends BasicGame
 	{
     	background = new Background(new Image("resources/background.png"), new Image("resources/background.png"));
     	bird = new Bird(new Image("resources/BirdMoveUp.png"));
+    	
     	//bird = new Bird(new Image("resources/BirdMoveUp.png"));
     	//SpriteSheet ss = new SpriteSheet(new Image("resources/DudeWalking_L2R.jpg"), 28, 49);
     	//Image [] ii = {ss.getSubImage(0, 0), ss.getSubImage(1, 0)};
@@ -56,7 +60,7 @@ public class SimpleGame extends BasicGame
     {    	
          AppGameContainer app = new AppGameContainer(new SimpleGame());
  
-         app.setDisplayMode(800, 600, false);
+         app.setDisplayMode(SCREEN_HEIGHT, SCREEN_WIDTH, false);
          app.start();
     }
 }
