@@ -10,7 +10,7 @@ public class Human extends Entity
 	public Human(Image[] images)
 	{
 		 super(images);
-		 this.setPosition(new Vector2f(500, 450));
+		 this.setPosition(new Vector2f(500, 420));
 		 this.setVelocity(0.15f);
 		 this.boundingShape = new Rectangle(this.getPosition().x, 
 					this.getPosition().y, 
