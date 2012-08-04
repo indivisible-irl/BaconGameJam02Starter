@@ -80,8 +80,7 @@ public class Bird extends Entity
 	 */
 	public void update(Input input, int delta)
 	{
-
-		float rotation = this.getAnimationFrame().getRotation();
+		//float rotation = this.getAnimationFrame().getRotation();
 		
 		if(input.isKeyDown(Input.KEY_LEFT) || input.isKeyDown(Input.KEY_A))
 		{
@@ -90,8 +89,8 @@ public class Bird extends Entity
 				this.flip(true, false);
 			}
 			this.getPosition().x -=  this.getVelocity() * delta;	
-			if(rotation < 0) this.getAnimationFrame().rotate(1);
-			if(rotation > 0) this.getAnimationFrame().rotate(-1);
+			//if(rotation < 0) this.getAnimationFrame().rotate(1);
+			//if(rotation > 0) this.getAnimationFrame().rotate(-1);
 		}
 		if(input.isKeyDown(Input.KEY_RIGHT) || input.isKeyDown(Input.KEY_D))
 		{
@@ -100,18 +99,18 @@ public class Bird extends Entity
 				this.flip(true, false);
 			}
 			this.getPosition().x +=  this.getVelocity() * delta;
-			if(rotation < 0) this.getAnimationFrame().rotate(1);
-			if(rotation > 0) this.getAnimationFrame().rotate(-1);
+			//if(rotation < 0) this.getAnimationFrame().rotate(1);
+			//if(rotation > 0) this.getAnimationFrame().rotate(-1);
 		}
 		if(input.isKeyDown(Input.KEY_UP) || input.isKeyDown(Input.KEY_W))
 		{
-			if(rotation > -45) this.getAnimationFrame().rotate(-1);
+			//if(rotation > -45) this.getAnimationFrame().rotate(-1);
 			this.getPosition().y -=  this.getVelocity() * delta;
 		}
 		if(input.isKeyDown(Input.KEY_DOWN) || input.isKeyDown(Input.KEY_S))
 		{
 			this.getPosition().y +=  this.getVelocity() * delta;
-			if(rotation < 45) this.getAnimationFrame().rotate(1);
+			//if(rotation < 45) this.getAnimationFrame().rotate(1);
 		}
 		if(input.isKeyDown(Input.KEY_SPACE))
 		{

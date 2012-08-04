@@ -1,4 +1,5 @@
 import org.newdawn.slick.Image;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 /**
@@ -9,14 +10,24 @@ public class Crap extends Entity
 {
 	private static final int SCREEN_HEIGHT = 600;
 	
-	boolean isActive = false;
-	Bird parentBird;
+	protected boolean isActive = false;
+	protected Bird parentBird;
 	
 	public Crap(Image image, Bird bird)
 	{
 		super(image);
 		super.velocity = 0.3f;
 		parentBird = bird;
+		this.boundingShape = new Rectangle(this.getPosition().x, 
+				this.getPosition().y, 
+				this.getAnimationFrame().getWidth(),
+				this.getAnimationFrame().getHeight());
+	}
+	
+	private void updateBoundingRect()
+	{
+		boundingShape.setX(this.position.x);
+		boundingShape.setY(this.position.y);
 	}
 	
 	public void update(int delta)
@@ -28,6 +39,7 @@ public class Crap extends Entity
 		{
 			this.deactivate();
 		}
+		updateBoundingRect();
 	}
 	
 	public void draw()

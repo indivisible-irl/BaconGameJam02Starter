@@ -1,8 +1,11 @@
 
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SpriteSheet;
 //click includes
 import org.newdawn.slick.Image;
+import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 
 public class Entity
@@ -17,6 +20,7 @@ public class Entity
 	protected float health;
 	protected Animation animation;
 	protected Image[] images;
+	protected Shape boundingShape;
 
 	///////////////////////////////////////
 	//Getters/Setters
@@ -147,11 +151,27 @@ public class Entity
 	public void addAnimationFrame(Image image, int duration)
 	{
 		this.animation.addFrame(image, duration);
+	}	
+	
+	/**
+	 * @return the boundingShape
+	 */
+	public Shape getBoundingShape()
+	{
+		return boundingShape;
+	}
+
+	/**
+	 * @param boundingShape the boundingShape to set
+	 */
+	public void setBoundingShape(Shape boundingShape)
+	{
+		this.boundingShape = boundingShape;
 	}
 	
-	///////////////////////////////////////
-	//Constructors
-	
+///////////////////////////////////////
+//Constructors
+
 	/**
 	 * Default constructor
 	 *
@@ -187,4 +207,5 @@ public class Entity
 		this.animation.start();
 		this.animation.setAutoUpdate(true);
 	}
+
 }
