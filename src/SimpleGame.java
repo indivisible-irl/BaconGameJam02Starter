@@ -10,6 +10,7 @@ public class SimpleGame extends BasicGame
 {	
 	private Background background = null;
 	private Bird bird;
+	private Enemy enemy;
 	private EntityManager entityManager;
 	private Score score;
 	
@@ -34,8 +35,18 @@ public class SimpleGame extends BasicGame
     			};
     	bird = new Bird(ibird);
     	
+    	Image[] iEnemy = {
+    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
+			new Image(GLOBAL.BIRD_BROWN_2, GLOBAL.chromakey), 
+			new Image(GLOBAL.BIRD_BROWN_3, GLOBAL.chromakey), 
+			new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
+			new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
+    		};
+    	enemy = new Enemy(iEnemy);
+    	
     	entityManager = new EntityManager(bird);
     	entityManager.addEntity(Human.getRandomlyPlacedHuman());
+    	entityManager.addEntity(enemy.getRandomlyPlacedEnemy());
     }
  
     @Override
