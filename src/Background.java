@@ -44,7 +44,7 @@ public class Background
 	public void update(int delta)
 	{
 		int rightEdge = (int)(this.leadImage.getPosition().x + leadImage.getAnimationFrame().getWidth());
-		if(rightEdge == 0)
+		if(rightEdge <= 0)
 		{
 			System.out.println("right edge is == 0!");
 			Entity tempEntity = this.leadImage;
