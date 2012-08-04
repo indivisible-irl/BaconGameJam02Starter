@@ -1,4 +1,5 @@
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -6,6 +7,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
  
 public class SimpleGame extends BasicGame
 {
@@ -23,6 +25,13 @@ public class SimpleGame extends BasicGame
 	{
     	background = new Background(new Image("resources/BackgroundSample.jpg"), new Image("resources/BackgroundSample.jpg"));
     	bird = new Bird(new Image("resources/BirdMoveUp.png"));
+    	//bird = new Bird(new Image("resources/BirdMoveUp.png"));
+    	//SpriteSheet ss = new SpriteSheet(new Image("resources/DudeWalking_L2R.jpg"), 28, 49);
+    	//Image [] ii = {ss.getSubImage(0, 0), ss.getSubImage(1, 0)};
+    	//int [] dur = {100, 100};
+    	//bird = new Bird(new Animation(ii, 100));
+    	bird.getAnimation().setAutoUpdate(true);
+    	bird.getAnimation().start();
     }
  
     @Override

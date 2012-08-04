@@ -1,6 +1,5 @@
 
-import java.util.ArrayList;
-
+import org.newdawn.slick.Animation;
 //click includes
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Vector2f;
@@ -13,8 +12,7 @@ public class Entity
 	private float velocity;
 	private float direction;
 	private float scoremultiplier;
-	private ArrayList<Image> animationFrames;
-	private Image spriteImage;
+	private Animation animation;
 
 	///////////////////////////////////////
 	//Getters/Setters
@@ -75,39 +73,32 @@ public class Entity
 		this.direction = direction;
 	}
 	/**
-	 * @return the animationFrames
+	 * @return the current animation frame
 	 */
-	public ArrayList<Image> getAnimationFrames()
+	public Image getAnimationFrame()
 	{
-		return animationFrames;
+		return this.animation.getCurrentFrame();
 	}
 	/**
-	 * @param animationFrames the animationFrames to set
+	 * @return Get the animation
 	 */
-	public void setAnimationFrames(ArrayList<Image> animationFrames)
+	public Animation getAnimation()
 	{
-		this.animationFrames = animationFrames;
+		return this.animation;
 	}
 	/**
-	 * @return the spriteImage
+	 * @param Sets the animation frame
 	 */
-	public Image getSpriteImage()
+	public void setAnimationFrames(int index)
 	{
-		return spriteImage;
+		this.animation.setCurrentFrame(index);
 	}
 	/**
 	 * @param image add an individual image to the animationFrame list
 	 */
-	public void setIndividualAnimationFrame(Image image)
+	public void addAnimationFrame(Image image, int duration)
 	{
-		animationFrames.add(image);
-	}
-	/**
-	 * @param spriteImage the spriteImage to set
-	 */
-	public void setSpriteImage(Image spriteImage)
-	{
-		this.spriteImage = spriteImage;
+		this.animation.addFrame(image, duration);
 	}
 	
 	/**
@@ -119,21 +110,19 @@ public class Entity
 		this.position = new Vector2f(0, 0);
 		this.velocity = 0.0f;
 		this.direction = 0;
-		this.animationFrames = new ArrayList<Image>();
-		this.spriteImage = image;
+		this.animation = new Animation();
+		this.addAnimationFrame(image, 1000);
 	}
 	
 	/**
-	 * Constructor that also allows for the animationFrames
+	 * Constructor that uses a SpriteSheet to make an animation
 	 * @param image
-	 * @param animationFrames
 	 */
-	public Entity(Image image, ArrayList<Image> animationFrames)
-	{		
+	public Entity(Animation animation)
+	{
 		this.position = new Vector2f(0, 0);
 		this.velocity = 0.0f;
 		this.direction = 0;
-		this.animationFrames = animationFrames;
-		this.spriteImage = image;
+		this.animation = animation;
 	}
 }
