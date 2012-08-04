@@ -1,0 +1,66 @@
+import java.util.ArrayList;
+
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
+
+
+public class EntityManager {
+	private static final int SCREEN_WIDTH = 800;
+	private static final int SCREEN_HEIGHT = 600;
+	
+	private Bird bird;
+	private ArrayList<Entity> entities;
+	
+	public EntityManager(Bird b) throws SlickException
+	{
+		bird = b;
+	}
+	
+	/**
+	 * Appends a new entity to the list
+	 * @param Entity
+	 */
+	public void addEntity(Entity entity)
+	{
+		entities.add(entity);
+	}
+	
+	/**
+	 * Removes an entity from the list
+	 * @param Entity
+	 */
+	public void removeEntity(Entity entity)
+	{
+		entities.remove(entity);
+	}
+	
+	
+	/**
+	 * Updates all entities
+	 * @param input
+	 * @param delta
+	 */
+	public void update(Input input, int delta)
+	{
+		for(Entity e : entities){
+			//Collision Manager
+			e.update(input, delta);
+		}
+		
+		bird.update(input, delta);
+	}
+	
+	/**
+	 * Draws all entities
+	 */
+	public void draw()
+	{
+		for(Entity e : entities){
+			e.draw();
+		}
+		
+		bird.draw();
+	}
+}
