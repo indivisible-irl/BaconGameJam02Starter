@@ -64,4 +64,9 @@ public class Crap extends Entity
 	{
 		return this.isActive;
 	}
+	
+	protected void handleCollision()
+	{
+		System.out.println("Crap collision");
+	}
 }

@@ -1,4 +1,5 @@
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.Input;
 
 //click includes
 import org.newdawn.slick.Image;
@@ -250,6 +251,16 @@ public class Entity
 	}
 	
 	protected void handleCollision()
+	{
+		
+	}
+	
+	public void update(Input input, int delta)
+	{
+		
+	}
+	
+	public void draw()
 	{
 		
 	}
