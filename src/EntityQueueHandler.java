@@ -15,33 +15,67 @@ public class EntityQueueHandler {
 	
 	/////////////////////////////////////////////////
 	
+	/**
+	 * get the assigned EntityManager
+	 * @return
+	 */
 	public EntityManager getEntityManager(){
 		return this.entityManger;
 	}
+	/**
+	 * set the EntityManager
+	 * @param em
+	 */
 	public void setEntityManager(EntityManager em){
 		this.entityManger = em;
 	}
+	/**
+	 * returns the current randomly generated number
+	 * @return
+	 */
 	public int getRandom(){
 		return this.random;
 	}
+	/**
+	 * set the current random number
+	 */
 	public void setRandom(){
 		this.random = rGen.nextInt(GLOBAL.RANDOM_MAX);
 	}
+	/**
+	 * get the delay between attempted seeding
+	 * @return
+	 */
 	public long getDelay(){
 		return this.delay;
 	}
+	/**
+	 * set the delay frequency
+	 * @param wait
+	 */
 	public void setDelay(long wait){
 		this.delay = wait;
 	}
+	/**
+	 * return the last time a seed was attempted
+	 * @return
+	 */
 	private long getLastUpdate(){
 		return this.lastUpdate;
 	}
+	/**
+	 * set the lastUpdate when a seed is performed
+	 * @param update
+	 */
 	private void setLastUpdate(long update){
 		this.lastUpdate = update;
 	}
 	
 	/////////////////////////////////////////////////
 	
+	/**
+	 * the main method to call to get the Queue to handler to do its magic
+	 */
 	public void update(){
 		if (new Date().getTime() - getLastUpdate() > getDelay())
 		{
@@ -68,12 +102,19 @@ public class EntityQueueHandler {
 			setLastUpdate(new Date().getTime());
 		}
 	}
+	/**
+	 * decrease the delay interval between seed attempts
+	 */
 	public void decreaseDelay(){
 		setDelay(getDelay() - GLOBAL.ENTITY_DECREMENTS);
 	}
 	
 	////////////////////////////////////////////////
 	
+	/**
+	 * Default constructor, needs to be passed the EntityManager.
+	 * @param em
+	 */
 	public EntityQueueHandler(EntityManager em){
 		setEntityManager(em);
 		setLastUpdate(new Date().getTime());
