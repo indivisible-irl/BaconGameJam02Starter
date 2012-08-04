@@ -21,20 +21,23 @@ public class Bird extends Entity
 	public Bird(Image image) throws SlickException
 	{
 		 super(image);
+		 this.init();
+	}
+	
+	public Bird(Image[] images) throws SlickException
+	{
+		 super(images);
+		 this.init();
+	}
+	
+	private void init() throws SlickException
+	{
 		 this.setPosition(new Vector2f(50, 50));
 		 this.setVelocity(0.3f);
 		 this.crap = new Crap(new Image("resources/poop.png", new Color(255, 0, 255)), this);
 		 this.direction = -1;
 	}
 	
-	public Bird(Image[] images) throws SlickException
-	{
-		 super(images);
-		 this.setPosition(new Vector2f(50, 50));
-		 this.setVelocity(0.3f);
-		 this.crap = new Crap(new Image("resources/poop.png", new Color(255, 0, 255)), this);
-		 this.direction = -1;
-	}
 	//////////////////////////////////////////////////////
 	////// get & set	
 	
