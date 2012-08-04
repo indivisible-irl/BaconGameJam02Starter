@@ -8,10 +8,13 @@
 import java.util.Date;
 import java.text.DecimalFormat;
 
+import org.newdawn.slick.Font;
+import org.newdawn.slick.SpriteSheetFont;
+
 public class Score {
 	private static int BASE_SCORE = 5;
 	private static DecimalFormat format = new DecimalFormat("#");
-	private static double MULTIPLIER_MULTIPLIER = 0.2;
+	private static double MULTIPLIER_MULTIPLIER = 0.05;
 	private static int MULTIPLIER_PERIOD = 1000;
 	private static long START = new Date().getTime();
 	
@@ -20,6 +23,8 @@ public class Score {
 	private int bonus;
 	private long time;
 	private long lastTime;
+	private SpriteSheetFont fontimage;
+	private Font font;
 	
 	/////////////////////////////////////////////////
 	
@@ -143,12 +148,16 @@ public class Score {
 		setScore(getScore() + (BASE_SCORE * getMultiplier()));
 	}
 	
+	public void draw(){
+	}
+	
 	//////////////////////////////////////////////
 	
 	/**
 	 * Main constructor
 	 */
 	public Score(){
+		
 		setScore(0);
 		setMultiplier(1.0);
 		setBonus(0);

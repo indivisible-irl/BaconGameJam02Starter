@@ -11,6 +11,7 @@ public class SimpleGame extends BasicGame
 	private Background background = null;
 	private Bird bird;
 	private EntityManager entityManager;
+	private Score score;
 	
     public SimpleGame()
     {
@@ -21,6 +22,7 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
+    	score = new Score();
     	background = new Background(new Image(GLOBAL.BACKGROUND), new Image(GLOBAL.BACKGROUND));
     	
     	Image[] ibird = {
@@ -49,6 +51,8 @@ public class SimpleGame extends BasicGame
     	background.update(delta);
     	//bird.update(input, delta);
     	entityManager.update(input, delta);
+    	
+    	score.update();
     }
     
     @Override
@@ -58,6 +62,8 @@ public class SimpleGame extends BasicGame
     	background.draw();
     	//bird.draw();
     	entityManager.draw();
+    	
+    	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 75, 0);
     }
  
     /**
