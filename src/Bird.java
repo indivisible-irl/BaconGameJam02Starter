@@ -41,7 +41,7 @@ public class Bird extends Entity
 	private void init() throws SlickException
 	{
 		 this.setPosition(new Vector2f(50, 50));
-		 this.setVelocity(0.3f);
+		 this.setVelocity(0.2f);
 		 this.crap = new Crap(new Image("resources/poop.png", new Color(255, 0, 255)), this);
 		 this.direction = -1;
 	}

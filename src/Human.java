@@ -25,6 +25,7 @@ public class Human extends Entity
 					this.getPosition().y, 
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
+		 this.colidable = true;
 	}
 	
 	/**
@@ -47,8 +48,7 @@ public class Human extends Entity
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
 		Human returnHuman = new Human(dude);
-		returnHuman.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);
-		returnHuman.colidable = true;
+		returnHuman.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);		
 		return returnHuman;
 	}
 	
