@@ -48,6 +48,7 @@ public class Human extends Entity
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
 		Human returnHuman = new Human(dude);
 		returnHuman.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);
+		returnHuman.colidable = true;
 		return returnHuman;
 	}
 	
