@@ -263,12 +263,12 @@ public class Entity
 		
 	}
 	
-	public void update(Input input, int delta)
+	protected void update(Input input, int delta)
 	{
 		
 	}
 	
-	public void draw()
+	protected void draw()
 	{
 		
 	}

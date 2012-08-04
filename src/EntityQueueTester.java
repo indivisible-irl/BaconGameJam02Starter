@@ -15,7 +15,7 @@ public class EntityQueueTester extends BasicGame
 	
     public EntityQueueTester()
     {
-        super("Bird Poop!");
+        super("EntityQueueTester");
     }
  
     @Override

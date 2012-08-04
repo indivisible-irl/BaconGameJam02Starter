@@ -37,6 +37,12 @@ public class GLOBAL {
 	public static final String BIRD_WHITE_4 = "resources/bird/white/04.png";
 	public static final String BIRD_WHITE_5 = "resources/bird/white/05.png";
 	
+	public static final String BIRD_BROWN_1 = "resources/bird/brown/01.png";
+	public static final String BIRD_BROWN_2 = "resources/bird/brown/02.png";
+	public static final String BIRD_BROWN_3 = "resources/bird/brown/03.png";
+	public static final String BIRD_BROWN_4 = "resources/bird/brown/04.png";
+	public static final String BIRD_BROWN_5 = "resources/bird/brown/05.png";
+	
 	public static final String DUDE_WALK_1 = "resources/dude/walk/01.png";
 	public static final String DUDE_WALK_2 = "resources/dude/walk/02.png";
 	public static final String DUDE_WALK_3 = "resources/dude/walk/03.png";
