@@ -38,13 +38,13 @@ public class SimpleGame extends BasicGame
     	bird = new Bird(ibird);
     	
     	Image[] idude = {
-    			new Image("resources/dude/walk/07.png", chromakey), 
-    			new Image("resources/dude/walk/06.png", chromakey), 
-    			new Image("resources/dude/walk/05.png", chromakey),
-    			new Image("resources/dude/walk/04.png", chromakey),
-    			new Image("resources/dude/walk/03.png", chromakey),
-    			new Image("resources/dude/walk/02.png", chromakey),
-    			new Image("resources/dude/walk/01.png", chromakey)
+    			new Image("resources/dude/walk/07.png", chromakey).getScaledCopy(1.7f), 
+    			new Image("resources/dude/walk/06.png", chromakey).getScaledCopy(1.7f), 
+    			new Image("resources/dude/walk/05.png", chromakey).getScaledCopy(1.7f),
+    			new Image("resources/dude/walk/04.png", chromakey).getScaledCopy(1.7f),
+    			new Image("resources/dude/walk/03.png", chromakey).getScaledCopy(1.7f),
+    			new Image("resources/dude/walk/02.png", chromakey).getScaledCopy(1.7f),
+    			new Image("resources/dude/walk/01.png", chromakey).getScaledCopy(1.7f)
     			};
     	dude = new Human(idude);
     }
@@ -74,6 +74,7 @@ public class SimpleGame extends BasicGame
          AppGameContainer app = new AppGameContainer(new SimpleGame());
  
          app.setDisplayMode(SCREEN_HEIGHT, SCREEN_WIDTH, false);
+         app.setTargetFrameRate(60);
          app.start();
     }
 }
