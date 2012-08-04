@@ -18,8 +18,6 @@ public class Human extends Entity
 					this.getAnimationFrame().getHeight());
 	}
 	
-	
-	
 	private void updateBoundingRect()
 	{
 		boundingShape.setX(this.position.x);
@@ -29,8 +27,7 @@ public class Human extends Entity
 	public void update(Input input, int delta)
 	{
 		this.getPosition().x -=  this.getVelocity() * delta;
-		this.updateBoundingRect();
-		
+		this.updateBoundingRect();	
 		
 	}
 	

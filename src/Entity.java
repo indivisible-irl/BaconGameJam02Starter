@@ -1,10 +1,7 @@
-
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.SpriteSheet;
+
 //click includes
 import org.newdawn.slick.Image;
-import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 
@@ -21,6 +18,7 @@ public class Entity
 	protected Animation animation;
 	protected Image[] images;
 	protected Shape boundingShape;
+	protected boolean colidable;
 
 	///////////////////////////////////////
 	//Getters/Setters
@@ -169,8 +167,21 @@ public class Entity
 		this.boundingShape = boundingShape;
 	}
 	
-///////////////////////////////////////
-//Constructors
+	/**
+	 * @return the colidable
+	 */
+	public boolean isColidable()
+	{
+		return colidable;
+	}
+
+	/**
+	 * @param colidable the colidable to set
+	 */
+	public void setColidable(boolean colidable)
+	{
+		this.colidable = colidable;
+	}
 
 	/**
 	 * Default constructor
@@ -182,6 +193,7 @@ public class Entity
 		this.velocity = 0.0f;
 		this.direction = 0;
 	}
+	
 	/**
 	 * Constructor that requires an Image
 	 * @param image
@@ -194,6 +206,17 @@ public class Entity
 		this.animation = new Animation();
 		this.addAnimationFrame(image, 1000);
 	}
+	
+	public Entity(Image image, boolean colidable)
+	{
+		this.position = new Vector2f(0, 0);
+		this.velocity = 0.0f;
+		this.direction = 0;
+		this.animation = new Animation();
+		this.addAnimationFrame(image, 1000);
+		this.colidable = colidable;
+	}
+	
 	/**
 	 * Constructor that uses a an array of images to make an animation
 	 * @param spriteSheet
@@ -206,6 +229,22 @@ public class Entity
 		this.animation = new Animation(images, 100);
 		this.animation.start();
 		this.animation.setAutoUpdate(true);
+	}
+	
+	/**
+	 * 
+	 * @param images
+	 * @param colidable
+	 */
+	public Entity(Image[] images, boolean colidable){
+		this.position = new Vector2f(0, 0);
+		this.velocity = 0.0f;
+		this.direction = 0;
+		this.images = images;
+		this.animation = new Animation(images, 100);
+		this.animation.start();
+		this.animation.setAutoUpdate(true);
+		this.colidable = colidable;
 	}
 
 }
