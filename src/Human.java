@@ -9,7 +9,7 @@ public class Human extends Entity
 	{
 		 super(images);
 		 this.setPosition(new Vector2f(500, 450));
-		 this.setVelocity(0.3f);
+		 this.setVelocity(0.15f);
 	}
 
 	public void update(Input input, int delta)
