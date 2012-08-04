@@ -1,11 +1,21 @@
+import java.util.Random;
+
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 
 public class Human extends Entity
 {
+	protected static final int VARIANCE = 42;
+	protected static final int LOWER_RAONDOM_BOUND = 390;
+	protected static final int SCREEN_WIDTH = 800;
+	
+	private static Color chromakey = new Color(255, 0, 255);
+	
 	
 	public Human(Image[] images)
 	{
@@ -16,6 +26,30 @@ public class Human extends Entity
 					this.getPosition().y, 
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
+	}
+	
+	/**
+	 * Returns a Human object placed (somewhat) randomly on the sidewalk from the background
+	 * and 100 pixels off the screen to the right
+	 * @return
+	 * @throws SlickException
+	 */
+	public static Human getRandomlyPlacedHuman() throws SlickException
+	{
+		Image[] dude = {
+				new Image("resources/dude/walk/07.png", chromakey).getScaledCopy(1.7f), 
+				new Image("resources/dude/walk/06.png", chromakey).getScaledCopy(1.7f), 
+				new Image("resources/dude/walk/05.png", chromakey).getScaledCopy(1.7f),
+				new Image("resources/dude/walk/04.png", chromakey).getScaledCopy(1.7f),
+				new Image("resources/dude/walk/03.png", chromakey).getScaledCopy(1.7f),
+				new Image("resources/dude/walk/02.png", chromakey).getScaledCopy(1.7f),
+				new Image("resources/dude/walk/01.png", chromakey).getScaledCopy(1.7f)
+				};
+		Random rand = new Random();
+		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RAONDOM_BOUND;
+		Human returnHuman = new Human(dude);
+		returnHuman.position = new Vector2f(SCREEN_WIDTH + 100, randomYValue);
+		return returnHuman;
 	}
 	
 	private void updateBoundingRect()

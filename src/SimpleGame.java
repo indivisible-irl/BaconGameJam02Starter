@@ -15,6 +15,7 @@ public class SimpleGame extends BasicGame
 	Background background = null;
 	Bird bird;
 	Human dude;
+	Human otherDude;
 	
     public SimpleGame()
     {
@@ -35,7 +36,8 @@ public class SimpleGame extends BasicGame
     			new Image("resources/bird/white/04.png", chromakey), 
     			new Image("resources/bird/white/05.png", chromakey)
     			};
-    	bird = new Bird(ibird);
+    	bird = new Bird(ibird);   	
+    	
     	
     	Image[] idude = {
     			new Image("resources/dude/walk/07.png", chromakey).getScaledCopy(1.7f), 
@@ -47,6 +49,8 @@ public class SimpleGame extends BasicGame
     			new Image("resources/dude/walk/01.png", chromakey).getScaledCopy(1.7f)
     			};
     	dude = new Human(idude);
+    	
+    	otherDude = Human.getRandomlyPlacedHuman();
     }
  
     @Override
@@ -57,6 +61,7 @@ public class SimpleGame extends BasicGame
     	background.update(delta);
     	bird.update(input, delta);
     	dude.update(input, delta);
+    	otherDude.update(input, delta);
     }
     
     @Override
@@ -66,6 +71,7 @@ public class SimpleGame extends BasicGame
     	background.draw();
     	bird.draw();
     	dude.draw();
+    	otherDude.draw();
     }
  
     public static void main(String[] args) 
