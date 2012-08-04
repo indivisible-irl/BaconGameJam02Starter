@@ -28,7 +28,8 @@ public class SimpleGame extends BasicGame
     {
  
     }
- 
+    
+    @Override
     public void render(GameContainer gc, Graphics g) 
 			throws SlickException 
     {
@@ -37,9 +38,7 @@ public class SimpleGame extends BasicGame
  
     public static void main(String[] args) 
 			throws SlickException
-    {
-    	System.out.print("Hello World");
-    	
+    {    	
          AppGameContainer app = 
 			new AppGameContainer(new SimpleGame());
  
