@@ -1,6 +1,4 @@
-#BaconJam02Starter!#
-
-Bird Poop!
+#Bird Poop!#
 
 Crappy game sloppily hacked together by Negativeoxy, ghostdog20 and indivisible with artwork from Anthonyk123.
 
