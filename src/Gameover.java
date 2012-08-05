@@ -58,7 +58,7 @@ public class Gameover {
 			if(TryAgain.isMouseOver()){
 				setStartgame(true);
 			}else if(Menu.isMouseOver()){
-				
+				setGotomenu(true);
 			}else{
 				
 			}
