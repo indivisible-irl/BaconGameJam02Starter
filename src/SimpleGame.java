@@ -43,6 +43,7 @@ public class SimpleGame extends BasicGame
     		gameover = new Gameover(gc, score);
     		
     	} else {
+    	this.exitGame = false;
     	impact = new Impact(IMAGES.getImpacts());
     	birdHealth = new Health(impact);
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
