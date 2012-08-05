@@ -38,6 +38,7 @@ public class SimpleGame extends BasicGame
     	if(inMenu){
     		menu = new Menu(gc);
     		inMenu = false;
+    		gameover = new Gameover(gc, score);
     	} else {
     	
     	score = new Score();
@@ -46,11 +47,7 @@ public class SimpleGame extends BasicGame
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
     	sun = new Sun(IMAGES.SUN.getScaledCopy(GLOBAL.SUN_SCALE));
     	eggs = new Eggs(IMAGES.getNewEggs(), birdHealth);
-    	gameover = new Gameover(gc, score);
-    	
-    	Image[] iBird = IMAGES.getNewBird();
-    	bird = new Bird(iBird);
-    	
+    	bird = new Bird(IMAGES.getNewBird());
     	entityManager = new EntityManager(bird, birdHealth);
     	entityQueueHandler = new EntityQueueHandler(entityManager);
     	}
@@ -68,6 +65,14 @@ public class SimpleGame extends BasicGame
     		inMenu = false;
     		this.init(gc);
     		menu.setStartgame(false);
+    	}else if(gameover.getGotomenu()){
+    		menu.setActive(true);
+    		inMenu = true;
+    		this.init(gc);
+    	}else if(gameover.getStartgame()){
+    		this.exitGame = false;
+    		gameover.setStartgame(false);
+    		this.init(gc);
     	}
     	if(menu.isActive()){
     		menu.update(input, delta);

@@ -18,6 +18,7 @@ public class IMAGES {
 	
 	public static final Image GAMEOVER_HELLYEAH_BUTTON = makeImage(GLOBAL.GAMEOVER_HELLYEAH_BUTTON, false);
 	public static final Image GAMEOVER_CHICKENOUT_BUTTON = makeImage(GLOBAL.GAMEOVER_CHICKENOUT_BUTTON, false);
+	public static final Image GAMEOVER_BACKGROUND = makeImage(GLOBAL.GAMEOVER_BACKGROUND, false);
 
 	public static final Image BIRD_WHITE_1 = makeImage(GLOBAL.BIRD_WHITE_1, true);
 	public static final Image BIRD_WHITE_2 = makeImage(GLOBAL.BIRD_WHITE_2, true);

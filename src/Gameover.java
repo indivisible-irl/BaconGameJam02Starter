@@ -1,3 +1,4 @@
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.gui.MouseOverArea;
@@ -18,6 +19,9 @@ public class Gameover {
 		
 		TryAgain = new MouseOverArea(game, IMAGES.GAMEOVER_HELLYEAH_BUTTON, 100, 100);
 		Menu = new MouseOverArea(game, IMAGES.GAMEOVER_CHICKENOUT_BUTTON, 200, 200);
+		
+		TryAgain.setMouseOverColor(new Color(255, 0, 255));
+		Menu.setMouseOverColor(new Color(255, 0, 255));
 	}
 	
 	/**
@@ -63,6 +67,7 @@ public class Gameover {
 	
 	public void draw()
 	{
+		IMAGES.GAMEOVER_BACKGROUND.draw(0, 0);
 		TryAgain.render(currentgame, currentgame.getGraphics());
 		Menu.render(currentgame, currentgame.getGraphics());
 	}
