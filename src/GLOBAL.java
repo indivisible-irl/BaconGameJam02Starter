@@ -16,6 +16,7 @@ public class GLOBAL {
 	// timing, when to increase the game's difficulty and score multiplier (ms)
 	public static int DIFFICULTY_INCREASE_PERIOD = 80000; // 80 secs??
 	public static float SCROLL_SPEED = 0.1f;
+	public static float CLOUD_SPEED = SCROLL_SPEED / 2;
 	
 	// Entity generation timing
 	public static final long ENTITY_DELAY = 2000;
@@ -35,6 +36,7 @@ public class GLOBAL {
 	public static final Color chromakey = new Color(255, 0, 255);
 	
 	public static final String BACKGROUND = "resources/background.png";
+	public static final String CLOUDS = "resources/clouds.png";
 	public static final String CRAP = "resources/poop.png";
 	public static final String EGG = "resources/egg.png";
 	

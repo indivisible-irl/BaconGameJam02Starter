@@ -9,6 +9,7 @@ import org.newdawn.slick.SlickException;
 public class SimpleGame extends BasicGame
 {	
 	private Background background = null;
+	private Clouds clouds = null;
 	private Bird bird;
 	//private Enemy enemy;
 	private EntityManager entityManager;
@@ -26,6 +27,7 @@ public class SimpleGame extends BasicGame
 	{
     	score = new Score();
     	background = new Background(new Image(GLOBAL.BACKGROUND), new Image(GLOBAL.BACKGROUND));
+    	clouds = new Clouds(new Image(GLOBAL.CLOUDS), new Image(GLOBAL.CLOUDS));
     	
     	Image[] ibird = IMAGES.IMAGES_BIRD;
     	bird = new Bird(ibird);
@@ -62,6 +64,8 @@ public class SimpleGame extends BasicGame
     	}
     	
     	background.update(delta);
+    	clouds.update(delta);
+    	
     	entityQueueHandler.update();
     	entityManager.update(input, delta);
     	score.update();
@@ -72,6 +76,7 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
     {
     	background.draw();
+    	clouds.draw();
     	entityManager.draw();
     	
     	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 75, 0);

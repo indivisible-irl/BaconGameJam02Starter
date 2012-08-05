@@ -5,6 +5,7 @@ import org.newdawn.slick.SlickException;
 public class IMAGES {
 	
 	public static final Image BACKGROUND = makeImage(GLOBAL.BACKGROUND, false);
+	public static final Image CLOUDS = makeImage(GLOBAL.CLOUDS, false);
 	public static final Image CRAP = makeImage(GLOBAL.CRAP, true);
 	public static final Image EGG = makeImage(GLOBAL.EGG, true);
 	
