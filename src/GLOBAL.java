@@ -88,6 +88,14 @@ public class GLOBAL {
 	public static final String EGG_4 = "resources/eggs/egg_4.png";
 	public static final String EGG_5 = "resources/eggs/egg_5.png";
 	
+	public static final String IMPACT_15 = "resources/impact/impact_15.png";
+	public static final String IMPACT_30 = "resources/impact/impact_30.png";
+	public static final String IMPACT_45 = "resources/impact/impact_45.png";
+	public static final String IMPACT_60 = "resources/impact/impact_60.png";
+	public static final String IMPACT_75 = "resources/impact/impact_75.png";
+	public static final String IMPACT_85 = "resources/impact/impact_85.png";
+	public static final String IMPACT_92 = "resources/impact/impact_92.png";
+	
 	public static final float CAR_SCALE = 1.7f;
 	public static final String CAR_RED = "resources/cars/red.png";
 	public static final String CAR_RED_WRECK = "resources/cars/red-wrecked.png";

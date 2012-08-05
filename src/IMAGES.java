@@ -120,6 +120,23 @@ public class IMAGES {
 		return eggs;
 	}
 	
+	public static Image[] getImpacts(){
+		Image[] impacts = {
+				makeImage(GLOBAL.IMPACT_92, true),
+				makeImage(GLOBAL.IMPACT_85, true),
+				makeImage(GLOBAL.IMPACT_75, true),
+				makeImage(GLOBAL.IMPACT_60, true),
+				makeImage(GLOBAL.IMPACT_45, true),
+				makeImage(GLOBAL.IMPACT_30, true),
+				makeImage(GLOBAL.IMPACT_15, true),
+				makeImage(GLOBAL.IMPACT_60, true),
+				makeImage(GLOBAL.IMPACT_45, true),
+				makeImage(GLOBAL.IMPACT_30, true),
+				makeImage(GLOBAL.IMPACT_15, true)
+		};
+		return impacts;
+	}
+	
 	/**
 	 * Method to create an Image object and return it
 	 * @param fileLocation, hasTransparency
