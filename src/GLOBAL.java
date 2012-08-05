@@ -41,6 +41,8 @@ public class GLOBAL {
 	public static final String CLOUDS = "resources/clouds.png";
 	public static final String CRAP = "resources/poop.png";
 	public static final String EGG = "resources/egg.png";
+	public static final String SUN = "resources/Smiley Sun.png";
+	public static final float SUN_SCALE = .5f;
 	
 	public static final String MENU_BACKGROUND = "resources/Menu/MenuBackground.png";
 	public static final String MENU_PLAY_BUTTON = "resources/Menu/Play.png";

@@ -12,6 +12,7 @@ public class SimpleGame extends BasicGame
 	private Menu menu = null;
 	private Background background = null;
 	private Clouds clouds = null;
+	private Sun sun = null;
 	private Bird bird;
 	private Health birdHealth;
 	//private Enemy enemy;
@@ -41,6 +42,7 @@ public class SimpleGame extends BasicGame
     	birdHealth = new Health();
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
+    	sun = new Sun(IMAGES.SUN.getScaledCopy(GLOBAL.SUN_SCALE));
     	
     	Image[] iBird = IMAGES.getNewBird();
     	bird = new Bird(iBird);
@@ -110,6 +112,7 @@ public class SimpleGame extends BasicGame
     	}else{
     	
     	background.draw();
+    	sun.draw();
     	clouds.draw();
     	entityManager.draw();
     	
