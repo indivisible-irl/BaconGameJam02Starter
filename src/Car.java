@@ -12,9 +12,25 @@ public class Car extends Entity
 {
 	protected static final int VARIANCE = 42;
 	protected static final int LOWER_RANDOM_BOUND = 420;
+	protected static final String[][] cars =
+				{
+					{GLOBAL.CAR_BLUE, GLOBAL.CAR_BLUE_WRECK},
+					{GLOBAL.CAR_GREEN, GLOBAL.CAR_GREEN_WRECK},
+					{GLOBAL.CAR_PURPLE, GLOBAL.CAR_PURPLE_WRECK},
+					{GLOBAL.CAR_RED, GLOBAL.CAR_RED_WRECK}
+				};
+	protected int carSelection;
 	
-	private static Color chromakey = new Color(255, 0, 255);
+	/////////////////////////////////////////////////////////////
 	
+	public int getCarSelection(){
+		return this.carSelection;
+	}
+	public void setCarSelection(int selected){
+		this.carSelection = selected;
+	}
+	
+	/////////////////////////////////////////////////////////////
 	
 	public Car(Image[] images)
 	{
@@ -29,21 +45,23 @@ public class Car extends Entity
 	}
 	
 	/**
-	 * Returns a Human object placed (somewhat) randomly on the sidewalk from the background
+	 * Returns a Car object placed (somewhat) randomly on the road from the background
 	 * and 100 pixels off the screen to the right
 	 * @return
 	 * @throws SlickException
 	 */
 	public static Car getRandomlyPlacedCar() throws SlickException
 	{
-		Image[] dude = {
-				new Image("resources/car/red.png", chromakey).getScaledCopy(1.7f)
+		Random random = new Random();
+		int carSelection = random.nextInt(cars.length);
+		Image[] car = {
+				new Image(cars[carSelection][0], GLOBAL.chromakey).getScaledCopy(1.7f)
 				};
-		Random rand = new Random();
-		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
-		Car returnHuman = new Car(dude);
-		returnHuman.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);		
-		return returnHuman;
+		random = new Random();
+		int randomYValue = random.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
+		Car returnCar = new Car(car);
+		returnCar.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);		
+		return returnCar;
 	}
 	
 	

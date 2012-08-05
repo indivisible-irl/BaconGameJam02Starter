@@ -18,7 +18,7 @@ public class GLOBAL {
 	// timing, when to increase the game's difficulty and score multiplier (ms)
 	public static int DIFFICULTY_INCREASE_PERIOD = 80000; // 80 secs??
 	
-	// 
+	// Entity generation timing
 	public static final long ENTITY_DELAY = 2000;
 	public static final long ENTITY_INCREMENT = 200;
 
