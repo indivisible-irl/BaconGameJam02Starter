@@ -27,6 +27,7 @@ public class GLOBAL {
 	public static final int HUMAN_FREQUENCY = 25;		// 25
 	public static final int CAT_FREQUENCY = 45;			// 20
 	public static final int BIRD_FREQUENCY = 70;		// 25
+	public static final int TREE_FREQUENCY = 100;		// 25
 	public static final int CAR_FREQUENCY = 90;			// 20
 	public static final int DO_NOTHING = 120;			// 30
 	public static final int RANDOM_MAX = 120;			// max for random num gen			

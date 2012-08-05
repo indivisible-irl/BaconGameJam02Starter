@@ -114,6 +114,15 @@ public class EntityQueueHandler {
 				} catch (SlickException e) {
 					e.printStackTrace();
 				}
+			} else if ( getRandom() < GLOBAL.TREE_FREQUENCY) {
+				if (debug){
+					System.out.println("TREE!!");
+				}
+				try {
+					getEntityManager().addEntity(Tree.getRandomlyPlacedTree());
+				} catch (SlickException e) {
+					e.printStackTrace();
+				}
 			} else {
 				// do nothing
 			}
