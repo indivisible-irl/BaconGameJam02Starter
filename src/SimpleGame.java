@@ -13,11 +13,13 @@ public class SimpleGame extends BasicGame
 	private Background background = null;
 	private Clouds clouds = null;
 	private Bird bird;
+	private Health birdHealth;
 	//private Enemy enemy;
 	private EntityManager entityManager;
 	private EntityQueueHandler entityQueueHandler;
 	private Score score;
 	private boolean inMenu = true;
+	private boolean exitGame;
 	
     public SimpleGame()
     {
@@ -33,16 +35,17 @@ public class SimpleGame extends BasicGame
     	if(inMenu){
     		menu = new Menu(gc);
     		inMenu = false;
-    	}else{
+    	} else {
     	
     	score = new Score();
+    	birdHealth = new Health();
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
     	
     	Image[] iBird = IMAGES.getNewBird();
     	bird = new Bird(iBird);
     	
-    	entityManager = new EntityManager(bird);
+    	entityManager = new EntityManager(bird, birdHealth);
     	entityQueueHandler = new EntityQueueHandler(entityManager);
     	}
     }
@@ -90,7 +93,7 @@ public class SimpleGame extends BasicGame
     	clouds.update(delta);
     	
     	entityQueueHandler.update();
-    	entityManager.update(input, delta);
+    	this.exitGame = entityManager.update(input, delta);
     	score.update();
     	}
     }
