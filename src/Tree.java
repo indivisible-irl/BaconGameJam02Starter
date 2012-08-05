@@ -36,9 +36,9 @@ public class Tree extends Entity
 		Image[] tree = new Image[1];
 		Boolean randBool = new Random().nextBoolean();
 		if (randBool){
-			tree[0] = IMAGES.TREE_1;
+			tree[0] = IMAGES.makeImage(GLOBAL.TREE_1, true, GLOBAL.TREE_SCALE);
 		} else {
-			tree[0] = IMAGES.TREE_2;
+			tree[0] = IMAGES.makeImage(GLOBAL.TREE_2, true, GLOBAL.TREE_SCALE);
 		}
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
