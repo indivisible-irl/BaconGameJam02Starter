@@ -36,13 +36,8 @@ public class Enemy extends Entity
 	
 	public static Enemy getRandomlyPlacedEnemy(Bird bird) throws SlickException
 	{
-		Image[] iEnemy = {
-	    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
-				new Image(GLOBAL.BIRD_BROWN_2, GLOBAL.chromakey), 
-				new Image(GLOBAL.BIRD_BROWN_3, GLOBAL.chromakey), 
-				new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
-				new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
-	    		};
+		Image[] iEnemy = {IMAGES.BIRD_BROWN_1, IMAGES.BIRD_BROWN_2, IMAGES.BIRD_BROWN_3,
+							IMAGES.BIRD_BROWN_4, IMAGES.BIRD_BROWN_5};
 		Enemy returnEnemy = new Enemy(iEnemy, bird);
 		
 		return returnEnemy;

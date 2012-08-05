@@ -14,16 +14,12 @@ public class IMAGES {
 	public static final Image BIRD_WHITE_3 = makeImage(GLOBAL.BIRD_WHITE_3, true);
 	public static final Image BIRD_WHITE_4 = makeImage(GLOBAL.BIRD_WHITE_4, true);
 	public static final Image BIRD_WHITE_5 = makeImage(GLOBAL.BIRD_WHITE_5, true);
-	public static final Image[] IMAGES_BIRD = {BIRD_WHITE_1, BIRD_WHITE_2, BIRD_WHITE_3,
-								BIRD_WHITE_4, BIRD_WHITE_5 }; 
 	
 	public static final Image BIRD_BROWN_1 = makeImage(GLOBAL.BIRD_BROWN_1, true);
 	public static final Image BIRD_BROWN_2 = makeImage(GLOBAL.BIRD_BROWN_2, true);
 	public static final Image BIRD_BROWN_3 = makeImage(GLOBAL.BIRD_BROWN_3, true);
 	public static final Image BIRD_BROWN_4 = makeImage(GLOBAL.BIRD_BROWN_4, true);
 	public static final Image BIRD_BROWN_5 = makeImage(GLOBAL.BIRD_BROWN_5, true);
-	public static final Image[] IMAGES_ENEMY = {BIRD_BROWN_1, BIRD_BROWN_2, BIRD_BROWN_3,
-								BIRD_BROWN_4, BIRD_BROWN_5 };
 	
 	public static final Image DUDE_WALK_1 = makeImage(GLOBAL.DUDE_WALK_1, true, GLOBAL.DUDE_SCALE);
 	public static final Image DUDE_WALK_2 = makeImage(GLOBAL.DUDE_WALK_2, true, GLOBAL.DUDE_SCALE);
@@ -34,9 +30,6 @@ public class IMAGES {
 	public static final Image DUDE_WALK_7 = makeImage(GLOBAL.DUDE_WALK_7, true, GLOBAL.DUDE_SCALE);
 	public static final Image DUDE_WALK_8 = makeImage(GLOBAL.DUDE_WALK_8, true, GLOBAL.DUDE_SCALE);
 	public static final Image DUDE_WALK_9 = makeImage(GLOBAL.DUDE_WALK_9, true, GLOBAL.DUDE_SCALE);
-	public static final Image[] IMAGES_DUDE = {DUDE_WALK_9, DUDE_WALK_8, DUDE_WALK_7, 
-								DUDE_WALK_6, DUDE_WALK_5, DUDE_WALK_4,
-								DUDE_WALK_3, DUDE_WALK_2, DUDE_WALK_1 };
 	
 	public static final Image CAR_RED =  makeImage(GLOBAL.CAR_RED, true);
 	public static final Image CAR_RED_WRECK =  makeImage(GLOBAL.CAR_RED_WRECK, true);

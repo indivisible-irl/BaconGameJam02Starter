@@ -25,9 +25,10 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
 	{
     	score = new Score();
-    	background = new Background(new Image(GLOBAL.BACKGROUND), new Image(GLOBAL.BACKGROUND));
+    	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	
-    	Image[] ibird = IMAGES.IMAGES_BIRD;
+    	Image[] ibird = {IMAGES.BIRD_WHITE_1, IMAGES.BIRD_WHITE_2, IMAGES.BIRD_WHITE_3,
+    			IMAGES.BIRD_WHITE_4, IMAGES.BIRD_WHITE_5 };
     	bird = new Bird(ibird);
     	
     	entityManager = new EntityManager(bird);

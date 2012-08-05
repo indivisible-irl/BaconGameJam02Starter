@@ -34,15 +34,15 @@ public class Human extends Entity
 	public static Human getRandomlyPlacedHuman() throws SlickException
 	{
 		Image[] dude = {
-				new Image(GLOBAL.DUDE_WALK_9, GLOBAL.chromakey).getScaledCopy(1.7f), 
-				new Image(GLOBAL.DUDE_WALK_8, GLOBAL.chromakey).getScaledCopy(1.7f), 
-				new Image(GLOBAL.DUDE_WALK_7, GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(GLOBAL.DUDE_WALK_6, GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(GLOBAL.DUDE_WALK_5, GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(GLOBAL.DUDE_WALK_4, GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(GLOBAL.DUDE_WALK_3, GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(GLOBAL.DUDE_WALK_2, GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(GLOBAL.DUDE_WALK_1, GLOBAL.chromakey).getScaledCopy(1.7f)
+				new Image(GLOBAL.DUDE_WALK_9, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE), 
+				new Image(GLOBAL.DUDE_WALK_8, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE), 
+				new Image(GLOBAL.DUDE_WALK_7, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
+				new Image(GLOBAL.DUDE_WALK_6, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
+				new Image(GLOBAL.DUDE_WALK_5, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
+				new Image(GLOBAL.DUDE_WALK_4, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
+				new Image(GLOBAL.DUDE_WALK_3, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
+				new Image(GLOBAL.DUDE_WALK_2, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
+				new Image(GLOBAL.DUDE_WALK_1, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE)
 				};
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
