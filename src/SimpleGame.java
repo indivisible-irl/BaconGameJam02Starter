@@ -10,7 +10,7 @@ public class SimpleGame extends BasicGame
 {	
 	private Background background = null;
 	private Bird bird;
-	private Enemy enemy;
+	//private Enemy enemy;
 	private EntityManager entityManager;
 	private EntityQueueHandler entityQueueHandler;
 	private Score score;
@@ -36,14 +36,14 @@ public class SimpleGame extends BasicGame
     			};
     	bird = new Bird(ibird);
     	
-    	Image[] iEnemy = {
-    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_2, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_3, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
-    		};
-    	enemy = new Enemy(iEnemy);
+//    	Image[] iEnemy = {
+//    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
+//			new Image(GLOBAL.BIRD_BROWN_2, GLOBAL.chromakey), 
+//			new Image(GLOBAL.BIRD_BROWN_3, GLOBAL.chromakey), 
+//			new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
+//			new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
+//    		};
+//    	enemy = new Enemy(iEnemy);
     	
     	entityManager = new EntityManager(bird);
     	entityManager.addEntity(Human.getRandomlyPlacedHuman());
@@ -57,20 +57,20 @@ public class SimpleGame extends BasicGame
     {
     	Input input = gc.getInput();
     	
-    	if(input.isKeyDown(Input.KEY_H)){
+    	if(input.isKeyPressed(Input.KEY_H)){
     		entityManager.addEntity(Human.getRandomlyPlacedHuman());
     	}
-    	if(input.isKeyDown(Input.KEY_E)){
+    	if(input.isKeyPressed(Input.KEY_E)){
     		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
     	}
-    	if(input.isKeyDown(Input.KEY_C)){
+    	if(input.isKeyPressed(Input.KEY_C)){
     		entityManager.addEntity(Car.getRandomlyPlacedCar());
     	}
-    	if(input.isKeyDown(Input.KEY_P)){
+    	if(input.isKeyPressed(Input.KEY_P)){
     		entityQueueHandler.increaseDelay();
     		System.out.println("Increased Queue delay: " + entityQueueHandler.getDelay());
     	}
-    	if(input.isKeyDown(Input.KEY_O)){
+    	if(input.isKeyPressed(Input.KEY_O)){
     		entityQueueHandler.decreaseDelay();
     		System.out.println("Decreased Queue delay: " + entityQueueHandler.getDelay());
     	}

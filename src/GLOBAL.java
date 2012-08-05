@@ -13,7 +13,7 @@ import org.newdawn.slick.Color;
 public class GLOBAL {
 	public static final int SCREEN_WIDTH = 800;
 	public static final int SCREEN_HEIGHT = 600;
-	
+
 	public static final long ENTITY_DELAY = 2000;
 	public static final long ENTITY_INCREMENT = 200;
 
@@ -54,4 +54,8 @@ public class GLOBAL {
 	public static final String DUDE_WALK_7 = "resources/dude/walk/07.png";
 	public static final String DUDE_WALK_8 = "resources/dude/walk/08.png";
 	public static final String DUDE_WALK_9 = "resources/dude/walk/09.png";
+	
+	public static final int BASE_SCORE = 5;
+	public static double MULTIPLIER_MULTIPLIER = 0.05;
+	public static int MULTIPLIER_PERIOD = 1000;
 }
