@@ -133,7 +133,7 @@ public class Score {
 	 */
 	public void updateMultiplier(){
 		setTime();
-		if( (getTime() - START) - getLastTime() > GLOBAL.MULTIPLIER_PERIOD){
+		if( (getTime() - START) - getLastTime() > GLOBAL.DIFFICULTY_INCREASE_PERIOD){
 			increaseMultiplier();
 		}
 	}
