@@ -10,6 +10,7 @@ public class SimpleGame extends BasicGame
 {
 	private GameContainer game = null;
 	private Menu menu = null;
+	private Gameover gameover = null;
 	private Background background = null;
 	private Clouds clouds = null;
 	private Sun sun = null;
@@ -43,6 +44,7 @@ public class SimpleGame extends BasicGame
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
     	sun = new Sun(IMAGES.SUN.getScaledCopy(GLOBAL.SUN_SCALE));
+    	gameover = new Gameover(gc, score);
     	
     	Image[] iBird = IMAGES.getNewBird();
     	bird = new Bird(iBird);
@@ -67,6 +69,8 @@ public class SimpleGame extends BasicGame
     	}
     	if(menu.isActive()){
     		menu.update(input, delta);
+    	}else if(this.exitGame){
+    		gameover.update(input, delta);
     	}else{
 	    	if(input.isKeyPressed(Input.KEY_H)){
 	    		entityManager.addEntity(Human.getRandomlyPlacedHuman());
@@ -108,6 +112,8 @@ public class SimpleGame extends BasicGame
     {
     	if(menu.isActive()){
     		menu.draw();
+    	}else if(this.exitGame){
+    		
     	}else{
     	
     	background.draw();

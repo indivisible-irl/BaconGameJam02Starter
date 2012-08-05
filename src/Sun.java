@@ -17,12 +17,6 @@ public class Sun
 	}
 	
 	/**
-	 * scrolls the sun to the left
-	 * @param entity
-	 * @param delta
-	 */
-	
-	/**
 	 * Update the sun's position. Call draw() to display the changes.
 	 * @param delta
 	 */
