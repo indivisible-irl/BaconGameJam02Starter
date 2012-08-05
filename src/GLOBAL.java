@@ -34,6 +34,12 @@ public class GLOBAL {
 	public static final int DO_NOTHING = 120;			// 30
 	public static final int RANDOM_MAX = 120;			// max for random num gen			
 	
+	// screen boundries
+	public static final int BUFFER_TOP = 15;
+	public static final int BUFFER_BOTTOM = GLOBAL.SCREEN_HEIGHT - 150;
+	public static final int BUFFER_LEFT = 15;
+	public static final int BUFFER_RIGHT = GLOBAL.SCREEN_WIDTH - 75;
+	
 	// images:
 	public static final Color chromakey = new Color(255, 0, 255);
 	

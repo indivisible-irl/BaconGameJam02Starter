@@ -105,6 +105,14 @@ public class SimpleGame extends BasicGame
 	    		entityQueueHandler.decreaseDelay();
 	    		System.out.println("Decreased Queue delay: " + entityQueueHandler.getDelay());
 	    	}
+	    	if(input.isKeyPressed(Input.KEY_I)){
+	    		birdHealth.increaseHealth();
+	    		System.out.println("Increased health: " + birdHealth.getHealth());
+	    	}
+	    	if(input.isKeyPressed(Input.KEY_U)){
+	    		birdHealth.decreaseHealth();
+	    		System.out.println("Decreased health: " + birdHealth.getHealth());
+	    	}
 	    	
 	    	// Updates
 	    	background.update(delta);
