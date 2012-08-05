@@ -1,27 +1,31 @@
 import org.newdawn.slick.Image;
-import org.newdawn.slick.geom.Vector2f;
+//import org.newdawn.slick.geom.Vector2f;
 
 public class Eggs
 {
-	Image image;
-	float velocity = 0;
+	private Image[] images;
+	private Image currentImage;
+	private Health birdHealth;
 	
 	/**
 	 * Constructs a Sun object, These two images need to be the same
 	 * @param leadImage
 	 * @param followImage
 	 */
-	public Eggs(Image image)
+	public Eggs(Image[] imgs, Health health)
 	{
-		this.image = image;
+		this.images = imgs;
+		this.birdHealth = health;
+		update();
 	}
 	
 	/**
 	 * Update the eggs . Call draw() to display the changes.
 	 * @param delta
 	 */
-	public void update(int delta)
+	public void update()
 	{
+		this.currentImage = this.images[this.birdHealth.getHealth()-1];
 	}
 	
 	/**
@@ -29,6 +33,7 @@ public class Eggs
 	 */
 	public void draw()
 	{
-		image.draw(500, 0);
+		update();
+		currentImage.draw(15, 15);
 	}
 }

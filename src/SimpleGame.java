@@ -14,6 +14,7 @@ public class SimpleGame extends BasicGame
 	private Background background = null;
 	private Clouds clouds = null;
 	private Sun sun = null;
+	private Eggs eggs = null;
 	private Bird bird;
 	private Health birdHealth;
 	//private Enemy enemy;
@@ -44,6 +45,7 @@ public class SimpleGame extends BasicGame
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
     	sun = new Sun(IMAGES.SUN.getScaledCopy(GLOBAL.SUN_SCALE));
+    	eggs = new Eggs(IMAGES.getNewEggs(), birdHealth);
     	gameover = new Gameover(gc, score);
     	
     	Image[] iBird = IMAGES.getNewBird();
@@ -96,6 +98,7 @@ public class SimpleGame extends BasicGame
 	    	// Updates
 	    	background.update(delta);
 	    	clouds.update(delta);
+	    	eggs.update();
 	    	
 	    	entityQueueHandler.update();
 	    	this.exitGame = entityManager.update(input, delta);
@@ -120,6 +123,7 @@ public class SimpleGame extends BasicGame
     	sun.draw();
     	clouds.draw();
     	entityManager.draw();
+    	eggs.draw();
     	
     	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 275, 0);
     	}
