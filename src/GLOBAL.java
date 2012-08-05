@@ -79,6 +79,13 @@ public class GLOBAL {
 	public static final String DUDE_WALK_9 = "resources/dude/walk/09.png";
 	public static final String DUDE_DEAD = "resources/dude/walk/human-death.png";
 	
+	public static final float EGG_SCALE = 0.5f;
+	public static final String EGG_1 = "resources/eggs/egg_1.png";
+	public static final String EGG_2 = "resources/eggs/egg_2.png";
+	public static final String EGG_3 = "resources/eggs/egg_3.png";
+	public static final String EGG_4 = "resources/eggs/egg_4.png";
+	public static final String EGG_5 = "resources/eggs/egg_5.png";
+	
 	public static final float CAR_SCALE = 1.7f;
 	public static final String CAR_RED = "resources/cars/red.png";
 	public static final String CAR_RED_WRECK = "resources/cars/red-wrecked.png";
