@@ -8,6 +8,8 @@ import org.newdawn.slick.SlickException;
  
 public class SimpleGame extends BasicGame
 {	
+	private GameContainer game = null;
+	private Menu menu = null;
 	private Background background = null;
 	private Clouds clouds = null;
 	private Bird bird;
@@ -15,6 +17,7 @@ public class SimpleGame extends BasicGame
 	private EntityManager entityManager;
 	private EntityQueueHandler entityQueueHandler;
 	private Score score;
+	private boolean inMenu = true;
 	
     public SimpleGame()
     {
@@ -25,6 +28,13 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
+    	game = gc;
+    	
+    	if(inMenu){
+    		menu = new Menu(gc);
+    		inMenu = false;
+    	}else{
+    	
     	score = new Score();
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
@@ -35,6 +45,7 @@ public class SimpleGame extends BasicGame
     	
     	entityManager = new EntityManager(bird);
     	entityQueueHandler = new EntityQueueHandler(entityManager);
+    	}
     }
  
     @Override
@@ -42,6 +53,16 @@ public class SimpleGame extends BasicGame
 			throws SlickException     
     {
     	Input input = gc.getInput();
+    	
+    	if(menu.getStartgame()){
+    		menu.setActive(false);
+    		inMenu = false;
+    		this.init(gc);
+    		menu.setStartgame(false);
+    	}
+    	if(menu.isActive()){
+    		menu.update(input, delta);
+    	}else{
     	
     	if(input.isKeyPressed(Input.KEY_H)){
     		entityManager.addEntity(Human.getRandomlyPlacedHuman());
@@ -70,17 +91,23 @@ public class SimpleGame extends BasicGame
     	entityQueueHandler.update();
     	entityManager.update(input, delta);
     	score.update();
+    	}
     }
     
     @Override
     public void render(GameContainer gc, Graphics g) 
 			throws SlickException 
     {
+    	if(menu.isActive()){
+    		menu.draw();
+    	}else{
+    	
     	background.draw();
     	clouds.draw();
     	entityManager.draw();
     	
     	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 75, 0);
+    	}
     }
  
     /**

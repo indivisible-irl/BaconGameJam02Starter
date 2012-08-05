@@ -9,6 +9,12 @@ public class IMAGES {
 	public static final Image CRAP = makeImage(GLOBAL.CRAP, true);
 	public static final Image EGG = makeImage(GLOBAL.EGG, true);
 	
+	public static final Image MENU_BACKGROUND = makeImage(GLOBAL.MENU_BACKGROUND, false);
+	public static final Image MENU_PLAY_BUTTON = makeImage(GLOBAL.MENU_PLAY_BUTTON, false);
+	public static final Image MENU_ABOUT_BUTTON = makeImage(GLOBAL.MENU_ABOUT_BUTTON, false);
+	public static final Image MENU_EXIT_BUTTON = makeImage(GLOBAL.MENU_EXIT_BUTTON, false);
+	public static final Image MENU_HIGHSCORE_BUTTON = makeImage(GLOBAL.MENU_HIGHSCORE_BUTTON, false);
+
 	
 	public static final Image BIRD_WHITE_1 = makeImage(GLOBAL.BIRD_WHITE_1, true);
 	public static final Image BIRD_WHITE_2 = makeImage(GLOBAL.BIRD_WHITE_2, true);

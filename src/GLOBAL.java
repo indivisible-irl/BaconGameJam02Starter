@@ -42,6 +42,13 @@ public class GLOBAL {
 	public static final String CRAP = "resources/poop.png";
 	public static final String EGG = "resources/egg.png";
 	
+	public static final String MENU_BACKGROUND = "resources/Menu/MenuBackground.png";
+	public static final String MENU_PLAY_BUTTON = "resources/Menu/Play.png";
+	public static final String MENU_ABOUT_BUTTON = "resources/Menu/About.png";
+	public static final String MENU_EXIT_BUTTON = "resources/Menu/Exit.png";
+	public static final String MENU_HIGHSCORE_BUTTON = "resources/Menu/Highscore.png";
+
+	
 	public static final String BIRD_WHITE_1 = "resources/bird/white/01.png";
 	public static final String BIRD_WHITE_2 = "resources/bird/white/02.png";
 	public static final String BIRD_WHITE_3 = "resources/bird/white/03.png";
