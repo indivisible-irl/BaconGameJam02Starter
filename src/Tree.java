@@ -89,4 +89,7 @@ public class Tree extends Entity
 		this.getAnimation().draw(this.getPosition().x, this.getPosition().y);
 	}
 	
+	public int getScore(){
+		return 100;
+	}
 }

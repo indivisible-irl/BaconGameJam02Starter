@@ -159,4 +159,6 @@ public class Bird extends Entity
 		this.getAnimation().draw(this.getPosition().x, this.getPosition().y);
 		if(this.crap.isActive) this.crap.draw();
 	}
+	
+	
 }

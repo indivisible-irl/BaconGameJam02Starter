@@ -51,7 +51,7 @@ public class SimpleGame extends BasicGame
     	sun = new Sun(IMAGES.SUN.getScaledCopy(GLOBAL.SUN_SCALE));
     	eggs = new Eggs(IMAGES.getNewEggs(), birdHealth);
     	bird = new Bird(IMAGES.getNewBird());
-    	entityManager = new EntityManager(bird, birdHealth);
+    	entityManager = new EntityManager(bird, birdHealth, score);
     	entityQueueHandler = new EntityQueueHandler(entityManager);
     	
     	System.out.println("RESET");

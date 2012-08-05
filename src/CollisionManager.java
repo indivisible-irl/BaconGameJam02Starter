@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class CollisionManager
 {	
-	public static boolean checkAndHandleCollisions(Bird bird, ArrayList<Entity> entities, Health birdHealth)
+	public static boolean checkAndHandleCollisions(Bird bird, ArrayList<Entity> entities, Health birdHealth, Score score)
 	{
 		Boolean exit = false;
 		for (Entity entity : entities)
@@ -15,6 +15,7 @@ public class CollisionManager
 				{
 					entity.handleCollision(entity);
 					bird.getCrap().handleCollision(entity);
+					score.addBonus(entity.getScore());
 				}
 				//Bird collision with enemies
 				if(entity.boundingShape.intersects(bird.boundingShape))

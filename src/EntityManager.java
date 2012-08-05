@@ -8,6 +8,7 @@ public class EntityManager {
 	private Bird bird;
 	private Health birdHealth;
 	private ArrayList<Entity> entities;
+	private Score score;
 	private boolean exit;
 	
 	public EntityManager(Bird b) throws SlickException
@@ -16,8 +17,9 @@ public class EntityManager {
 		bird = b;
 		birdHealth = new Health(new Impact(IMAGES.getImpacts()));
 	}
-	public EntityManager(Bird b, Health bHealth) throws SlickException
+	public EntityManager(Bird b, Health bHealth, Score s) throws SlickException
 	{
+		score = s;
 		entities = new ArrayList<Entity>();		
 		bird = b;
 		birdHealth = bHealth;
@@ -72,7 +74,7 @@ public class EntityManager {
 	 */
 	public boolean update(Input input, int delta)
 	{
-		this.exit = CollisionManager.checkAndHandleCollisions(bird, entities, birdHealth);
+		this.exit = CollisionManager.checkAndHandleCollisions(bird, entities, birdHealth, score);
 		
 		for(int i = 0; i < this.entities.size(); i++)
 		{

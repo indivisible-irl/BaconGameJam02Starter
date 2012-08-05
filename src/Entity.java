@@ -272,5 +272,10 @@ public class Entity
 	{
 		
 	}
+	
+	public int getScore(){
+		return 100;
+		
+	}
 
 }
