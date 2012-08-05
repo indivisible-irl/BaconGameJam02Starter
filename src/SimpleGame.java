@@ -27,13 +27,7 @@ public class SimpleGame extends BasicGame
     	score = new Score();
     	background = new Background(new Image(GLOBAL.BACKGROUND), new Image(GLOBAL.BACKGROUND));
     	
-    	Image[] ibird = {
-    			new Image(GLOBAL.BIRD_WHITE_1, GLOBAL.chromakey), 
-    			new Image(GLOBAL.BIRD_WHITE_2, GLOBAL.chromakey), 
-    			new Image(GLOBAL.BIRD_WHITE_3, GLOBAL.chromakey), 
-    			new Image(GLOBAL.BIRD_WHITE_4, GLOBAL.chromakey), 
-    			new Image(GLOBAL.BIRD_WHITE_5, GLOBAL.chromakey)
-    			};
+    	Image[] ibird = IMAGES.IMAGES_BIRD;
     	bird = new Bird(ibird);
     	
     	entityManager = new EntityManager(bird);

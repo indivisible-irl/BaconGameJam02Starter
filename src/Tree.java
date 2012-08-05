@@ -1,6 +1,5 @@
 import java.util.Random;
 
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -13,14 +12,12 @@ public class Tree extends Entity
 	protected static final int VARIANCE = 1;
 	protected static final int LOWER_RANDOM_BOUND = 243;
 	
-	private static Color chromakey = new Color(255, 0, 255);
-	
 	
 	public Tree(Image[] images)
 	{
 		 super(images);
 		 this.setPosition(new Vector2f(500, 420));
-		 this.setVelocity(0.1f);
+		 this.setVelocity(GLOBAL.SCROLL_SPEED);
 		 this.boundingShape = new Rectangle(this.getPosition().x, 
 					this.getPosition().y, 
 					this.getAnimationFrame().getWidth(),
@@ -37,7 +34,7 @@ public class Tree extends Entity
 	public static Tree getRandomlyPlacedTree() throws SlickException
 	{
 		Image[] tree = {
-				new Image(GLOBAL.TREE_2, chromakey).getScaledCopy(.8f)
+				new Image(GLOBAL.TREE_2, GLOBAL.chromakey).getScaledCopy(.8f)
 				};
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;

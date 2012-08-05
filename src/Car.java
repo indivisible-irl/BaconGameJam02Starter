@@ -90,11 +90,8 @@ public class Car extends Entity
 	public void handleCollision(Entity entity)
 	{
 		this.setAnimationFrames(1);
-		
 		this.colidable = false;
-
-		this.setVelocity(.1f);
-		
+		this.setVelocity(GLOBAL.SCROLL_SPEED);
 		this.getPosition().y -= 45;
 	}
 	

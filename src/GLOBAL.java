@@ -1,6 +1,4 @@
 import org.newdawn.slick.Color;
-//import org.newdawn.slick.Image;
-//import org.newdawn.slick.SlickException;
 
 /*
  * Reddit BaconGameJam - Aug 2012
@@ -17,6 +15,7 @@ public class GLOBAL {
 
 	// timing, when to increase the game's difficulty and score multiplier (ms)
 	public static int DIFFICULTY_INCREASE_PERIOD = 80000; // 80 secs??
+	public static float SCROLL_SPEED = 0.1f;
 	
 	// Entity generation timing
 	public static final long ENTITY_DELAY = 2000;
@@ -37,6 +36,7 @@ public class GLOBAL {
 	
 	public static final String BACKGROUND = "resources/background.png";
 	public static final String CRAP = "resources/poop.png";
+	public static final String EGG = "resources/egg.png";
 	
 	public static final String BIRD_WHITE_1 = "resources/bird/white/01.png";
 	public static final String BIRD_WHITE_2 = "resources/bird/white/02.png";
@@ -50,6 +50,7 @@ public class GLOBAL {
 	public static final String BIRD_BROWN_4 = "resources/bird/brown/04.png";
 	public static final String BIRD_BROWN_5 = "resources/bird/brown/05.png";
 	
+	public static final float DUDE_SCALE = 0.7f;
 	public static final String DUDE_WALK_1 = "resources/dude/walk/01.png";
 	public static final String DUDE_WALK_2 = "resources/dude/walk/02.png";
 	public static final String DUDE_WALK_3 = "resources/dude/walk/03.png";
