@@ -50,7 +50,7 @@ public class Enemy extends Entity
 				new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
 				new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
 	    		};
-		Enemy returnEnemy = new Enemy(iEnemy, bird);
+		Enemy returnEnemy = new Enemy(iEnemy);
 		
 		return returnEnemy;
 	}
