@@ -32,6 +32,8 @@ public class Menu {
 		Highscore.setMouseOverColor(new Color(255, 0, 255));
 		About.setMouseOverColor(new Color(255, 0, 255));
 		Exit.setMouseOverColor(new Color(255, 0, 255));
+		
+		whichscreen = GLOBAL.MAIN_MENU;
 	}
 	
 	/**
@@ -70,7 +72,7 @@ public class Menu {
 			}else if(Highscore.isMouseOver()){
 				
 			}else if(About.isMouseOver()){
-				
+				whichscreen = GLOBAL.ABOUT_MENU;
 			}else if(Exit.isMouseOver()){
 				Game.exit();
 			}else{
@@ -81,12 +83,16 @@ public class Menu {
 	
 	public void draw()
 	{
+		if(whichscreen == GLOBAL.MAIN_MENU){
 		IMAGES.MENU_BACKGROUND.draw(0, 0);
 		
 		Play.render(Game, Game.getGraphics());
 		Highscore.render(Game, Game.getGraphics());
 		About.render(Game, Game.getGraphics());
 		Exit.render(Game, Game.getGraphics());
+		}else if(whichscreen == GLOBAL.ABOUT_MENU){
+			IMAGES.MENU_ABOUTBACKGROUND.draw(0, 0);
+		}
 	}
 	
 	

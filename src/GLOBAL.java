@@ -50,6 +50,7 @@ public class GLOBAL {
 	public static final float SUN_SCALE = .5f;
 	
 	public static final String MENU_BACKGROUND = "resources/Menu/MenuBackground.png";
+	public static final String MENU_ABOUTBACKGROUND = "resources/Menu/AboutBackground.png";
 	public static final String MENU_PLAY_BUTTON = "resources/Menu/Play.png";
 	public static final String MENU_ABOUT_BUTTON = "resources/Menu/About.png";
 	public static final String MENU_EXIT_BUTTON = "resources/Menu/Exit.png";

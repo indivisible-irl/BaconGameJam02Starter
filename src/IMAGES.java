@@ -11,6 +11,7 @@ public class IMAGES {
 	
 
 	public static final Image MENU_BACKGROUND = makeImage(GLOBAL.MENU_BACKGROUND, false);
+	public static final Image MENU_ABOUTBACKGROUND = makeImage(GLOBAL.MENU_ABOUTBACKGROUND, false);
 	public static final Image MENU_PLAY_BUTTON = makeImage(GLOBAL.MENU_PLAY_BUTTON, false);
 	public static final Image MENU_ABOUT_BUTTON = makeImage(GLOBAL.MENU_ABOUT_BUTTON, false);
 	public static final Image MENU_EXIT_BUTTON = makeImage(GLOBAL.MENU_EXIT_BUTTON, false);
