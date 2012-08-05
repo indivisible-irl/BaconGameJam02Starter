@@ -8,8 +8,7 @@ import org.newdawn.slick.geom.Vector2f;
  */
 public class Crap extends Entity
 {
-	//public static final String NAME = "Crap";
-	//private static final int SCREEN_HEIGHT = 600;
+	public static final String NAME = "Crap";
 	
 	protected boolean isActive = false;
 	protected Bird parentBird;
@@ -41,7 +40,7 @@ public class Crap extends Entity
 	
 	public void update(int delta)
 	{
-		if(!isActive) return;  //if the poop isnt active, dont do shit!  GET IT
+		if(!isActive) return;  //if the poop isn't active, don't do shit!  GET IT?
 		
 		this.position.y += this.velocity * delta;
 		if(this.position.y > GLOBAL.SCREEN_HEIGHT)

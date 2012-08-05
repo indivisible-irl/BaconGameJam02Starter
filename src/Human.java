@@ -12,13 +12,13 @@ public class Human extends Entity
 	protected static final int VARIANCE = 42;
 	protected static final int LOWER_RANDOM_BOUND = 390;
 	
-	private Image deadimage;
+	//private Image deadimage;
 	
 	
 	public Human(Image[] images, Image dead)
 	{
 		 super(images);
-		 this.deadimage = dead;
+		 //this.deadimage = dead;
 		 this.setPosition(new Vector2f(500, 420));
 		 this.setVelocity(0.15f);
 		 this.boundingShape = new Rectangle(this.getPosition().x, 
@@ -37,17 +37,7 @@ public class Human extends Entity
 	 */
 	public static Human getRandomlyPlacedHuman() throws SlickException
 	{
-		Image[] dude = {
-				new Image(GLOBAL.DUDE_WALK_9, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE), 
-				new Image(GLOBAL.DUDE_WALK_8, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE), 
-				new Image(GLOBAL.DUDE_WALK_7, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
-				new Image(GLOBAL.DUDE_WALK_6, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
-				new Image(GLOBAL.DUDE_WALK_5, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
-				new Image(GLOBAL.DUDE_WALK_4, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
-				new Image(GLOBAL.DUDE_WALK_3, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
-				new Image(GLOBAL.DUDE_WALK_2, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE),
-				new Image(GLOBAL.DUDE_WALK_1, GLOBAL.chromakey).getScaledCopy(GLOBAL.DUDE_SCALE)
-				};
+		Image[] dude = IMAGES.getNewDude();
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
 		Human returnHuman = new Human(dude, IMAGES.DUDE_DEAD);
@@ -77,15 +67,11 @@ public class Human extends Entity
 	
 	public void handleCollision(Entity entity)
 	{
-		Image[] deadimages = {deadimage};
-		
+		Image[] deadimages = {IMAGES.makeImage(GLOBAL.DUDE_DEAD, true, GLOBAL.DUDE_SCALE)};
 		this.setAnimation(deadimages);
-		
 		this.colidable = false;
 		this.getAnimation().stop();
-		
 		this.setVelocity(GLOBAL.SCROLL_SPEED);
-		
 		this.getPosition().y += 50;
 	}
 	

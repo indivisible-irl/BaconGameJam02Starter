@@ -56,8 +56,8 @@ public class Car extends Entity
 		Random random = new Random();
 		int carSelection = random.nextInt(cars.length);
 		Image[] car = {
-				new Image(cars[carSelection][0], GLOBAL.chromakey).getScaledCopy(1.7f),
-				new Image(cars[carSelection][1], GLOBAL.chromakey).getScaledCopy(1.7f)
+				new Image(cars[carSelection][0], GLOBAL.chromakey).getScaledCopy(GLOBAL.CAR_SCALE),
+				new Image(cars[carSelection][1], GLOBAL.chromakey).getScaledCopy(GLOBAL.CAR_SCALE)
 				};
 		random = new Random();
 		int randomYValue = random.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;

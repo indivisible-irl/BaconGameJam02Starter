@@ -33,9 +33,13 @@ public class Tree extends Entity
 	 */
 	public static Tree getRandomlyPlacedTree() throws SlickException
 	{
-		Image[] tree = {
-				new Image(GLOBAL.TREE_2, GLOBAL.chromakey).getScaledCopy(.8f)
-				};
+		Image[] tree = new Image[1];
+		Boolean randBool = new Random().nextBoolean();
+		if (randBool){
+			tree[0] = IMAGES.TREE_1;
+		} else {
+			tree[0] = IMAGES.TREE_2;
+		}
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
 		Tree returnTree = new Tree(tree);
