@@ -16,8 +16,8 @@ public class Gameover {
 		currentgame = game;
 		currentscore = score;
 		
-		TryAgain = new MouseOverArea(game, IMAGES.MENU_PLAY_BUTTON, 100, 100);
-		Menu = new MouseOverArea(game, IMAGES.MENU_PLAY_BUTTON, 200, 200);
+		TryAgain = new MouseOverArea(game, IMAGES.GAMEOVER_HELLYEAH_BUTTON, 100, 100);
+		Menu = new MouseOverArea(game, IMAGES.GAMEOVER_CHICKENOUT_BUTTON, 200, 200);
 	}
 	
 	/**

@@ -22,10 +22,10 @@ public class Menu {
 		
 		Game = game;
 		
-		Play = new MouseOverArea(game, IMAGES.MENU_PLAY_BUTTON, 100, 100);
-		Highscore = new MouseOverArea(game, IMAGES.MENU_HIGHSCORE_BUTTON, 200, 200);
-		About = new MouseOverArea(game, IMAGES.MENU_ABOUT_BUTTON, 300, 300);
-		Exit = new MouseOverArea(game, IMAGES.MENU_EXIT_BUTTON, 400, 400);
+		Play = new MouseOverArea(game, IMAGES.MENU_PLAY_BUTTON, 270, 230);
+		Highscore = new MouseOverArea(game, IMAGES.MENU_HIGHSCORE_BUTTON, 270, 320);
+		About = new MouseOverArea(game, IMAGES.MENU_ABOUT_BUTTON, 270, 410);
+		Exit = new MouseOverArea(game, IMAGES.MENU_EXIT_BUTTON, 270, 500);
 		
 		Play.setMouseOverColor(new Color(255, 0, 255));
 		Highscore.setMouseOverColor(new Color(255, 0, 255));
@@ -80,6 +80,8 @@ public class Menu {
 	
 	public void draw()
 	{
+		IMAGES.MENU_BACKGROUND.draw(0, 0);
+		
 		Play.render(Game, Game.getGraphics());
 		Highscore.render(Game, Game.getGraphics());
 		About.render(Game, Game.getGraphics());
