@@ -80,6 +80,9 @@ public class EntityManager {
 			if(entities.get(i).position.x < -(entities.get(i).getAnimationFrame().getWidth()) && this.entities.size() >= 1) entities.remove(i);
 		}
 		bird.update(input, delta);
+		if (this.exit){
+			System.out.println("You're dead! You shouldn't be playing!!!");
+		}
 		return this.exit;
 	}
 	

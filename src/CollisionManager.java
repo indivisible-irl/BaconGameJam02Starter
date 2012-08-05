@@ -24,6 +24,7 @@ public class CollisionManager
 					entity.handleCollision(bird);
 					// if health = 0 exit game.
 					exit = !(birdHealth.isAlive());
+					System.out.println("Collision: Exit? " +exit);
 				}
 			}
 		}
