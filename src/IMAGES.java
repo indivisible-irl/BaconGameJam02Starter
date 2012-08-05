@@ -42,9 +42,9 @@ public class IMAGES {
 	public static final Image CAR_PURPLE =  makeImage(GLOBAL.CAR_PURPLE, true);
 	public static final Image CAR_PURPLE_WRECK =  makeImage(GLOBAL.CAR_PURPLE_WRECK, true);
 	
-	public static final Image TREE_1 =  makeImage(GLOBAL.TREE_1, true);
-	public static final Image TREE_2 =  makeImage(GLOBAL.TREE_2, true);
-	public static final Image POLE_1 =  makeImage(GLOBAL.POLE_1, true);
+	public static final Image TREE_1 =  makeImage(GLOBAL.TREE_1, true, GLOBAL.TREE_SCALE);
+	public static final Image TREE_2 =  makeImage(GLOBAL.TREE_2, true, GLOBAL.TREE_SCALE);
+	public static final Image POLE_1 =  makeImage(GLOBAL.POLE_1, true, GLOBAL.POLE_SCALE);
 	
 	///////////////////////////////////////////////////////////////////////////////
 	
@@ -55,8 +55,32 @@ public class IMAGES {
 				makeImage(GLOBAL.BIRD_BROWN_3, true),
 				makeImage(GLOBAL.BIRD_BROWN_4, true),
 				makeImage(GLOBAL.BIRD_BROWN_5, true)
-			};
+		};
 		return enemy;
+	}
+	public static Image[] getNewBird(){
+		Image[] bird = {
+				makeImage(GLOBAL.BIRD_WHITE_1, true),
+				makeImage(GLOBAL.BIRD_WHITE_2, true),
+				makeImage(GLOBAL.BIRD_WHITE_3, true),
+				makeImage(GLOBAL.BIRD_WHITE_4, true),
+				makeImage(GLOBAL.BIRD_WHITE_5, true)
+		};
+		return bird;
+	}
+	public static Image[] getNewDude(){
+		Image[] dude = {
+				makeImage(GLOBAL.DUDE_WALK_9, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_8, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_7, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_6, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_5, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_4, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_3, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_2, true, GLOBAL.DUDE_SCALE),
+				makeImage(GLOBAL.DUDE_WALK_1, true, GLOBAL.DUDE_SCALE)
+		};
+		return dude;
 	}
 	
 	/**
@@ -96,3 +120,4 @@ public class IMAGES {
 		return img;
 	}
 }
+

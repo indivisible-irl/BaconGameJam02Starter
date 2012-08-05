@@ -20,7 +20,7 @@ public class SimpleGame extends BasicGame
     {
         super("Bird Poop!");
     }
- 
+
     @Override
     public void init(GameContainer gc) 
 			throws SlickException 
@@ -29,9 +29,8 @@ public class SimpleGame extends BasicGame
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
     	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
     	
-    	Image[] ibird = {IMAGES.BIRD_WHITE_1, IMAGES.BIRD_WHITE_2, IMAGES.BIRD_WHITE_3,
-    			IMAGES.BIRD_WHITE_4, IMAGES.BIRD_WHITE_5 };
-    	bird = new Bird(ibird);
+    	Image[] iBird = IMAGES.getNewBird();
+    	bird = new Bird(iBird);
     	
     	entityManager = new EntityManager(bird);
     	entityQueueHandler = new EntityQueueHandler(entityManager);
@@ -41,8 +40,8 @@ public class SimpleGame extends BasicGame
     public void update(GameContainer gc, int delta) 
 			throws SlickException     
     {
+    	// Button listeners:
     	Input input = gc.getInput();
-    	
     	if(input.isKeyPressed(Input.KEY_H)){
     		entityManager.addEntity(Human.getRandomlyPlacedHuman());
     	}
@@ -64,6 +63,7 @@ public class SimpleGame extends BasicGame
     		System.out.println("Decreased Queue delay: " + entityQueueHandler.getDelay());
     	}
     	
+    	// Updates
     	background.update(delta);
     	clouds.update(delta);
     	
