@@ -15,6 +15,8 @@ public class GLOBAL {
 
 	// timing, when to increase the game's difficulty and score multiplier (ms)
 	public static int DIFFICULTY_INCREASE_PERIOD = 80000; // 80 secs??
+	
+	// overall speed of the game.
 	public static float SCROLL_SPEED = 0.1f;
 	public static float CLOUD_SPEED = SCROLL_SPEED / 2;
 	
@@ -52,7 +54,7 @@ public class GLOBAL {
 	public static final String BIRD_BROWN_4 = "resources/bird/brown/04.png";
 	public static final String BIRD_BROWN_5 = "resources/bird/brown/05.png";
 	
-	public static final float DUDE_SCALE = 0.7f;
+	public static final float DUDE_SCALE = 1.7f;
 	public static final String DUDE_WALK_1 = "resources/dude/walk/01.png";
 	public static final String DUDE_WALK_2 = "resources/dude/walk/02.png";
 	public static final String DUDE_WALK_3 = "resources/dude/walk/03.png";
