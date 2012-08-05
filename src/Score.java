@@ -132,6 +132,12 @@ public class Score {
 			increaseMultiplier();
 		}
 	}
+	
+	public void reset(){
+		resetMultiplier();
+		setScore(0);
+	}
+	
 	/**
 	 * Main score update method to be called from the game.
 	 */

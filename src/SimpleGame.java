@@ -37,12 +37,12 @@ public class SimpleGame extends BasicGame
     	game = gc;
     	
     	if(inMenu){
+    		score = new Score();
     		menu = new Menu(gc);
     		inMenu = false;
     		gameover = new Gameover(gc, score);
+    		
     	} else {
-    	
-    	score = new Score();
     	impact = new Impact(IMAGES.getImpacts());
     	birdHealth = new Health(impact);
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
@@ -52,6 +52,8 @@ public class SimpleGame extends BasicGame
     	bird = new Bird(IMAGES.getNewBird());
     	entityManager = new EntityManager(bird, birdHealth);
     	entityQueueHandler = new EntityQueueHandler(entityManager);
+    	
+    	System.out.println("RESET");
     	}
     }
  
@@ -68,10 +70,12 @@ public class SimpleGame extends BasicGame
     		this.init(gc);
     		menu.setStartgame(false);
     	}else if(gameover.getGotomenu()){
+    		score.reset();
     		menu.setActive(true);
     		inMenu = true;
     		this.init(gc);
     	}else if(gameover.getStartgame()){
+    		score.reset();
     		this.exitGame = false;
     		gameover.setStartgame(false);
     		this.init(gc);

@@ -17,8 +17,8 @@ public class Gameover {
 		currentgame = game;
 		currentscore = score;
 		
-		TryAgain = new MouseOverArea(game, IMAGES.GAMEOVER_HELLYEAH_BUTTON, 100, 100);
-		Menu = new MouseOverArea(game, IMAGES.GAMEOVER_CHICKENOUT_BUTTON, 200, 200);
+		TryAgain = new MouseOverArea(game, IMAGES.GAMEOVER_HELLYEAH_BUTTON, 150, 450);
+		Menu = new MouseOverArea(game, IMAGES.GAMEOVER_CHICKENOUT_BUTTON, 400, 450);
 		
 		TryAgain.setMouseOverColor(new Color(255, 0, 255));
 		Menu.setMouseOverColor(new Color(255, 0, 255));
@@ -68,6 +68,9 @@ public class Gameover {
 	public void draw()
 	{
 		IMAGES.GAMEOVER_BACKGROUND.draw(0, 0);
+		
+		currentgame.getGraphics().drawString(currentscore.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 500, 250);
+		
 		TryAgain.render(currentgame, currentgame.getGraphics());
 		Menu.render(currentgame, currentgame.getGraphics());
 	}
