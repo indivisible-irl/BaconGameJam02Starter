@@ -80,6 +80,8 @@ public class Tree extends Entity
 			this.getAnimationFrame().rotate(-90);
 		}
 		this.setVelocity(.1f);
+		
+		this.getPosition().y += 100;
 	}
 	
 	public void draw()

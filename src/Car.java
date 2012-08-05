@@ -11,7 +11,7 @@ import org.newdawn.slick.geom.Vector2f;
 public class Car extends Entity 
 {
 	protected static final int VARIANCE = 42;
-	protected static final int LOWER_RANDOM_BOUND = 420;
+	protected static final int LOWER_RANDOM_BOUND = 470;
 	protected static final String[][] cars =
 				{
 					{GLOBAL.CAR_BLUE, GLOBAL.CAR_BLUE_WRECK},

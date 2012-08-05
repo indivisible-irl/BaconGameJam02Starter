@@ -73,7 +73,7 @@ public class Enemy extends Entity
 	{
 		if(!this.colidable){
 			if(this.getPosition().y < 450){
-				this.getPosition().y +=  this.getVelocity() * delta;
+				this.getPosition().y +=  0.25f * delta;
 			}
 			this.getPosition().x -=  this.getVelocity() * delta;
 		}else{
