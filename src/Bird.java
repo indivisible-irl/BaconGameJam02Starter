@@ -13,11 +13,7 @@ import org.newdawn.slick.geom.Vector2f;
 public class Bird extends Entity 
 {				
 	private Crap crap;
-	private static int BUFFER_TOP = 15;
-	private static int BUFFER_BOTTOM = GLOBAL.SCREEN_HEIGHT - 150;
-	private static int BUFFER_LEFT = 15;
-	private static int BUFFER_RIGHT = GLOBAL.SCREEN_WIDTH - 75;
-	
+		
 	/**
 	 * 
 	 * @param image sprite image
@@ -112,7 +108,7 @@ public class Bird extends Entity
 				direction = -1;
 				this.flip(true, false);
 			}
-			if (!(this.getPosition().getX() < BUFFER_LEFT))
+			if (!(this.getPosition().getX() < GLOBAL.BUFFER_LEFT))
 			{
 				this.getPosition().x -=  this.getVelocity() * delta;
 			}
@@ -125,7 +121,7 @@ public class Bird extends Entity
 				direction = 1;
 				this.flip(true, false);
 			}
-			if (!(this.getPosition().getX() > BUFFER_RIGHT))
+			if (!(this.getPosition().getX() > GLOBAL.BUFFER_RIGHT))
 			{
 				this.getPosition().x +=  this.getVelocity() * delta;
 			}
@@ -135,14 +131,14 @@ public class Bird extends Entity
 		if(input.isKeyDown(Input.KEY_UP) || input.isKeyDown(Input.KEY_W))
 		{
 			//if(rotation > -45) this.getAnimationFrame().rotate(-1);
-			if (!(this.getPosition().getY() < BUFFER_TOP))
+			if (!(this.getPosition().getY() < GLOBAL.BUFFER_TOP))
 			{
 				this.getPosition().y -=  this.getVelocity() * delta;
 			}
 		}
 		if(input.isKeyDown(Input.KEY_DOWN) || input.isKeyDown(Input.KEY_S))
 		{
-			if (!(this.getPosition().getY() > BUFFER_BOTTOM))
+			if (!(this.getPosition().getY() > GLOBAL.BUFFER_BOTTOM))
 			{
 				this.getPosition().y +=  this.getVelocity() * delta;
 			}

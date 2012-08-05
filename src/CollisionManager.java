@@ -19,6 +19,10 @@ public class CollisionManager
 				//Bird collision with enemies
 				if(entity.boundingShape.intersects(bird.boundingShape))
 				{
+					if (entity.boundingShape.getX() > GLOBAL.BUFFER_RIGHT){
+						System.out.println("Avoided a collision. WHEW!");
+						continue;
+					}
 					System.out.println("Collision detected between the bird and " + entity.getName());
 					birdHealth.decreaseHealth();
 					entity.handleCollision(bird);
