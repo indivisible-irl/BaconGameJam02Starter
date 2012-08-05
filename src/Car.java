@@ -42,6 +42,8 @@ public class Car extends Entity
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
 		 this.colidable = true;
+		 
+		 this.getAnimation().stop();
 	}
 	
 	/**
@@ -55,7 +57,8 @@ public class Car extends Entity
 		Random random = new Random();
 		int carSelection = random.nextInt(cars.length);
 		Image[] car = {
-				new Image(cars[carSelection][0], GLOBAL.chromakey).getScaledCopy(1.7f)
+				new Image(cars[carSelection][0], GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(cars[carSelection][1], GLOBAL.chromakey).getScaledCopy(1.7f)
 				};
 		random = new Random();
 		int randomYValue = random.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
@@ -87,17 +90,15 @@ public class Car extends Entity
 	
 	public void handleCollision(Entity entity)
 	{
+		this.setAnimationFrames(1);
+		
 		Random rand = new Random();
 		
 		this.colidable = false;
-		this.getAnimation().stop();
-		
-		if(rand.nextBoolean()){
-			this.getAnimationFrame().rotate(90);
-		}else{
-			this.getAnimationFrame().rotate(-90);
-		}
+
 		this.setVelocity(.1f);
+		
+		this.getPosition().y -= 45;
 	}
 	
 	public void draw()
