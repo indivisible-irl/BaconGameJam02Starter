@@ -7,7 +7,7 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
  
 public class SimpleGame extends BasicGame
-{	
+{
 	private GameContainer game = null;
 	private Menu menu = null;
 	private Background background = null;
@@ -68,38 +68,37 @@ public class SimpleGame extends BasicGame
     	if(menu.isActive()){
     		menu.update(input, delta);
     	}else{
-    	
-    	if(input.isKeyPressed(Input.KEY_H)){
-    		entityManager.addEntity(Human.getRandomlyPlacedHuman());
-    	}
-    	if(input.isKeyPressed(Input.KEY_E)){
-    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy(bird));
-    	}
-    	if(input.isKeyPressed(Input.KEY_C)){
-    		entityManager.addEntity(Car.getRandomlyPlacedCar());
-    	}
-    	if(input.isKeyPressed(Input.KEY_T)){
-    		entityManager.addEntity(Tree.getRandomlyPlacedTree());
-    	}
-    	if(input.isKeyPressed(Input.KEY_P)){
-    		entityQueueHandler.increaseDelay();
-    		System.out.println("Increased Queue delay: " + entityQueueHandler.getDelay());
-    	}
-    	if(input.isKeyPressed(Input.KEY_O)){
-    		entityQueueHandler.decreaseDelay();
-    		System.out.println("Decreased Queue delay: " + entityQueueHandler.getDelay());
-    	}
-    	
-    	// Updates
-    	background.update(delta);
-    	clouds.update(delta);
-    	
-    	entityQueueHandler.update();
-    	this.exitGame = entityManager.update(input, delta);
-    	score.update();
-    	if (this.exitGame){
-    		System.out.println("GAME OVER!");
-    	}
+	    	if(input.isKeyPressed(Input.KEY_H)){
+	    		entityManager.addEntity(Human.getRandomlyPlacedHuman());
+	    	}
+	    	if(input.isKeyPressed(Input.KEY_E)){
+	    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy(bird));
+	    	}
+	    	if(input.isKeyPressed(Input.KEY_C)){
+	    		entityManager.addEntity(Car.getRandomlyPlacedCar());
+	    	}
+	    	if(input.isKeyPressed(Input.KEY_T)){
+	    		entityManager.addEntity(Tree.getRandomlyPlacedTree());
+	    	}
+	    	if(input.isKeyPressed(Input.KEY_P)){
+	    		entityQueueHandler.increaseDelay();
+	    		System.out.println("Increased Queue delay: " + entityQueueHandler.getDelay());
+	    	}
+	    	if(input.isKeyPressed(Input.KEY_O)){
+	    		entityQueueHandler.decreaseDelay();
+	    		System.out.println("Decreased Queue delay: " + entityQueueHandler.getDelay());
+	    	}
+	    	
+	    	// Updates
+	    	background.update(delta);
+	    	clouds.update(delta);
+	    	
+	    	entityQueueHandler.update();
+	    	this.exitGame = entityManager.update(input, delta);
+	    	score.update();
+	    	if (this.exitGame){
+	    		System.out.println("GAME OVER!");
+	    	}
     	}
     }
     
