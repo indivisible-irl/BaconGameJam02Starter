@@ -110,10 +110,10 @@ public class SimpleGame extends BasicGame
 	    	background.update(delta);
 	    	clouds.update(delta);
 	    	eggs.update();
-	    	
+	    	score.update();
 	    	entityQueueHandler.update();
 	    	this.exitGame = entityManager.update(input, delta);
-	    	score.update();
+	    	
 	    	if (this.exitGame){
 	    		System.out.println("GAME OVER!");
 	    	}
@@ -133,11 +133,11 @@ public class SimpleGame extends BasicGame
     	background.draw();
     	sun.draw();
     	clouds.draw();
-    	entityManager.draw();
     	eggs.draw();
+    	entityManager.draw();
     	impact.draw();
     	
-    	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 275, 0);
+    	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 375, 5);
     	}
     }
  
