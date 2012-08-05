@@ -121,7 +121,7 @@ public class SimpleGame extends BasicGame
     	clouds.draw();
     	entityManager.draw();
     	
-    	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 75, 0);
+    	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 275, 0);
     	}
     }
  
