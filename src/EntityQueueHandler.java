@@ -101,7 +101,7 @@ public class EntityQueueHandler {
 					System.out.println("Another evil birdy");
 				}
 				try {
-					getEntityManager().addEntity(Enemy.getRandomlyPlacedEnemy());
+					getEntityManager().addEntity(Enemy.getRandomlyPlacedEnemy(getEntityManager().getBird()));
 				} catch (SlickException e) {
 					e.printStackTrace();
 				}

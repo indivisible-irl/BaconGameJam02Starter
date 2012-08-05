@@ -41,6 +41,14 @@ public class EntityManager {
 	}
 	
 	/**
+	 * @return the Bird
+	 */
+	public Bird getBird()
+	{
+		return bird;
+	}
+	
+	/**
 	 * Updates all entities
 	 * @param input
 	 * @param delta

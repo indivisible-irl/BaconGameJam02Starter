@@ -11,9 +11,12 @@ public class Enemy extends Entity
 	protected final int VARIANCE = 0;
 	protected final int LOWER_RANDOM_BOUND = 380;
 	
-	public Enemy(Image[] images) throws SlickException
+	private Bird bird;
+	
+	public Enemy(Image[] images, Bird bird) throws SlickException
 	{
 		super(images);
+		this.bird = bird;
 		this.init();
 	}
 	
@@ -31,7 +34,7 @@ public class Enemy extends Entity
 		 this.colidable = true;
 	}
 	
-	public static Enemy getRandomlyPlacedEnemy() throws SlickException
+	public static Enemy getRandomlyPlacedEnemy(Bird bird) throws SlickException
 	{
 		Image[] iEnemy = {
 	    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
@@ -40,14 +43,32 @@ public class Enemy extends Entity
 				new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
 				new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
 	    		};
-		Enemy returnEnemy = new Enemy(iEnemy);
+		Enemy returnEnemy = new Enemy(iEnemy, bird);
 		
 		return returnEnemy;
 	}
 	
 	public void update(Input input, int delta)
 	{
-		this.getPosition().x -=  this.getVelocity() * delta;
+		float birdx = bird.getPosition().x;
+		float birdy = bird.getPosition().y;
+		float x = this.getPosition().x - birdx;
+		float y = this.getPosition().y - birdy;
+		if(Math.sqrt(x * x + y * y) < 100){
+			if(this.getPosition().x < birdx){
+				this.getPosition().x +=  this.getVelocity() * delta;
+			}else{
+				this.getPosition().x -=  this.getVelocity() * delta;
+			}		
+			if(this.getPosition().y < birdy){
+				this.getPosition().y +=  this.getVelocity() * delta;
+			}else{
+				this.getPosition().y -=  this.getVelocity() * delta;
+			}	
+		}else{
+			this.getPosition().x -=  this.getVelocity() * delta;
+		}
+		
 		this.updateBoundingRect();	
 	}
 	

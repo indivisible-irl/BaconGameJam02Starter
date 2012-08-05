@@ -43,7 +43,7 @@ public class SimpleGame extends BasicGame
 			new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
 			new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
     		};
-    	enemy = new Enemy(iEnemy);
+    	enemy = new Enemy(iEnemy, bird);
     	
     	entityManager = new EntityManager(bird);
     	entityManager.addEntity(Human.getRandomlyPlacedHuman());
@@ -61,7 +61,7 @@ public class SimpleGame extends BasicGame
     		entityManager.addEntity(Human.getRandomlyPlacedHuman());
     	}
     	if(input.isKeyDown(Input.KEY_E)){
-    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
+    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy(bird));
     	}
     	if(input.isKeyDown(Input.KEY_C)){
     		entityManager.addEntity(Car.getRandomlyPlacedCar());
