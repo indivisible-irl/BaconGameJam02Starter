@@ -48,6 +48,17 @@ public class IMAGES {
 	
 	///////////////////////////////////////////////////////////////////////////////
 	
+	public static Image[] getNewEnemy(){
+		Image[] enemy = {
+				makeImage(GLOBAL.BIRD_BROWN_1, true),
+				makeImage(GLOBAL.BIRD_BROWN_2, true),
+				makeImage(GLOBAL.BIRD_BROWN_3, true),
+				makeImage(GLOBAL.BIRD_BROWN_4, true),
+				makeImage(GLOBAL.BIRD_BROWN_5, true)
+			};
+		return enemy;
+	}
+	
 	/**
 	 * Method to create an Image object and return it
 	 * @param fileLocation, hasTransparency
