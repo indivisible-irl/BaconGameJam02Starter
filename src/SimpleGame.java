@@ -27,6 +27,7 @@ public class SimpleGame extends BasicGame
 	{
     	score = new Score();
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);
+    	clouds = new Clouds(IMAGES.CLOUDS, IMAGES.CLOUDS);
     	
     	Image[] ibird = {IMAGES.BIRD_WHITE_1, IMAGES.BIRD_WHITE_2, IMAGES.BIRD_WHITE_3,
     			IMAGES.BIRD_WHITE_4, IMAGES.BIRD_WHITE_5 };
