@@ -6,6 +6,7 @@ import org.newdawn.slick.geom.Vector2f;
  * @author 
  *
  */
+@SuppressWarnings("unused")
 public class ScoreDisp extends Entity
 {
 	public static final String NAME = "Score";

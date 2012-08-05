@@ -11,6 +11,7 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 
+@SuppressWarnings("unused")
 public class Car extends Entity 
 {
 	protected static final int VARIANCE = 42;
