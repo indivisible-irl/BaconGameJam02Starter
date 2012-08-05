@@ -71,7 +71,7 @@ public class Menu {
 			}else if(About.isMouseOver()){
 				
 			}else if(Exit.isMouseOver()){
-				
+				Game.exit();
 			}else{
 				
 			}
