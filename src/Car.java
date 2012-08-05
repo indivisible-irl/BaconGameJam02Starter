@@ -1,4 +1,8 @@
+import java.io.IOException;
 import java.util.Random;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
@@ -89,6 +93,7 @@ public class Car extends Entity
 	
 	public void handleCollision(Entity entity)
 	{
+		//SOUNDS.playSound(SOUNDS.CAR);
 		this.setAnimationFrames(1);
 		this.colidable = false;
 		this.setVelocity(GLOBAL.SCROLL_SPEED);
