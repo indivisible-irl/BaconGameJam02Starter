@@ -13,8 +13,6 @@ public class Human extends Entity
 	protected static final int VARIANCE = 42;
 	protected static final int LOWER_RANDOM_BOUND = 390;
 	
-	private static Color chromakey = new Color(255, 0, 255);
-	
 	
 	public Human(Image[] images)
 	{
@@ -37,13 +35,15 @@ public class Human extends Entity
 	public static Human getRandomlyPlacedHuman() throws SlickException
 	{
 		Image[] dude = {
-				new Image("resources/dude/walk/07.png", chromakey).getScaledCopy(1.7f), 
-				new Image("resources/dude/walk/06.png", chromakey).getScaledCopy(1.7f), 
-				new Image("resources/dude/walk/05.png", chromakey).getScaledCopy(1.7f),
-				new Image("resources/dude/walk/04.png", chromakey).getScaledCopy(1.7f),
-				new Image("resources/dude/walk/03.png", chromakey).getScaledCopy(1.7f),
-				new Image("resources/dude/walk/02.png", chromakey).getScaledCopy(1.7f),
-				new Image("resources/dude/walk/01.png", chromakey).getScaledCopy(1.7f)
+				new Image(GLOBAL.DUDE_WALK_9, GLOBAL.chromakey).getScaledCopy(1.7f), 
+				new Image(GLOBAL.DUDE_WALK_8, GLOBAL.chromakey).getScaledCopy(1.7f), 
+				new Image(GLOBAL.DUDE_WALK_7, GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(GLOBAL.DUDE_WALK_6, GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(GLOBAL.DUDE_WALK_5, GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(GLOBAL.DUDE_WALK_4, GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(GLOBAL.DUDE_WALK_3, GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(GLOBAL.DUDE_WALK_2, GLOBAL.chromakey).getScaledCopy(1.7f),
+				new Image(GLOBAL.DUDE_WALK_1, GLOBAL.chromakey).getScaledCopy(1.7f)
 				};
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
