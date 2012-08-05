@@ -63,6 +63,12 @@ public class IMAGES {
 	public static final Image EGG_4 = makeImage(GLOBAL.EGG_4, true, GLOBAL.EGG_SCALE);
 	public static final Image EGG_5 = makeImage(GLOBAL.EGG_5, true, GLOBAL.EGG_SCALE);
 	
+	public static final Image SCORE_100 = makeImage(GLOBAL.SCORE_100, true, GLOBAL.SCORE_SCALE);
+	public static final Image SCORE_200 = makeImage(GLOBAL.SCORE_200, true, GLOBAL.SCORE_SCALE);
+	public static final Image SCORE_300 = makeImage(GLOBAL.SCORE_300, true, GLOBAL.SCORE_SCALE);
+	public static final Image SCORE_500 = makeImage(GLOBAL.SCORE_500, true, GLOBAL.SCORE_SCALE);
+	
+	
 	///////////////////////////////////////////////////////////////////////////////
 	
 	/**
@@ -137,6 +143,18 @@ public class IMAGES {
 		};
 		return impacts;
 	}
+	
+	public static Image[] getScores(){
+		Image[] scores = {
+				makeImage(GLOBAL.SCORE_100, true, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200, true, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300, true, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500, true, GLOBAL.SCORE_SCALE)
+		};
+		return scores;
+	}
+	
+	///////////////////////////////////////////////////
 	
 	/**
 	 * Method to create an Image object and return it

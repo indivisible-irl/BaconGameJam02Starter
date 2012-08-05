@@ -103,6 +103,12 @@ public class GLOBAL {
 	public static final String IMPACT_85 = "resources/impact/impact_85.png";
 	public static final String IMPACT_92 = "resources/impact/impact_92.png";
 	
+	public static final float SCORE_SCALE = 0.8f;
+	public static final String SCORE_100 = "resources/scores/100.png";
+	public static final String SCORE_200 = "resources/scores/200.png";
+	public static final String SCORE_300 = "resources/scores/300.png";
+	public static final String SCORE_500 = "resources/scores/500.png";
+	
 	public static final float CAR_SCALE = 1.7f;
 	public static final String CAR_RED = "resources/cars/red.png";
 	public static final String CAR_RED_WRECK = "resources/cars/red-wrecked.png";
