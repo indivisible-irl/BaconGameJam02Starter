@@ -53,8 +53,18 @@ public class IMAGES {
 	public static final Image TREE_2 =  makeImage(GLOBAL.TREE_2, true, GLOBAL.TREE_SCALE);
 	public static final Image POLE_1 =  makeImage(GLOBAL.POLE_1, true, GLOBAL.POLE_SCALE);
 	
+	public static final Image EGG_1 = makeImage(GLOBAL.EGG_1, true, GLOBAL.EGG_SCALE);
+	public static final Image EGG_2 = makeImage(GLOBAL.EGG_2, true, GLOBAL.EGG_SCALE);
+	public static final Image EGG_3 = makeImage(GLOBAL.EGG_3, true, GLOBAL.EGG_SCALE);
+	public static final Image EGG_4 = makeImage(GLOBAL.EGG_4, true, GLOBAL.EGG_SCALE);
+	public static final Image EGG_5 = makeImage(GLOBAL.EGG_5, true, GLOBAL.EGG_SCALE);
+	
 	///////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 * Get an array of unique Images for the evil bird
+	 * @return
+	 */
 	public static Image[] getNewEnemy(){
 		Image[] enemy = {
 				makeImage(GLOBAL.BIRD_BROWN_1, true),
@@ -65,6 +75,10 @@ public class IMAGES {
 		};
 		return enemy;
 	}
+	/**
+	 * Get an array of unique Images for the birdy
+	 * @return
+	 */
 	public static Image[] getNewBird(){
 		Image[] bird = {
 				makeImage(GLOBAL.BIRD_WHITE_1, true),
@@ -75,6 +89,10 @@ public class IMAGES {
 		};
 		return bird;
 	}
+	/**
+	 * Get an array of unique Images for the walking guy
+	 * @return
+	 */
 	public static Image[] getNewDude(){
 		Image[] dude = {
 				makeImage(GLOBAL.DUDE_WALK_9, true, GLOBAL.DUDE_SCALE),
@@ -88,6 +106,15 @@ public class IMAGES {
 				makeImage(GLOBAL.DUDE_WALK_1, true, GLOBAL.DUDE_SCALE)
 		};
 		return dude;
+	}
+	/**
+	 * Get an Image array of Egg images
+	 * @return
+	 */
+	public static Image[] getNewEggs(){
+		Image[] eggs = {
+				EGG_1, EGG_2, EGG_3, EGG_4, EGG_5};
+		return eggs;
 	}
 	
 	/**
