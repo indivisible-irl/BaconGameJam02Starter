@@ -71,6 +71,12 @@ public class Enemy extends Entity
 	
 	public void update(Input input, int delta)
 	{
+		if(!this.colidable){
+			if(this.getPosition().y < 450){
+				this.getPosition().y +=  this.getVelocity() * delta;
+			}
+			this.getPosition().x -=  this.getVelocity() * delta;
+		}else{
 		float birdx = bird.getPosition().x;
 		float birdy = bird.getPosition().y;
 		float x = this.getPosition().x - birdx;
@@ -90,7 +96,8 @@ public class Enemy extends Entity
 			this.getPosition().x -=  this.getVelocity() * delta;
 		}
 		
-		this.updateBoundingRect();	
+		}
+		this.updateBoundingRect();
 	}
 	
 	private void updateBoundingRect()
