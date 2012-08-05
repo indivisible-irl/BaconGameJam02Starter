@@ -8,9 +8,6 @@
 import java.util.Date;
 import java.text.DecimalFormat;
 
-import org.newdawn.slick.Font;
-import org.newdawn.slick.SpriteSheetFont;
-
 public class Score {
 	private static DecimalFormat format = new DecimalFormat("#");
 	private static long START = new Date().getTime();
@@ -20,8 +17,6 @@ public class Score {
 	private int bonus;
 	private long time;
 	private long lastTime;
-	private SpriteSheetFont fontimage;
-	private Font font;
 	
 	/////////////////////////////////////////////////
 	

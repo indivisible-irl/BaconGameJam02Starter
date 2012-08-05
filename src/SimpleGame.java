@@ -36,18 +36,7 @@ public class SimpleGame extends BasicGame
     			};
     	bird = new Bird(ibird);
     	
-    	Image[] iEnemy = {
-    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_2, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_3, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
-			new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
-    		};
-    	Enemy enemy = new Enemy(iEnemy, bird);
-    	
     	entityManager = new EntityManager(bird);
-    	entityManager.addEntity(Human.getRandomlyPlacedHuman());
-    	//entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
     	entityQueueHandler = new EntityQueueHandler(entityManager);
     }
  
@@ -66,6 +55,9 @@ public class SimpleGame extends BasicGame
     	if(input.isKeyPressed(Input.KEY_C)){
     		entityManager.addEntity(Car.getRandomlyPlacedCar());
     	}
+    	if(input.isKeyPressed(Input.KEY_T)){
+    		entityManager.addEntity(Tree.getRandomlyPlacedTree());
+    	}
     	if(input.isKeyPressed(Input.KEY_P)){
     		entityQueueHandler.increaseDelay();
     		System.out.println("Increased Queue delay: " + entityQueueHandler.getDelay());
@@ -76,7 +68,6 @@ public class SimpleGame extends BasicGame
     	}
     	
     	background.update(delta);
-    	//bird.update(input, delta);
     	entityQueueHandler.update();
     	entityManager.update(input, delta);
     	score.update();
@@ -87,7 +78,6 @@ public class SimpleGame extends BasicGame
 			throws SlickException 
     {
     	background.draw();
-    	//bird.draw();
     	entityManager.draw();
     	
     	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 75, 0);

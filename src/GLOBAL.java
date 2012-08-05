@@ -59,6 +59,7 @@ public class GLOBAL {
 	public static final String DUDE_WALK_7 = "resources/dude/walk/07.png";
 	public static final String DUDE_WALK_8 = "resources/dude/walk/08.png";
 	public static final String DUDE_WALK_9 = "resources/dude/walk/09.png";
+	public static final String DUDE_DEAD = "resources/dude/walk/human-death.png";
 	
 	public static final String CAR_RED = "resources/cars/red.png";
 	public static final String CAR_RED_WRECK = "resources/cars/red-wrecked.png";

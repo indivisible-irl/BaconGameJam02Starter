@@ -1,6 +1,5 @@
 import java.util.Random;
 
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -91,8 +90,6 @@ public class Car extends Entity
 	public void handleCollision(Entity entity)
 	{
 		this.setAnimationFrames(1);
-		
-		Random rand = new Random();
 		
 		this.colidable = false;
 
