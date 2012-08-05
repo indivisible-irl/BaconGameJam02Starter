@@ -3,6 +3,7 @@ public class Health {
 
 	private int health;
 	private boolean alive;
+	private Impact impacts;
 	
 	///////////////////////////
 	
@@ -34,6 +35,9 @@ public class Health {
 	public void setAlive(boolean alive){
 		this.alive = alive;
 	}
+	public void setImpacts(Impact impact){
+		this.impacts = impact;
+	}
 	///////////////////////////
 	
 	/**
@@ -58,6 +62,7 @@ public class Health {
 	 * Decrease health by 1
 	 */
 	public void decreaseHealth(){
+		this.impacts.trigger();
 		if (getHealth() == 1){
 			setAlive(false);
 			System.out.println("Health: You are dead, sorry. Alive: " +isAlive());
@@ -72,11 +77,13 @@ public class Health {
 	/**
 	 * Default constructor
 	 */
-	public Health(){
+	public Health(Impact impact){
+		setImpacts(impact);
 		setHealth(3);
 		setAlive(true);
 	}
-	public Health(int hp){
+	public Health(Impact impact, int hp){
+		setImpacts(impact);
 		setHealth(hp);
 		if (!(hp == 0)){
 			setAlive(true);

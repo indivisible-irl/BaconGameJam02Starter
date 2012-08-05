@@ -14,7 +14,7 @@ public class EntityManager {
 	{
 		entities = new ArrayList<Entity>();		
 		bird = b;
-		birdHealth = new Health();
+		birdHealth = new Health(new Impact(IMAGES.getImpacts()));
 	}
 	public EntityManager(Bird b, Health bHealth) throws SlickException
 	{
