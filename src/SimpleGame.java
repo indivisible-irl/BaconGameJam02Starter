@@ -95,6 +95,9 @@ public class SimpleGame extends BasicGame
     	entityQueueHandler.update();
     	this.exitGame = entityManager.update(input, delta);
     	score.update();
+    	if (this.exitGame){
+    		System.out.println("GAME OVER!");
+    	}
     	}
     }
     
