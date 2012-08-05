@@ -49,7 +49,11 @@ public class GLOBAL {
 	public static final String MENU_ABOUT_BUTTON = "resources/Menu/About.png";
 	public static final String MENU_EXIT_BUTTON = "resources/Menu/Exit.png";
 	public static final String MENU_HIGHSCORE_BUTTON = "resources/Menu/Highscore.png";
-
+	public static final int MAIN_MENU = 0;
+	public static final int ABOUT_MENU = 1;
+	public static final int HIGHSCORE_MENU = 2;
+	public static final int GAMEOVER_MENU = 3;
+	
 	
 	public static final String BIRD_WHITE_1 = "resources/bird/white/01.png";
 	public static final String BIRD_WHITE_2 = "resources/bird/white/02.png";

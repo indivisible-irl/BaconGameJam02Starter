@@ -14,6 +14,8 @@ public class Menu {
 	private MouseOverArea About;
 	private MouseOverArea Exit;
 	
+	private int whichscreen;
+	
 	public Menu(GameContainer game)
 	{
 		setActive(true);
