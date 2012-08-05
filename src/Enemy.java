@@ -13,6 +13,13 @@ public class Enemy extends Entity
 	
 	private Bird bird;
 	
+	public Enemy(Image[] images) throws SlickException
+	{
+		super(images);
+		this.bird = bird;
+		this.init();
+	}
+	
 	public Enemy(Image[] images, Bird bird) throws SlickException
 	{
 		super(images);
@@ -32,6 +39,20 @@ public class Enemy extends Entity
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
 		 this.colidable = true;
+	}
+	
+	public static Enemy getRandomlyPlacedEnemy() throws SlickException
+	{
+		Image[] iEnemy = {
+	    		new Image(GLOBAL.BIRD_BROWN_1, GLOBAL.chromakey), 
+				new Image(GLOBAL.BIRD_BROWN_2, GLOBAL.chromakey), 
+				new Image(GLOBAL.BIRD_BROWN_3, GLOBAL.chromakey), 
+				new Image(GLOBAL.BIRD_BROWN_4, GLOBAL.chromakey), 
+				new Image(GLOBAL.BIRD_BROWN_5, GLOBAL.chromakey)
+	    		};
+		Enemy returnEnemy = new Enemy(iEnemy, bird);
+		
+		return returnEnemy;
 	}
 	
 	public static Enemy getRandomlyPlacedEnemy(Bird bird) throws SlickException

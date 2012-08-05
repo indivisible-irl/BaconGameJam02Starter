@@ -12,10 +12,7 @@ import org.newdawn.slick.Font;
 import org.newdawn.slick.SpriteSheetFont;
 
 public class Score {
-	private static int BASE_SCORE = 5;
 	private static DecimalFormat format = new DecimalFormat("#");
-	private static double MULTIPLIER_MULTIPLIER = 0.05;
-	private static int MULTIPLIER_PERIOD = 1000;
 	private static long START = new Date().getTime();
 	
 	private double score;
@@ -112,7 +109,7 @@ public class Score {
 	 * Increase the score multiplier by 0.2
 	 */
 	public void increaseMultiplier(){
-		setMultiplier(getMultiplier() + MULTIPLIER_MULTIPLIER);
+		setMultiplier(getMultiplier() + GLOBAL.MULTIPLIER_MULTIPLIER);
 	}
 	/**
 	 * Reset the multiplier to it's base value.
@@ -136,7 +133,7 @@ public class Score {
 	 */
 	public void updateMultiplier(){
 		setTime();
-		if( (getTime() - START) - getLastTime() > MULTIPLIER_PERIOD){
+		if( (getTime() - START) - getLastTime() > GLOBAL.DIFFICULTY_INCREASE_PERIOD){
 			increaseMultiplier();
 		}
 	}
@@ -145,7 +142,7 @@ public class Score {
 	 */
 	public void update(){
 		updateMultiplier();
-		setScore(getScore() + (BASE_SCORE * getMultiplier()));
+		setScore(getScore() + (GLOBAL.BASE_SCORE * getMultiplier()));
 	}
 	
 	public void draw(){
