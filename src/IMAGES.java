@@ -15,6 +15,9 @@ public class IMAGES {
 	public static final Image MENU_ABOUT_BUTTON = makeImage(GLOBAL.MENU_ABOUT_BUTTON, false);
 	public static final Image MENU_EXIT_BUTTON = makeImage(GLOBAL.MENU_EXIT_BUTTON, false);
 	public static final Image MENU_HIGHSCORE_BUTTON = makeImage(GLOBAL.MENU_HIGHSCORE_BUTTON, false);
+	
+	public static final Image GAMEOVER_HELLYEAH_BUTTON = makeImage(GLOBAL.GAMEOVER_HELLYEAH_BUTTON, false);
+	public static final Image GAMEOVER_CHICKENOUT_BUTTON = makeImage(GLOBAL.GAMEOVER_CHICKENOUT_BUTTON, false);
 
 	public static final Image BIRD_WHITE_1 = makeImage(GLOBAL.BIRD_WHITE_1, true);
 	public static final Image BIRD_WHITE_2 = makeImage(GLOBAL.BIRD_WHITE_2, true);

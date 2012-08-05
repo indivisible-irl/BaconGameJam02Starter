@@ -113,7 +113,7 @@ public class SimpleGame extends BasicGame
     	if(menu.isActive()){
     		menu.draw();
     	}else if(this.exitGame){
-    		
+    		gameover.draw();
     	}else{
     	
     	background.draw();
