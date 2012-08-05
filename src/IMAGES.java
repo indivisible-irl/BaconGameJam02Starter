@@ -31,6 +31,7 @@ public class IMAGES {
 	public static final Image DUDE_WALK_7 = makeImage(GLOBAL.DUDE_WALK_7, true, GLOBAL.DUDE_SCALE);
 	public static final Image DUDE_WALK_8 = makeImage(GLOBAL.DUDE_WALK_8, true, GLOBAL.DUDE_SCALE);
 	public static final Image DUDE_WALK_9 = makeImage(GLOBAL.DUDE_WALK_9, true, GLOBAL.DUDE_SCALE);
+	public static final Image DUDE_DEAD = makeImage(GLOBAL.DUDE_DEAD, true, GLOBAL.DUDE_SCALE);
 	
 	public static final Image CAR_RED =  makeImage(GLOBAL.CAR_RED, true);
 	public static final Image CAR_RED_WRECK =  makeImage(GLOBAL.CAR_RED_WRECK, true);

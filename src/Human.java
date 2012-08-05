@@ -12,10 +12,13 @@ public class Human extends Entity
 	protected static final int VARIANCE = 42;
 	protected static final int LOWER_RANDOM_BOUND = 390;
 	
+	private Image deadimage;
 	
-	public Human(Image[] images)
+	
+	public Human(Image[] images, Image dead)
 	{
 		 super(images);
+		 this.deadimage = dead;
 		 this.setPosition(new Vector2f(500, 420));
 		 this.setVelocity(0.15f);
 		 this.boundingShape = new Rectangle(this.getPosition().x, 
@@ -23,6 +26,7 @@ public class Human extends Entity
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
 		 this.colidable = true;
+		 
 	}
 	
 	/**
@@ -46,7 +50,7 @@ public class Human extends Entity
 				};
 		Random rand = new Random();
 		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
-		Human returnHuman = new Human(dude);
+		Human returnHuman = new Human(dude, IMAGES.DUDE_DEAD);
 		returnHuman.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);		
 		return returnHuman;
 	}
@@ -73,17 +77,16 @@ public class Human extends Entity
 	
 	public void handleCollision(Entity entity)
 	{
-		Random rand = new Random();
+		Image[] deadimages = {deadimage};
+		
+		this.setAnimation(deadimages);
 		
 		this.colidable = false;
 		this.getAnimation().stop();
 		
-		if(rand.nextBoolean()){
-			this.getAnimationFrame().rotate(90);
-		}else{
-			this.getAnimationFrame().rotate(-90);
-		}
 		this.setVelocity(GLOBAL.SCROLL_SPEED);
+		
+		this.getPosition().y += 50;
 	}
 	
 	public void draw()
