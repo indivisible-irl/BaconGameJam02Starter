@@ -14,6 +14,7 @@ public class Menu {
 	private MouseOverArea About;
 	private MouseOverArea Exit;
 	
+	@SuppressWarnings("unused")
 	private int whichscreen;
 	
 	public Menu(GameContainer game)

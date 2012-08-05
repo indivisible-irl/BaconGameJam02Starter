@@ -1,7 +1,7 @@
-import java.io.Serializable;
+//import java.io.Serializable;
 
 
-public class Highscores implements Serializable{
+public class Highscores{
 
 	private long[] scores = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	private int greaterThanThis;
