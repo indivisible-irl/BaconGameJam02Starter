@@ -76,7 +76,7 @@ public class GLOBAL {
 	public static final String CAR_PURPLE = "resources/cars/purple.png";
 	public static final String CAR_PURPLE_WRECK = "resources/cars/purple-wrecked.png";
 	
-	public static final float TREE_SCALE = .8f;
+	public static final float TREE_SCALE = .9f;
 	public static final String TREE_1 = "resources/static/tree1.png";
 	public static final String TREE_2 = "resources/static/tree2.png";
 	public static final float POLE_SCALE = .9f;

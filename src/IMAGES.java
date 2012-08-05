@@ -9,7 +9,6 @@ public class IMAGES {
 	public static final Image CRAP = makeImage(GLOBAL.CRAP, true);
 	public static final Image EGG = makeImage(GLOBAL.EGG, true);
 	
-	
 	public static final Image BIRD_WHITE_1 = makeImage(GLOBAL.BIRD_WHITE_1, true);
 	public static final Image BIRD_WHITE_2 = makeImage(GLOBAL.BIRD_WHITE_2, true);
 	public static final Image BIRD_WHITE_3 = makeImage(GLOBAL.BIRD_WHITE_3, true);
