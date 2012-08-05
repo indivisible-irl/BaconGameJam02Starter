@@ -61,7 +61,7 @@ public class SimpleGame extends BasicGame
     		entityManager.addEntity(Human.getRandomlyPlacedHuman());
     	}
     	if(input.isKeyPressed(Input.KEY_E)){
-    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy());
+    		entityManager.addEntity(Enemy.getRandomlyPlacedEnemy(bird));
     	}
     	if(input.isKeyPressed(Input.KEY_C)){
     		entityManager.addEntity(Car.getRandomlyPlacedCar());

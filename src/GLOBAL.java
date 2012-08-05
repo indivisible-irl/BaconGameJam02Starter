@@ -11,12 +11,14 @@ import org.newdawn.slick.Color;
  */
 
 public class GLOBAL {
+	// screen size
 	public static final int SCREEN_WIDTH = 800;
 	public static final int SCREEN_HEIGHT = 600;
 
-	// timing to increase the game's difficulty (ms)
-	public static int DIFFICULTY_INCREASE_PERIOD = 80000;
+	// timing, when to increase the game's difficulty and score multiplier (ms)
+	public static int DIFFICULTY_INCREASE_PERIOD = 80000; // 80 secs??
 	
+	// 
 	public static final long ENTITY_DELAY = 2000;
 	public static final long ENTITY_INCREMENT = 200;
 
@@ -29,11 +31,10 @@ public class GLOBAL {
 	public static final int DO_NOTHING = 120;			// 30
 	public static final int RANDOM_MAX = 120;			// max for random num gen			
 	
+	// images:
 	public static final Color chromakey = new Color(255, 0, 255);
 	
 	public static final String BACKGROUND = "resources/background.png";
-	
-	//public static final Image IMG_BGRND = new Image(BACKGROUND);
 	public static final String CRAP = "resources/poop.png";
 	
 	public static final String BIRD_WHITE_1 = "resources/bird/white/01.png";
@@ -58,6 +59,20 @@ public class GLOBAL {
 	public static final String DUDE_WALK_8 = "resources/dude/walk/08.png";
 	public static final String DUDE_WALK_9 = "resources/dude/walk/09.png";
 	
+	public static final String CAR_RED = "resources/cars/red.png";
+	public static final String CAR_RED_WRECK = "resources/cars/red-wrecked.png";
+	public static final String CAR_BLUE = "resources/cars/blue.png";
+	public static final String CAR_BLUE_WRECK = "resources/cars/blue-wrecked.png";
+	public static final String CAR_GREEN = "resources/cars/green.png";
+	public static final String CAR_GREEN_WRECK = "resources/cars/green-wrecked.png";
+	public static final String CAR_PURPLE = "resources/cars/purple.png";
+	public static final String CAR_PURPLE_WRECK = "resources/cars/purple-wrecked.png";
+	
+	public static final String TREE_1 = "resources/static/tree1.png";
+	public static final String TREE_2 = "resources/static/tree2.png";
+	public static final String POLE_1 = "resources/static/pole.png";
+	
+	// scores:
 	public static final double BASE_SCORE = 0.2;
 	public static double MULTIPLIER_MULTIPLIER = 0.02;
 }
