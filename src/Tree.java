@@ -40,10 +40,8 @@ public class Tree extends Entity
 		} else {
 			tree[0] = IMAGES.makeImage(GLOBAL.TREE_2, true, GLOBAL.TREE_SCALE);
 		}
-		Random rand = new Random();
-		int randomYValue = rand.nextInt(VARIANCE) + LOWER_RANDOM_BOUND;
 		Tree returnTree = new Tree(tree);
-		returnTree.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, randomYValue);		
+		returnTree.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, GLOBAL.TREE_Y_VALUE);		
 		return returnTree;
 	}
 	
@@ -77,12 +75,13 @@ public class Tree extends Entity
 		
 		if(rand.nextBoolean()){
 			this.getAnimationFrame().rotate(90);
-		}else{
+			this.getPosition().y += 104;
+		} else {
 			this.getAnimationFrame().rotate(-90);
+			this.getPosition().y += 112;
 		}
 		this.setVelocity(.1f);
 		
-		this.getPosition().y += 100;
 	}
 	
 	public void draw()
