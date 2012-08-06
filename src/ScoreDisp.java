@@ -21,6 +21,15 @@ public class ScoreDisp extends Entity
 		super(image);
 		super.velocity = GLOBAL.SCROLL_SPEED;
 		parentEntity = parent;
+		this.colidable = false;
+		this.setPosition(new Vector2f(
+				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2),
+				(this.parentEntity.position.y - 30)
+				)
+			);
+//				((int)this.parentEntity.getPosition().x + this.parentEntity.getAnimationFrame().getWidth()/2)),
+//				((int)(this.parentEntity.getPosition().y - 25))
+//				);
 		this.boundingShape = new Rectangle(this.getPosition().x, 
 				this.getPosition().y, 
 				this.getAnimationFrame().getWidth(),
@@ -48,14 +57,14 @@ public class ScoreDisp extends Entity
 	 */
 	public void update(int delta)
 	{
-		if(!isActive) return;  //if the poop isn't active, don't do shit!  GET IT?
+//		if(!isActive) return;  //if the poop isn't active, don't do shit!  GET IT?
 		
 		this.position.y -= this.velocity * delta;
 		
-		if(this.position.y < -60)
-		{
-			this.deactivate();
-		}
+//		if(this.position.y < -60)
+//		{
+//			this.deactivate();
+//		}
 	}
 	/**
 	 * draw the score on the screen
@@ -67,24 +76,24 @@ public class ScoreDisp extends Entity
 	/**
 	 * Activate the score for drawing
 	 */
-	public void activate()
-	{
-		isActive = true;
-		//Position the sprite at the bottom center of the parent bird sprite
-//		this.position = new Vector2f(parentEntity.getPosition().x + (parentEntity.getAnimationFrame().getWidth() / 2),
-//				parentEntity.getPosition().y + parentEntity.getAnimationFrame().getHeight());
-		this.position = new Vector2f(parentEntity.getPosition().x, parentEntity.getPosition().y);
-	}
-	/**
-	 * Deactivate the score drawing
-	 */
-	public void deactivate()
-	{
-		isActive = false;
-	}
-	
-	public boolean isActive()
-	{
-		return this.isActive;
-	}
+//	public void activate()
+//	{
+//		isActive = true;
+//		//Position the sprite at the bottom center of the parent bird sprite
+////		this.position = new Vector2f(parentEntity.getPosition().x + (parentEntity.getAnimationFrame().getWidth() / 2),
+////				parentEntity.getPosition().y + parentEntity.getAnimationFrame().getHeight());
+//		this.position = new Vector2f(parentEntity.getPosition().x, parentEntity.getPosition().y);
+//	}
+//	/**
+//	 * Deactivate the score drawing
+//	 */
+//	public void deactivate()
+//	{
+//		isActive = false;
+//	}
+//	
+//	public boolean isActive()
+//	{
+//		return this.isActive;
+//	}
 }
