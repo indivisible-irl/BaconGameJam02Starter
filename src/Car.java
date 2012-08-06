@@ -82,7 +82,7 @@ public class Car extends Entity
 	 */
 	public String getName()
 	{
-		return "Car";
+		return "car";
 	}
 	/**
 	 * Update the car's status and info

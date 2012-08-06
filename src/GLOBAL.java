@@ -100,11 +100,15 @@ public class GLOBAL {
 	public static final String IMPACT_85 = "resources/impact/impact_85.png";
 	public static final String IMPACT_92 = "resources/impact/impact_92.png";
 	
-	public static final float SCORE_SCALE = 0.8f;
+	public static final float SCORE_SCALE = 0.4f;
 	public static final String SCORE_100 = "resources/scores/100.png";
 	public static final String SCORE_200 = "resources/scores/200.png";
 	public static final String SCORE_300 = "resources/scores/300.png";
 	public static final String SCORE_500 = "resources/scores/500.png";
+	public static final int SCORE_TREE = 100;
+	public static final int SCORE_CAR = 200;
+	public static final int SCORE_HUMAN = 300;
+	public static final int SCORE_ENEMY = 500;
 	
 	public static final float CAR_SCALE = 1.7f;
 	public static final String CAR_RED = "resources/cars/red.png";
@@ -127,8 +131,4 @@ public class GLOBAL {
 	public static final double BASE_SCORE = 0.2;
 	public static double MULTIPLIER_MULTIPLIER = 0.02;
 	
-	public static final int SCORE_TREE = 100;
-	public static final int SCORE_CAR = 200;
-	public static final int SCORE_HUMAN = 300;
-	public static final int SCORE_ENEMY = 500;
 }

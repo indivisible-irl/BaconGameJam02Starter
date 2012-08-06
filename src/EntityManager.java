@@ -9,7 +9,7 @@ public class EntityManager {
 	private Health birdHealth;
 	private ArrayList<Entity> entities;
 	private Score score;
-	private boolean exit;
+	private CollisionReturn cReturn;
 	
 	public EntityManager(Bird b) throws SlickException
 	{
@@ -74,18 +74,32 @@ public class EntityManager {
 	 */
 	public boolean update(Input input, int delta)
 	{
-		this.exit = CollisionManager.checkAndHandleCollisions(bird, entities, birdHealth, score);
+		//this.exit = CollisionManager.checkAndHandleCollisions(this, bird, entities, birdHealth, score);
 		
 		for(int i = 0; i < this.entities.size(); i++)
 		{
 			entities.get(i).update(input, delta);
 			if(entities.get(i).position.x < -(entities.get(i).getAnimationFrame().getWidth()) && this.entities.size() >= 1) entities.remove(i);
 		}
+		this.cReturn = CollisionManager.checkAndHandleCollisions(this, bird, entities, birdHealth, score);
+		if(cReturn.getCollision()){
+			if(cReturn.getEntity().getName() == "tree"){
+				this.addEntity(new ScoreDisp(IMAGES.SCORE_100, cReturn.getEntity()));
+			} else if(cReturn.getEntity().getName() == "car"){
+				this.addEntity(new ScoreDisp(IMAGES.SCORE_200, cReturn.getEntity()));
+			} else if(cReturn.getEntity().getName() == "human"){
+				this.addEntity(new ScoreDisp(IMAGES.SCORE_300, cReturn.getEntity()));
+			} else if(cReturn.getEntity().getName() == "enemy"){
+				this.addEntity(new ScoreDisp(IMAGES.SCORE_500, cReturn.getEntity()));
+			} else {
+				System.out.println("Crap collision but no entity identified");
+			}
+		}
 		bird.update(input, delta);
-		if (this.exit){
+		if (cReturn.getExit()){
 			System.out.println("You're dead! You shouldn't be playing!!!");
 		}
-		return this.exit;
+		return cReturn.getExit();
 	}
 	
 	/**

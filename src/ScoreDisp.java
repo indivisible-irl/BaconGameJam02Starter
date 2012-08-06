@@ -51,6 +51,7 @@ public class ScoreDisp extends Entity
 		if(!isActive) return;  //if the poop isn't active, don't do shit!  GET IT?
 		
 		this.position.y -= this.velocity * delta;
+		
 		if(this.position.y < -60)
 		{
 			this.deactivate();
@@ -70,8 +71,9 @@ public class ScoreDisp extends Entity
 	{
 		isActive = true;
 		//Position the sprite at the bottom center of the parent bird sprite
-		this.position = new Vector2f(parentEntity.getPosition().x + (parentEntity.getAnimationFrame().getWidth() / 2),
-				parentEntity.getPosition().y + parentEntity.getAnimationFrame().getHeight());
+//		this.position = new Vector2f(parentEntity.getPosition().x + (parentEntity.getAnimationFrame().getWidth() / 2),
+//				parentEntity.getPosition().y + parentEntity.getAnimationFrame().getHeight());
+		this.position = new Vector2f(parentEntity.getPosition().x, parentEntity.getPosition().y);
 	}
 	/**
 	 * Deactivate the score drawing

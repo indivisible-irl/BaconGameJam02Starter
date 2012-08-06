@@ -56,7 +56,7 @@ public class Human extends Entity
 	 */
 	public String getName()
 	{
-		return "Human";
+		return "human";
 	}
 	
 	public void update(Input input, int delta)

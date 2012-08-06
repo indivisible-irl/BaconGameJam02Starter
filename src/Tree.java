@@ -57,7 +57,7 @@ public class Tree extends Entity
 	 */
 	public String getName()
 	{
-		return "Tree";
+		return "tree";
 	}
 	
 	public void update(Input input, int delta)

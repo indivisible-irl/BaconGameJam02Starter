@@ -14,9 +14,9 @@ public class CollisionManager
 	 * @param score
 	 * @return bool exitGame - true if collision drops health to 0.
 	 */
-	public static boolean checkAndHandleCollisions(Bird bird, ArrayList<Entity> entities, Health birdHealth, Score score)
+	public static CollisionReturn checkAndHandleCollisions(EntityManager eManager, Bird bird, ArrayList<Entity> entities, Health birdHealth, Score score)
 	{
-		Boolean exit = false;
+		CollisionReturn cReturn = new CollisionReturn();
 		for (Entity entity : entities)
 		{
 			if(entity.colidable)
@@ -27,6 +27,7 @@ public class CollisionManager
 					entity.handleCollision(entity);
 					bird.getCrap().handleCollision(entity);
 					score.addBonus(entity.getScore());
+					cReturn.setEntity(entity);
 				}
 				//Bird collision with enemies
 				if(entity.boundingShape.intersects(bird.boundingShape))
@@ -43,13 +44,13 @@ public class CollisionManager
 					birdHealth.decreaseHealth();
 					entity.handleCollision(bird);
 					// if health = 0 exit game.
-					exit = !(birdHealth.isAlive());
+					cReturn.setExit(!(birdHealth.isAlive()));
 					if (debug){
-						System.out.println("Collision: Exit? " +exit);
+						System.out.println("Collision: Exit? " +cReturn.getExit());
 					}
 				}
 			}
 		}
-		return exit;
+		return cReturn;
 	}
 }
