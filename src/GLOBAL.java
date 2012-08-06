@@ -144,9 +144,9 @@ public class GLOBAL {
 	public static final String SCORE_500_10 = "resources/scores/500/10.png";
 	public static final String SCORE_00 = "resources/scores/0.png";
 	
-	public static final int SCORE_LOCATION_X = 250;
-	public static final int SCORE_LOCATION_Y = 10;
-	public static final float SCORE_NUM_SCALE = 0.2f;
+	public static final int SCORE_LOCATION_X = 280;
+	public static final int SCORE_LOCATION_Y = 15;
+	public static final float SCORE_NUM_SCALE = 0.3f;
 	public static final String SCORE_NUM_0 = "resources/scores/nums/0.png";
 	public static final String SCORE_NUM_1 = "resources/scores/nums/1.png";
 	public static final String SCORE_NUM_2 = "resources/scores/nums/2.png";

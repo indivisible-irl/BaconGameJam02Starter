@@ -153,7 +153,7 @@ public class SimpleGame extends BasicGame
     	entityManager.draw();
     	impact.draw();
     	
-    	gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 375, 5);
+    	//gc.getGraphics().drawString(score.getScorePrintable(), GLOBAL.SCREEN_WIDTH - 375, 5);
     	}
     }
  

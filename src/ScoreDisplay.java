@@ -31,7 +31,7 @@ public class ScoreDisplay extends Entity
 				(GLOBAL.SCORE_LOCATION_Y)
 				)
 		);
-		this.setAnimationFrames(0);
+		this.setAnimation(images);
 		this.boundingShape = new Rectangle(this.getPosition().x, 
 				this.getPosition().y, 
 				this.getAnimationFrame().getWidth(),
@@ -62,7 +62,7 @@ public class ScoreDisplay extends Entity
 	{
 		String scoreString = score.getScorePrintable();
 		char thisChar = scoreString.charAt(index);
-		this.setAnimationFrames((int)(thisChar));
+		this.setAnimationFrames(Character.getNumericValue(thisChar));
 	}
 	/**
 	 * draw the score on the screen
