@@ -3,7 +3,6 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Clouds
 {
-	
 	Entity leadImage;
 	Entity followImage;
 	boolean initialized = false;

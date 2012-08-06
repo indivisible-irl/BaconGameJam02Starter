@@ -1,8 +1,8 @@
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.Random;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+//import javax.sound.sampled.LineUnavailableException;
+//import javax.sound.sampled.UnsupportedAudioFileException;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
@@ -11,7 +11,6 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 
-@SuppressWarnings("unused")
 public class Car extends Entity 
 {
 	protected static final int VARIANCE = 42;
@@ -85,13 +84,17 @@ public class Car extends Entity
 	{
 		return "Car";
 	}
-	
+	/**
+	 * Update the car's status and info
+	 */
 	public void update(Input input, int delta)
 	{
 		this.getPosition().x -=  this.getVelocity() * delta;
 		this.updateBoundingRect();	
 	}
-	
+	/**
+	 * control what happens when a collision is triggered
+	 */
 	public void handleCollision(Entity entity)
 	{
 		//SOUNDS.playSound(SOUNDS.CAR);
@@ -100,14 +103,18 @@ public class Car extends Entity
 		this.setVelocity(GLOBAL.SCROLL_SPEED);
 		this.getPosition().y -= 45;
 	}
-	
+	/**
+	 * draw the car on screen
+	 */
 	public void draw()
 	{
 		this.getAnimation().draw(this.getPosition().x, this.getPosition().y);
 	}
-	
+	/**
+	 * return the car's score value
+	 */
 	public int getScore(){
-		return 250;
+		return GLOBAL.SCORE_CAR;
 	}
 	
 }

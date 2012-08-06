@@ -21,37 +21,7 @@ public class IMAGES {
 	public static final Image GAMEOVER_CHICKENOUT_BUTTON = makeImage(GLOBAL.GAMEOVER_CHICKENOUT_BUTTON);
 	public static final Image GAMEOVER_BACKGROUND = makeImage(GLOBAL.GAMEOVER_BACKGROUND);
 
-	//public static final Image BIRD_WHITE_1 = makeImage(GLOBAL.BIRD_WHITE_1);
-	//public static final Image BIRD_WHITE_2 = makeImage(GLOBAL.BIRD_WHITE_2);
-	//public static final Image BIRD_WHITE_3 = makeImage(GLOBAL.BIRD_WHITE_3);
-	//public static final Image BIRD_WHITE_4 = makeImage(GLOBAL.BIRD_WHITE_4);
-	//public static final Image BIRD_WHITE_5 = makeImage(GLOBAL.BIRD_WHITE_5);
-	
-	//public static final Image BIRD_BROWN_1 = makeImage(GLOBAL.BIRD_BROWN_1);
-	//public static final Image BIRD_BROWN_2 = makeImage(GLOBAL.BIRD_BROWN_2);
-	//public static final Image BIRD_BROWN_3 = makeImage(GLOBAL.BIRD_BROWN_3);
-	//public static final Image BIRD_BROWN_4 = makeImage(GLOBAL.BIRD_BROWN_4);
-	//public static final Image BIRD_BROWN_5 = makeImage(GLOBAL.BIRD_BROWN_5);
-	
-	//public static final Image DUDE_WALK_1 = makeImage(GLOBAL.DUDE_WALK_1, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_2 = makeImage(GLOBAL.DUDE_WALK_2, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_3 = makeImage(GLOBAL.DUDE_WALK_3, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_4 = makeImage(GLOBAL.DUDE_WALK_4, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_5 = makeImage(GLOBAL.DUDE_WALK_5, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_6 = makeImage(GLOBAL.DUDE_WALK_6, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_7 = makeImage(GLOBAL.DUDE_WALK_7, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_8 = makeImage(GLOBAL.DUDE_WALK_8, GLOBAL.DUDE_SCALE);
-	//public static final Image DUDE_WALK_9 = makeImage(GLOBAL.DUDE_WALK_9, GLOBAL.DUDE_SCALE);
 	public static final Image DUDE_DEAD = makeImage(GLOBAL.DUDE_DEAD, GLOBAL.DUDE_SCALE);
-	
-	//public static final Image CAR_RED =  makeImage(GLOBAL.CAR_RED);
-	//public static final Image CAR_RED_WRECK =  makeImage(GLOBAL.CAR_RED_WRECK);
-	//public static final Image CAR_BLUE =  makeImage(GLOBAL.CAR_BLUE);
-	//public static final Image CAR_BLUE_WRECK =  makeImage(GLOBAL.CAR_BLUE_WRECK);
-	//public static final Image CAR_GREEN =  makeImage(GLOBAL.CAR_GREEN);
-	//public static final Image CAR_GREEN_WRECK =  makeImage(GLOBAL.CAR_GREEN_WRECK);
-	//public static final Image CAR_PURPLE =  makeImage(GLOBAL.CAR_PURPLE);
-	//public static final Image CAR_PURPLE_WRECK =  makeImage(GLOBAL.CAR_PURPLE_WRECK);
 	
 	public static final Image TREE_1 =  makeImage(GLOBAL.TREE_1, GLOBAL.TREE_SCALE);
 	public static final Image TREE_2 =  makeImage(GLOBAL.TREE_2, GLOBAL.TREE_SCALE);
@@ -67,7 +37,6 @@ public class IMAGES {
 	public static final Image SCORE_200 = makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE);
 	public static final Image SCORE_300 = makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE);
 	public static final Image SCORE_500 = makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE);
-	
 	
 	///////////////////////////////////////////////////////////////////////////////
 	
@@ -87,7 +56,7 @@ public class IMAGES {
 	}
 	/**
 	 * Get an array of unique Images for the birdy
-	 * @return
+	 * @return Image[]
 	 */
 	public static Image[] getNewBird(){
 		Image[] bird = {
@@ -101,7 +70,7 @@ public class IMAGES {
 	}
 	/**
 	 * Get an array of unique Images for the walking guy
-	 * @return
+	 * @return Image[]
 	 */
 	public static Image[] getNewDude(){
 		Image[] dude = {
@@ -119,14 +88,17 @@ public class IMAGES {
 	}
 	/**
 	 * Get an Image array of Egg images
-	 * @return
+	 * @return Image[]
 	 */
 	public static Image[] getNewEggs(){
 		Image[] eggs = {
 				EGG_1, EGG_2, EGG_3, EGG_4, EGG_5};
 		return eggs;
 	}
-	
+	/**
+	 * Image array for the red flash when health lost
+	 * @return Image[]
+	 */
 	public static Image[] getImpacts(){
 		Image[] impacts = {
 				makeImage(GLOBAL.IMPACT_92),
@@ -143,7 +115,10 @@ public class IMAGES {
 		};
 		return impacts;
 	}
-	
+	/**
+	 * Get the set of score images
+	 * @return Image[]
+	 */
 	public static Image[] getScores(){
 		Image[] scores = {
 				makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE),
@@ -158,7 +133,7 @@ public class IMAGES {
 	
 	/**
 	 * Method to create an Image object and return it
-	 * @param fileLocation, hasTransparency
+	 * @param fileLocation
 	 * @return Image
 	 */
 	public static Image makeImage(String fileLocation){
@@ -172,7 +147,7 @@ public class IMAGES {
 	}
 	/**
 	 * Method to create an Image object and return it
-	 * @param fileLocation, hasTransparency
+	 * @param fileLocation, imageScale
 	 * @return Image
 	 */
 	public static Image makeImage(String fileLocation, float scale){

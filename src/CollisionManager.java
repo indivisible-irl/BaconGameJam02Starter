@@ -3,6 +3,17 @@ import java.util.ArrayList;
 
 public class CollisionManager
 {	
+	private static boolean debug = false;
+	
+	/**
+	 * Collision handling and detection in here.
+	 * Separate types of collision: bird-entity, crap-entity.
+	 * @param bird
+	 * @param entities
+	 * @param birdHealth
+	 * @param score
+	 * @return bool exitGame - true if collision drops health to 0.
+	 */
 	public static boolean checkAndHandleCollisions(Bird bird, ArrayList<Entity> entities, Health birdHealth, Score score)
 	{
 		Boolean exit = false;
@@ -21,15 +32,21 @@ public class CollisionManager
 				if(entity.boundingShape.intersects(bird.boundingShape))
 				{
 					if (entity.boundingShape.getX() > GLOBAL.BUFFER_RIGHT + 32){
-						System.out.println("Avoided a collision. WHEW!");
+						if (debug){
+							System.out.println("Avoided a collision. WHEW!");
+						}
 						continue;
 					}
-					System.out.println("Collision detected between the bird and " + entity.getName());
+					if (debug){
+						System.out.println("Collision detected between the bird and " + entity.getName());
+					}
 					birdHealth.decreaseHealth();
 					entity.handleCollision(bird);
 					// if health = 0 exit game.
 					exit = !(birdHealth.isAlive());
-					System.out.println("Collision: Exit? " +exit);
+					if (debug){
+						System.out.println("Collision: Exit? " +exit);
+					}
 				}
 			}
 		}

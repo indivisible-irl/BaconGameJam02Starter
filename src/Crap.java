@@ -2,14 +2,10 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
-/**
- * @author 
- *
- */
+
 public class Crap extends Entity
 {
 	public static final String NAME = "Crap";
-	
 	protected boolean isActive = false;
 	protected Bird parentBird;
 	

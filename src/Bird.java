@@ -15,7 +15,6 @@ public class Bird extends Entity
 	private Crap crap;
 		
 	/**
-	 * 
 	 * @param image sprite image
 	 */
 	public Bird(Image image) throws SlickException
@@ -23,7 +22,11 @@ public class Bird extends Entity
 		 super(image);
 		 this.init();
 	}
-	
+	/**
+	 * Use this constructor if you want your bird animated
+	 * @param images
+	 * @throws SlickException
+	 */
 	public Bird(Image[] images) throws SlickException
 	{
 		 super(images);
@@ -39,15 +42,17 @@ public class Bird extends Entity
 		 this.setPosition(new Vector2f(50, 140));
 		 this.setVelocity(0.2f);
 		 this.crap = new Crap(new Image(GLOBAL.CRAP), this);
-		 this.direction = -1;
-		 //this.flip(true, false);
+		 this.direction = 1; 		// facing right
+		 this.flip(true, false);	// flip as images face left
 		 this.boundingShape = new Rectangle(this.getPosition().x, 
 					this.getPosition().y, 
 					this.getAnimationFrame().getWidth(),
 					this.getAnimationFrame().getHeight());
 		 this.colidable = true;
 	}
-	
+	/**
+	 * Update the hitbox
+	 */
 	private void updateBoundingRect()
 	{
 		boundingShape.setX(this.position.x);
@@ -83,6 +88,11 @@ public class Bird extends Entity
 	//////////////////////////////////////////////////////
 	////// functional methods
 	
+	/**
+	 * Flip the image set horizontally to face direction of movement.
+	 * @param flipHorizontal
+	 * @param flipVertical
+	 */
 	public void flip(boolean flipHorizontal, boolean flipVertical)
 	{
 		for(int i = 0;i < images.length;i++){
@@ -152,7 +162,7 @@ public class Bird extends Entity
 	}	
 	
 	/**
-	 * handles the drawing of the bird each frame
+	 * handles the drawing of the bird for each frame
 	 */
 	public void draw()
 	{

@@ -17,6 +17,7 @@ public class GLOBAL {
 	// overall speed of the game.
 	public static float SCROLL_SPEED = 0.1f;
 	public static float CLOUD_SPEED = SCROLL_SPEED / 2;
+	public static float SCORE_SPEED = 0.2f;
 	
 	// Entity generation timing
 	public static final long ENTITY_DELAY = 2000;
@@ -125,4 +126,9 @@ public class GLOBAL {
 	// scores:
 	public static final double BASE_SCORE = 0.2;
 	public static double MULTIPLIER_MULTIPLIER = 0.02;
+	
+	public static final int SCORE_TREE = 100;
+	public static final int SCORE_CAR = 200;
+	public static final int SCORE_HUMAN = 300;
+	public static final int SCORE_ENEMY = 500;
 }

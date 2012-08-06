@@ -3,7 +3,6 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Background
 {
-	
 	Entity leadImage;
 	Entity followImage;
 	boolean initialized = false;
