@@ -7,11 +7,10 @@ import org.newdawn.slick.geom.Vector2f;
 @SuppressWarnings("unused")
 public class ScoreDisplay extends Entity
 {
-	public static final String NAME = "ScoreNums";
-	private int currentFrame;
-	
-	protected boolean isActive = false;
-	protected Entity parentEntity;
+	private static final String NAME = "ScoreNums";
+	private Image[] images;
+	private int index;
+	private Score score;
 	
 	private boolean debug = false;
 	
@@ -23,18 +22,21 @@ public class ScoreDisplay extends Entity
 	public ScoreDisplay(Image[] images, int index, Score score)
 	{
 		super(images);
-		super.velocity = GLOBAL.SCROLL_SPEED;
+		super.velocity = 0;
+		this.index = index;
+		this.score = score;
 		this.colidable = false;
 		this.setPosition(new Vector2f(
-				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2 - this.getAnimationFrame().getWidth() / 2),
-				(this.parentEntity.position.y - 30)
+				(GLOBAL.SCORE_LOCATION_X + (index*this.getAnimationFrame().getWidth())),
+				(GLOBAL.SCORE_LOCATION_Y)
 				)
-			);
-		this.setAnimationFrames(this.currentFrame);
+		);
+		this.setAnimationFrames(0);
 		this.boundingShape = new Rectangle(this.getPosition().x, 
 				this.getPosition().y, 
 				this.getAnimationFrame().getWidth(),
-				this.getAnimationFrame().getHeight());
+				this.getAnimationFrame().getHeight()
+				);
 	}
 	/**
 	 * Update hit box
@@ -58,7 +60,9 @@ public class ScoreDisplay extends Entity
 	 */
 	public void update(Input input, int delta)
 	{
-		//this.position.y -= this.velocity * delta;				// move up some more
+		String scoreString = score.getScorePrintable();
+		char thisChar = scoreString.charAt(index);
+		this.setAnimationFrames((int)(thisChar));
 	}
 	/**
 	 * draw the score on the screen

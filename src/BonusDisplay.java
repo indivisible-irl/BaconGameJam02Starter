@@ -30,7 +30,7 @@ public class BonusDisplay extends Entity
 		this.currentFrame = 0;
 		this.startingY = this.parentEntity.getPosition().y - 30;
 		this.setPosition(new Vector2f(
-				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2),
+				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2 - this.getAnimationFrame().getWidth() / 2),
 				(this.parentEntity.position.y - 30)
 				)
 			);

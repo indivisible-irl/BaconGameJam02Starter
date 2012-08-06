@@ -21,6 +21,8 @@ public class SimpleGame extends BasicGame
 	private EntityManager entityManager;
 	private EntityQueueHandler entityQueueHandler;
 	private Score score;
+	//private ScoreDisplay[] scoreNums;
+	private int scoreLength;
 	private boolean inMenu = true;
 	private boolean exitGame;
 	
@@ -37,6 +39,7 @@ public class SimpleGame extends BasicGame
     	
     	if(inMenu){
     		score = new Score();
+    		scoreLength = 0;
     		menu = new Menu(gc);
     		inMenu = false;
     		gameover = new Gameover(gc, score);
@@ -120,6 +123,10 @@ public class SimpleGame extends BasicGame
 	    	clouds.update(delta);
 	    	eggs.update();
 	    	score.update();
+	    	if (score.getScorePrintable().length() > scoreLength){
+	    		entityManager.addEntity(new ScoreDisplay(IMAGES.getScoreNums(), scoreLength, score));
+	    		scoreLength += 1;
+	    	}
 	    	entityQueueHandler.update();
 	    	this.exitGame = entityManager.update(input, delta);
 	    	
