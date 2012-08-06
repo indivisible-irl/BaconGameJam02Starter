@@ -11,7 +11,7 @@ public class EntityQueueHandler {
 	private long delay;
 	private long lastUpdate;
 	
-	private boolean debug = true;
+	private boolean debug = false;
 	
 	/////////////////////////////////////////////////
 	

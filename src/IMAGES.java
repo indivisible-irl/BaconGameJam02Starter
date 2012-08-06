@@ -33,10 +33,10 @@ public class IMAGES {
 	public static final Image EGG_4 = makeImage(GLOBAL.EGG_4, GLOBAL.EGG_SCALE);
 	public static final Image EGG_5 = makeImage(GLOBAL.EGG_5, GLOBAL.EGG_SCALE);
 	
-	public static final Image SCORE_100 = makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE);
-	public static final Image SCORE_200 = makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE);
-	public static final Image SCORE_300 = makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE);
-	public static final Image SCORE_500 = makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE);
+//	public static final Image SCORE_100 = makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE);
+//	public static final Image SCORE_200 = makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE);
+//	public static final Image SCORE_300 = makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE);
+//	public static final Image SCORE_500 = makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE);
 	
 	///////////////////////////////////////////////////////////////////////////////
 	
@@ -115,19 +115,84 @@ public class IMAGES {
 		};
 		return impacts;
 	}
-	/**
-	 * Get the set of score images
-	 * @return Image[]
-	 */
-	public static Image[] getScores(){
+	
+	public static Image[] getScores100(){
 		Image[] scores = {
-				makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE),
-				makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE),
-				makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE),
-				makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE)
+				makeImage(GLOBAL.SCORE_100_100, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_90, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_80, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_70, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_60, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_50, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_40, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_30, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_20, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_100_10, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_00, GLOBAL.SCORE_SCALE)
 		};
 		return scores;
 	}
+	public static Image[] getScores200(){
+		Image[] scores = {
+				makeImage(GLOBAL.SCORE_200_100, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_90, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_80, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_70, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_60, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_50, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_40, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_30, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_20, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_200_10, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_00, GLOBAL.SCORE_SCALE)
+		};
+		return scores;
+	}
+	public static Image[] getScores300(){
+		Image[] scores = {
+				makeImage(GLOBAL.SCORE_300_100, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_90, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_80, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_70, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_60, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_50, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_40, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_30, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_20, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_300_10, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_00, GLOBAL.SCORE_SCALE)
+		};
+		return scores;
+	}
+	public static Image[] getScores500(){
+		Image[] scores = {
+				makeImage(GLOBAL.SCORE_500_100, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_90, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_80, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_70, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_60, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_50, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_40, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_30, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_20, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_500_10, GLOBAL.SCORE_SCALE),
+				makeImage(GLOBAL.SCORE_00, GLOBAL.SCORE_SCALE)
+		};
+		return scores;
+	}
+//	/**
+//	 * Get the set of score images
+//	 * @return Image[]
+//	 */
+//	public static Image[] getScores(){
+//		Image[] scores = {
+//				makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE),
+//				makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE),
+//				makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE),
+//				makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE)
+//		};
+//		return scores;
+//	}
 	
 	///////////////////////////////////////////////////
 	

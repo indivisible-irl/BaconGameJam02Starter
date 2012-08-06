@@ -18,7 +18,6 @@ public class SimpleGame extends BasicGame
 	private Impact impact = null;
 	private Bird bird;
 	private Health birdHealth;
-	//private Enemy enemy;
 	private EntityManager entityManager;
 	private EntityQueueHandler entityQueueHandler;
 	private Score score;
@@ -34,7 +33,7 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
-    	game = gc;
+    	game = gc.setShowFPS(false);
     	
     	if(inMenu){
     		score = new Score();

@@ -1,35 +1,40 @@
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 
 
 @SuppressWarnings("unused")
-public class ScoreDisp extends Entity
+public class BonusDisplay extends Entity
 {
 	public static final String NAME = "Score";
+	private float startingY;
+	private int currentFrame;
 	
 	protected boolean isActive = false;
 	protected Entity parentEntity;
+	
+	private boolean debug = false;
 	
 	/**
 	 * Constructor
 	 * @param image - score image
 	 * @param parent - entity to draw above
 	 */
-	public ScoreDisp(Image image, Entity parent)
+	public BonusDisplay(Image[] images, Entity parent)
 	{
-		super(image);
+		super(images);
 		super.velocity = GLOBAL.SCROLL_SPEED;
 		parentEntity = parent;
 		this.colidable = false;
+		this.currentFrame = 0;
+		this.startingY = this.parentEntity.getPosition().y - 30;
 		this.setPosition(new Vector2f(
 				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2),
 				(this.parentEntity.position.y - 30)
 				)
 			);
-//				((int)this.parentEntity.getPosition().x + this.parentEntity.getAnimationFrame().getWidth()/2)),
-//				((int)(this.parentEntity.getPosition().y - 25))
-//				);
+		this.setAnimationFrames(this.currentFrame);
 		this.boundingShape = new Rectangle(this.getPosition().x, 
 				this.getPosition().y, 
 				this.getAnimationFrame().getWidth(),
@@ -55,16 +60,15 @@ public class ScoreDisp extends Entity
 	 * update the score's position etc
 	 * @param delta
 	 */
-	public void update(int delta)
+	public void update(Input input, int delta)
 	{
-//		if(!isActive) return;  //if the poop isn't active, don't do shit!  GET IT?
-		
-		this.position.y -= this.velocity * delta;
-		
-//		if(this.position.y < -60)
-//		{
-//			this.deactivate();
-//		}
+		if (this.startingY - this.position.y > 100){			// if it has risen 100 px
+			if (this.currentFrame < this.images.length -1){		// if end of image list has not been reached
+				this.currentFrame += 1;							// count++
+				this.setAnimationFrames(this.currentFrame);		// increment frame
+			}
+		}
+		this.position.y -= this.velocity * delta;				// move up some more
 	}
 	/**
 	 * draw the score on the screen
@@ -76,24 +80,4 @@ public class ScoreDisp extends Entity
 	/**
 	 * Activate the score for drawing
 	 */
-//	public void activate()
-//	{
-//		isActive = true;
-//		//Position the sprite at the bottom center of the parent bird sprite
-////		this.position = new Vector2f(parentEntity.getPosition().x + (parentEntity.getAnimationFrame().getWidth() / 2),
-////				parentEntity.getPosition().y + parentEntity.getAnimationFrame().getHeight());
-//		this.position = new Vector2f(parentEntity.getPosition().x, parentEntity.getPosition().y);
-//	}
-//	/**
-//	 * Deactivate the score drawing
-//	 */
-//	public void deactivate()
-//	{
-//		isActive = false;
-//	}
-//	
-//	public boolean isActive()
-//	{
-//		return this.isActive;
-//	}
 }

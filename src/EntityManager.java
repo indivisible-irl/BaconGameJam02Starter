@@ -80,17 +80,18 @@ public class EntityManager {
 		{
 			entities.get(i).update(input, delta);
 			if(entities.get(i).position.x < -(entities.get(i).getAnimationFrame().getWidth()) && this.entities.size() >= 1) entities.remove(i);
+			if(entities.get(i).position.y < -(entities.get(i).getAnimationFrame().getHeight()) && this.entities.size() >= 1) entities.remove(i);
 		}
 		this.cReturn = CollisionManager.checkAndHandleCollisions(this, bird, entities, birdHealth, score);
 		if(cReturn.getCollision()){
 			if(cReturn.getEntity().getName() == "tree"){
-				this.addEntity(new ScoreDisp(IMAGES.SCORE_100, cReturn.getEntity()));
+				this.addEntity(new BonusDisplay(IMAGES.getScores100(), cReturn.getEntity()));
 			} else if(cReturn.getEntity().getName() == "car"){
-				this.addEntity(new ScoreDisp(IMAGES.SCORE_200, cReturn.getEntity()));
+				this.addEntity(new BonusDisplay(IMAGES.getScores200(), cReturn.getEntity()));
 			} else if(cReturn.getEntity().getName() == "human"){
-				this.addEntity(new ScoreDisp(IMAGES.SCORE_300, cReturn.getEntity()));
+				this.addEntity(new BonusDisplay(IMAGES.getScores300(), cReturn.getEntity()));
 			} else if(cReturn.getEntity().getName() == "enemy"){
-				this.addEntity(new ScoreDisp(IMAGES.SCORE_500, cReturn.getEntity()));
+				this.addEntity(new BonusDisplay(IMAGES.getScores500(), cReturn.getEntity()));
 			} else {
 				System.out.println("Crap collision but no entity identified");
 			}

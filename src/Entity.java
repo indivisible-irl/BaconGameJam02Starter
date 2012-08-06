@@ -11,7 +11,7 @@ public class Entity
 	///////////////////////////////////////
 	// instance variables
 	
-	protected Vector2f position;		
+	protected Vector2f position;
 	protected float velocity;
 	protected float direction;
 	protected float scoremultiplier;

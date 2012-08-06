@@ -9,6 +9,8 @@ public class Crap extends Entity
 	protected boolean isActive = false;
 	protected Bird parentBird;
 	
+	private boolean debug = false;
+	
 	public Crap(Image image, Bird bird)
 	{
 		super(image);
@@ -71,7 +73,9 @@ public class Crap extends Entity
 	
 	protected void handleCollision(Entity entity)
 	{
-		System.out.println("Crap collision with " + entity.getName());
+		if(debug){
+			System.out.println("Crap collision with " + entity.getName());
+		}
 		this.position.y = 0;
 		this.deactivate();		
 	}

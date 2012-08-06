@@ -5,6 +5,8 @@ public class Health {
 	private boolean alive;
 	private Impact impacts;
 	
+	private boolean debug = false;
+	
 	///////////////////////////
 	
 	/**
@@ -65,10 +67,14 @@ public class Health {
 		this.impacts.trigger();
 		if (getHealth() == 1){
 			setAlive(false);
-			System.out.println("Health: You are dead, sorry. Alive: " +isAlive());
+			if (debug){
+				System.out.println("Health: You are dead, sorry. Alive: " +isAlive());
+			}
 		} else {
 			setHealth(getHealth() - 1);
-			System.out.println("Health: Lost an egg. Current hp: " +getHealth());
+			if (debug){
+				System.out.println("Health: Lost an egg. Current hp: " +getHealth());
+			}
 		}
 	}
 	
