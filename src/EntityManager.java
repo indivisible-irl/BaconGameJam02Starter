@@ -11,6 +11,8 @@ public class EntityManager {
 	private Score score;
 	private CollisionReturn cReturn;
 	
+	private boolean debug = false;
+	
 	public EntityManager(Bird b) throws SlickException
 	{
 		entities = new ArrayList<Entity>();		
@@ -79,8 +81,15 @@ public class EntityManager {
 		for(int i = 0; i < this.entities.size(); i++)
 		{
 			entities.get(i).update(input, delta);
-			if(entities.get(i).position.x < -(entities.get(i).getAnimationFrame().getWidth()) && this.entities.size() >= 1) entities.remove(i);
-			if(entities.get(i).position.y < -(entities.get(i).getAnimationFrame().getHeight()) && this.entities.size() >= 1) entities.remove(i);
+			if(entities.get(i).position.x < -(entities.get(i).getAnimationFrame().getWidth()) && this.entities.size() >= 1){
+				entities.remove(i);
+			}
+			if(entities.get(i).position.y < -(entities.get(i).getAnimationFrame().getHeight()) && this.entities.size() >= 1){
+				if (debug){
+					System.out.println("Destroyed: " +entities.get(i).getName());
+					entities.remove(i);
+				}
+			}
 		}
 		this.cReturn = CollisionManager.checkAndHandleCollisions(this, bird, entities, birdHealth, score);
 		if(cReturn.getCollision()){

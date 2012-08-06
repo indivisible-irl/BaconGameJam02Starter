@@ -33,7 +33,7 @@ public class SimpleGame extends BasicGame
     public void init(GameContainer gc) 
 			throws SlickException 
 	{
-    	game = gc.setShowFPS(false);
+    	game = gc;
     	
     	if(inMenu){
     		score = new Score();
@@ -43,6 +43,7 @@ public class SimpleGame extends BasicGame
     		
     	} else {
     	this.exitGame = false;
+    	gc.setShowFPS(false);
     	impact = new Impact(IMAGES.getImpacts());
     	birdHealth = new Health(impact);
     	background = new Background(IMAGES.BACKGROUND, IMAGES.BACKGROUND);

@@ -7,7 +7,7 @@ import org.newdawn.slick.geom.Vector2f;
 @SuppressWarnings("unused")
 public class BonusDisplay extends Entity
 {
-	public static final String NAME = "Score";
+	public static final String NAME = "BonusScore";
 	private float startingY;
 	private int currentFrame;
 	
