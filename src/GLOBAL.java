@@ -1,5 +1,3 @@
-import org.newdawn.slick.Color;
-
 /*
  * Reddit BaconGameJam - Aug 2012
  * Team maeT
@@ -41,8 +39,6 @@ public class GLOBAL {
 	public static final int BUFFER_RIGHT = GLOBAL.SCREEN_WIDTH - 75;
 	
 	// images:
-	public static final Color chromakey = new Color(255, 0, 255);
-	
 	public static final String BACKGROUND = "resources/background.png";
 	public static final String CLOUDS = "resources/clouds.png";
 	public static final String CRAP = "resources/poop.png";

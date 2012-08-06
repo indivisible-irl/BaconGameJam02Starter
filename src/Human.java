@@ -67,7 +67,7 @@ public class Human extends Entity
 	
 	public void handleCollision(Entity entity)
 	{
-		Image[] deadimages = {IMAGES.makeImage(GLOBAL.DUDE_DEAD, true, GLOBAL.DUDE_SCALE)};
+		Image[] deadimages = {IMAGES.makeImage(GLOBAL.DUDE_DEAD, GLOBAL.DUDE_SCALE)};
 		this.setAnimation(deadimages);
 		this.colidable = false;
 		this.getAnimation().stop();

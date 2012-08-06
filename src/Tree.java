@@ -36,9 +36,9 @@ public class Tree extends Entity
 		Image[] tree = new Image[1];
 		Boolean randBool = new Random().nextBoolean();
 		if (randBool){
-			tree[0] = IMAGES.makeImage(GLOBAL.TREE_1, true, GLOBAL.TREE_SCALE);
+			tree[0] = IMAGES.makeImage(GLOBAL.TREE_1, GLOBAL.TREE_SCALE);
 		} else {
-			tree[0] = IMAGES.makeImage(GLOBAL.TREE_2, true, GLOBAL.TREE_SCALE);
+			tree[0] = IMAGES.makeImage(GLOBAL.TREE_2, GLOBAL.TREE_SCALE);
 		}
 		Tree returnTree = new Tree(tree);
 		returnTree.position = new Vector2f(GLOBAL.SCREEN_WIDTH + 100, GLOBAL.TREE_Y_VALUE);		
