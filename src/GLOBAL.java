@@ -112,7 +112,6 @@ public class GLOBAL {
 	public static final String SCORE_100_30 = "resources/scores/100/30.png";
 	public static final String SCORE_100_20 = "resources/scores/100/20.png";
 	public static final String SCORE_100_10 = "resources/scores/100/10.png";
-	public static final String SCORE_100_00 = "resources/scores/100/00.png";
 	public static final String SCORE_200_100 = "resources/scores/200/100.png";
 	public static final String SCORE_200_90 = "resources/scores/200/90.png";
 	public static final String SCORE_200_80 = "resources/scores/200/80.png";
@@ -123,7 +122,6 @@ public class GLOBAL {
 	public static final String SCORE_200_30 = "resources/scores/200/30.png";
 	public static final String SCORE_200_20 = "resources/scores/200/20.png";
 	public static final String SCORE_200_10 = "resources/scores/200/10.png";
-	public static final String SCORE_200_00 = "resources/scores/200/00.png";
 	public static final String SCORE_300_100 = "resources/scores/300/100.png";
 	public static final String SCORE_300_90 = "resources/scores/300/90.png";
 	public static final String SCORE_300_80 = "resources/scores/300/80.png";
@@ -134,7 +132,6 @@ public class GLOBAL {
 	public static final String SCORE_300_30 = "resources/scores/300/30.png";
 	public static final String SCORE_300_20 = "resources/scores/300/20.png";
 	public static final String SCORE_300_10 = "resources/scores/300/10.png";
-	public static final String SCORE_300_00 = "resources/scores/300/00.png";
 	public static final String SCORE_500_100 = "resources/scores/500/100.png";
 	public static final String SCORE_500_90 = "resources/scores/500/90.png";
 	public static final String SCORE_500_80 = "resources/scores/500/80.png";
@@ -145,7 +142,6 @@ public class GLOBAL {
 	public static final String SCORE_500_30 = "resources/scores/500/30.png";
 	public static final String SCORE_500_20 = "resources/scores/500/20.png";
 	public static final String SCORE_500_10 = "resources/scores/500/10.png";
-	public static final String SCORE_500_00 = "resources/scores/500/00.png";
 	public static final String SCORE_00 = "resources/scores/0.png";
 
 	public static final int SCORE_TREE = 100;

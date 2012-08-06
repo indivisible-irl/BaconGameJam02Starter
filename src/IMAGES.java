@@ -34,11 +34,6 @@ public class IMAGES {
 	public static final Image EGG_4 = makeImage(GLOBAL.EGG_4, GLOBAL.EGG_SCALE);
 	public static final Image EGG_5 = makeImage(GLOBAL.EGG_5, GLOBAL.EGG_SCALE);
 	
-//	public static final Image SCORE_100 = makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE);
-//	public static final Image SCORE_200 = makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE);
-//	public static final Image SCORE_300 = makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE);
-//	public static final Image SCORE_500 = makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE);
-	
 	///////////////////////////////////////////////////////////////////////////////
 	
 	/**
@@ -116,7 +111,10 @@ public class IMAGES {
 		};
 		return impacts;
 	}
-	
+	/**
+	 * Image array for the 100 bonus
+	 * @return
+	 */
 	public static Image[] getScores100(){
 		Image[] scores = {
 				makeImage(GLOBAL.SCORE_100_100, GLOBAL.SCORE_SCALE),
@@ -133,6 +131,10 @@ public class IMAGES {
 		};
 		return scores;
 	}
+	/**
+	 * Image array for the 200 bonus
+	 * @return
+	 */
 	public static Image[] getScores200(){
 		Image[] scores = {
 				makeImage(GLOBAL.SCORE_200_100, GLOBAL.SCORE_SCALE),
@@ -149,6 +151,10 @@ public class IMAGES {
 		};
 		return scores;
 	}
+	/**
+	 * Image array for the 300 bonus
+	 * @return
+	 */
 	public static Image[] getScores300(){
 		Image[] scores = {
 				makeImage(GLOBAL.SCORE_300_100, GLOBAL.SCORE_SCALE),
@@ -165,6 +171,10 @@ public class IMAGES {
 		};
 		return scores;
 	}
+	/**
+	 * Image array for the 500 bonus
+	 * @return
+	 */
 	public static Image[] getScores500(){
 		Image[] scores = {
 				makeImage(GLOBAL.SCORE_500_100, GLOBAL.SCORE_SCALE),
@@ -181,19 +191,6 @@ public class IMAGES {
 		};
 		return scores;
 	}
-//	/**
-//	 * Get the set of score images
-//	 * @return Image[]
-//	 */
-//	public static Image[] getScores(){
-//		Image[] scores = {
-//				makeImage(GLOBAL.SCORE_100, GLOBAL.SCORE_SCALE),
-//				makeImage(GLOBAL.SCORE_200, GLOBAL.SCORE_SCALE),
-//				makeImage(GLOBAL.SCORE_300, GLOBAL.SCORE_SCALE),
-//				makeImage(GLOBAL.SCORE_500, GLOBAL.SCORE_SCALE)
-//		};
-//		return scores;
-//	}
 	
 	///////////////////////////////////////////////////
 	
