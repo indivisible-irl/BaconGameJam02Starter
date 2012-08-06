@@ -16,6 +16,7 @@ public class IMAGES {
 	public static final Image MENU_ABOUT_BUTTON = makeImage(GLOBAL.MENU_ABOUT_BUTTON);
 	public static final Image MENU_EXIT_BUTTON = makeImage(GLOBAL.MENU_EXIT_BUTTON);
 	public static final Image MENU_HIGHSCORE_BUTTON = makeImage(GLOBAL.MENU_HIGHSCORE_BUTTON);
+	public static final Image MENU_BACK_BUTTON = makeImage(GLOBAL.MENU_BACK_BUTTON);
 	
 	public static final Image GAMEOVER_HELLYEAH_BUTTON = makeImage(GLOBAL.GAMEOVER_HELLYEAH_BUTTON);
 	public static final Image GAMEOVER_CHICKENOUT_BUTTON = makeImage(GLOBAL.GAMEOVER_CHICKENOUT_BUTTON);

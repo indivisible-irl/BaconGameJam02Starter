@@ -52,6 +52,7 @@ public class GLOBAL {
 	public static final String MENU_ABOUT_BUTTON = "resources/Menu/About.png";
 	public static final String MENU_EXIT_BUTTON = "resources/Menu/Exit.png";
 	public static final String MENU_HIGHSCORE_BUTTON = "resources/Menu/Highscore.png";
+	public static final String MENU_BACK_BUTTON = "resources/Menu/Back.png";
 	public static final int MAIN_MENU = 0;
 	public static final int ABOUT_MENU = 1;
 	public static final int HIGHSCORE_MENU = 2;
