@@ -72,14 +72,17 @@ public class SimpleGame extends BasicGame
     		menu.setActive(false);
     		inMenu = false;
     		this.init(gc);
+    		scoreLength = 0;
     		menu.setStartgame(false);
     	}else if(gameover.getGotomenu()){
     		score.reset();
+    		scoreLength = 0;
     		menu.setActive(true);
     		inMenu = true;
     		this.init(gc);
     	}else if(gameover.getStartgame()){
     		score.reset();
+    		scoreLength = 0;
     		this.exitGame = false;
     		gameover.setStartgame(false);
     		this.init(gc);
