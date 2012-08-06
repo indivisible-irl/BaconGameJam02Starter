@@ -143,6 +143,18 @@ public class GLOBAL {
 	public static final String SCORE_500_20 = "resources/scores/500/20.png";
 	public static final String SCORE_500_10 = "resources/scores/500/10.png";
 	public static final String SCORE_00 = "resources/scores/0.png";
+	
+	public static final float SCORE_NUM_SCALE = 0.2f;
+	public static final String SCORE_NUM_0 = "resources/scores/nums/0.png";
+	public static final String SCORE_NUM_1 = "resources/scores/nums/1.png";
+	public static final String SCORE_NUM_2 = "resources/scores/nums/2.png";
+	public static final String SCORE_NUM_3 = "resources/scores/nums/3.png";
+	public static final String SCORE_NUM_4 = "resources/scores/nums/4.png";
+	public static final String SCORE_NUM_5 = "resources/scores/nums/5.png";
+	public static final String SCORE_NUM_6 = "resources/scores/nums/6.png";
+	public static final String SCORE_NUM_7 = "resources/scores/nums/7.png";
+	public static final String SCORE_NUM_8 = "resources/scores/nums/8.png";
+	public static final String SCORE_NUM_9 = "resources/scores/nums/9.png";
 
 	public static final int SCORE_TREE = 100;
 	public static final int SCORE_CAR = 200;

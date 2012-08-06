@@ -191,6 +191,25 @@ public class IMAGES {
 		};
 		return scores;
 	}
+	/**
+	 * Image array for separate numbers
+	 * @return
+	 */
+	public static Image[] getScoreNums(){
+		Image[] nums = {
+				makeImage(GLOBAL.SCORE_NUM_0, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_1, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_2, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_3, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_4, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_5, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_6, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_7, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_8, GLOBAL.SCORE_NUM_SCALE),
+				makeImage(GLOBAL.SCORE_NUM_9, GLOBAL.SCORE_NUM_SCALE),
+		};
+		return nums;
+	}
 	
 	///////////////////////////////////////////////////
 	

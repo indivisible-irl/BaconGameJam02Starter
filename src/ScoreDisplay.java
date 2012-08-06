@@ -5,10 +5,9 @@ import org.newdawn.slick.geom.Vector2f;
 
 
 @SuppressWarnings("unused")
-public class BonusDisplay extends Entity
+public class ScoreDisplay extends Entity
 {
-	public static final String NAME = "BonusScore";
-	private float startingY;
+	public static final String NAME = "ScoreNums";
 	private int currentFrame;
 	
 	protected boolean isActive = false;
@@ -21,16 +20,13 @@ public class BonusDisplay extends Entity
 	 * @param image - score image
 	 * @param parent - entity to draw above
 	 */
-	public BonusDisplay(Image[] images, Entity parent)
+	public ScoreDisplay(Image[] images, int index, Score score)
 	{
 		super(images);
 		super.velocity = GLOBAL.SCROLL_SPEED;
-		parentEntity = parent;
 		this.colidable = false;
-		this.currentFrame = 0;
-		this.startingY = this.parentEntity.getPosition().y - 30;
 		this.setPosition(new Vector2f(
-				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2),
+				(this.parentEntity.position.x + this.parentEntity.getAnimationFrame().getWidth() / 2 - this.getAnimationFrame().getWidth() / 2),
 				(this.parentEntity.position.y - 30)
 				)
 			);
@@ -62,14 +58,7 @@ public class BonusDisplay extends Entity
 	 */
 	public void update(Input input, int delta)
 	{
-		if (this.startingY - this.position.y > 100){			// if it has risen 100 px
-			if (this.currentFrame < this.images.length -1){		// if end of image list has not been reached
-				this.currentFrame += 1;							// count++
-				this.setAnimationFrames(this.currentFrame);		// increment frame
-			}
-		}
-		this.position.y -= this.velocity * delta;				// move up some more
-		this.position.x -= GLOBAL.SCROLL_SPEED * delta;			// keep pace with the background
+		//this.position.y -= this.velocity * delta;				// move up some more
 	}
 	/**
 	 * draw the score on the screen
